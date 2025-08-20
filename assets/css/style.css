@@ -192,3 +192,18 @@ table.dataTable th {
 	vertical-align: middle;
 	/* biar isi kolom ke tengah vertikal juga */
 }
+
+
+/* Benerin posisi menu popout biar gak nyangkut */
+.main-menu .menu-popout {
+	top: 0 !important;
+	/* selalu nempel parent */
+	left: 100% !important;
+	/* geser ke samping kanan */
+	position: absolute !important;
+	max-height: none !important;
+}
+
+.main-menu .menu-title {
+	display: none !important;
+}
