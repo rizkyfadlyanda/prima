@@ -203,7 +203,3 @@ table.dataTable th {
 	position: absolute !important;
 	max-height: none !important;
 }
-
-.main-menu .menu-title {
-	display: none !important;
-}

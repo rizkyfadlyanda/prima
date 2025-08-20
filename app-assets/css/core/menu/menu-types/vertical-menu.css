@@ -239,19 +239,7 @@ body.vertical-layout.vertical-menu.menu-collapsed .main-menu .user-content {
 
 body.vertical-layout.vertical-menu.menu-collapsed .main-menu .main-menu-content>span.menu-title,
 body.vertical-layout.vertical-menu.menu-collapsed .main-menu .main-menu-content a.menu-title {
-    font-weight: 600;
-
-    left: 60px;
-
-    width: 300px;
-    padding: 18px 30px;
-
-    text-align: left;
-    text-transform: uppercase;
-
-    color: #fff;
-    border-color: #00008b;
-    background-color: #00008b;
+    display: none !important;
 }
 
 body.vertical-layout.vertical-menu.menu-collapsed .main-menu .main-menu-content>ul.menu-content {
