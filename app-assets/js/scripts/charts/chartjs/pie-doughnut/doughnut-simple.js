@@ -52,7 +52,7 @@ $(window).on("load", function () {
     var ctx = $("#simple-doughnut-chart");
 
     // Hitung total
-    const dataValues = [2, 6, 37];
+    const dataValues = [6, 30, 7];
     const totalValue = dataValues.reduce((a, b) => a + b, 0);
 
     // Custom plugin untuk menampilkan teks di tengah
@@ -89,20 +89,20 @@ $(window).on("load", function () {
 
     const ctxCanvas = document.getElementById('simple-doughnut-chart').getContext('2d');
 
-    // Biru ke Ungu Cerah
+    // Approved
     const gradientBlue = ctxCanvas.createLinearGradient(0, 0, 0, 300);
-    gradientBlue.addColorStop(0, '#666EE8');  // biru dominan
-    gradientBlue.addColorStop(1, '#5760e6');  // ungu muda (cerah dan soft)
+    gradientBlue.addColorStop(0, '#76d869ff');
+    gradientBlue.addColorStop(1, '#5ed84f');
 
-    // Oranye ke Kuning Terang
+    // In Progress
     const gradientOrange = ctxCanvas.createLinearGradient(0, 0, 0, 300);
-    gradientOrange.addColorStop(0, '#FF9149');  // oranye dominan
-    gradientOrange.addColorStop(1, '#fa7d2a');  // kuning pastel (lemony)
+    gradientOrange.addColorStop(0, '#FF9149');
+    gradientOrange.addColorStop(1, '#fa7d2a');
 
-    // (Opsional) Merah ke Merah Muda Cerah
+    // Rejected
     const gradientRed = ctxCanvas.createLinearGradient(0, 0, 0, 300);
-    gradientRed.addColorStop(0, '#FF4961');  // merah utama
-    gradientRed.addColorStop(1, '#f22e48');  // merah muda/soft pink
+    gradientRed.addColorStop(0, '#FF4961');
+    gradientRed.addColorStop(1, '#f22e48');
 
     // Chart Options
     var chartOptions = {
@@ -132,9 +132,9 @@ $(window).on("load", function () {
     };
 
     var chartData = {
-        labels: ["Open", "On Progress", "Closed"],
+        labels: ["In Progress", "Approved", "Rejected"],
         datasets: [{
-            label: "My First dataset",
+            label: "Investment",
             data: dataValues,
             backgroundColor: [
                 gradientOrange,
