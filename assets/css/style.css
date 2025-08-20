@@ -1,0 +1,194 @@
+/*================================================================================
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: ThemeSelection
+	
+================================================================================
+
+NOTE:
+------
+PLACE HERE YOUR OWN SCSS CODES AND IF NEEDED, OVERRIDE THE STYLES FROM THE OTHER STYLESHEETS.
+WE WILL RELEASE FUTURE UPDATES SO IN ORDER TO NOT OVERWRITE YOUR STYLES IT'S BETTER LIKE THIS.  */
+@media (min-width: 768px) {
+	.scroll-limited {
+		max-height: 380px;
+		overflow-y: auto;
+	}
+}
+
+.table-responsive thead th {
+	position: sticky;
+	top: 0;
+	background-color: white;
+	/* atau warna card kamu */
+	z-index: 2;
+}
+
+.header-flex {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	/* agar tombol turun kalau layar kecil */
+	gap: 10px;
+	/* kasih jarak */
+}
+
+.header-flex .btn {
+	margin-left: auto;
+	/* dorong tombol ke kanan */
+}
+
+/* Saat mobile */
+@media (max-width: 768px) {
+	.header-flex {
+		flex-direction: column;
+		/* tombol & judul jadi vertikal */
+		align-items: flex-start;
+		/* rata kiri */
+	}
+
+	.header-flex .btn {
+		width: 100%;
+		/* tombol jadi full */
+		margin-top: 10px;
+		/* kasih jarak dari judul */
+	}
+}
+
+
+
+
+/* 
+.nav-link.active {
+	color: #fff;
+	border: none;
+	transition: all 0.3s ease-in-out;
+}
+ 
+/* Warna calm untuk setiap tab 
+.nav-link.tab-open.active {
+	background-color: #1E2528;
+}
+
+.nav-link.tab-admin.active {
+	background-color: #1E2528;
+}
+
+.nav-link.tab-gate.active {
+	background-color: #1E2528;
+}
+
+
+.nav-link.tab-done.active {
+	background-image: -webkit-gradient(linear, left top, right top, from(#9f78ff), to(#32cafe));
+	background-image: -webkit-linear-gradient(left, #9f78ff, #32cafe);
+	background-image: -moz-linear-gradient(left, #9f78ff, #32cafe);
+	background-image: -o-linear-gradient(left, #9f78ff, #32cafe);
+	background-image: linear-gradient(to right, #9f78ff, #32cafe);
+	background-repeat: repeat-x;
+}
+
+.nav-link.tab-revise.active {
+	background-image: -webkit-gradient(linear, left top, right top, from(#9f78ff), to(#32cafe));
+	background-image: -webkit-linear-gradient(left, #9f78ff, #32cafe);
+	background-image: -moz-linear-gradient(left, #9f78ff, #32cafe);
+	background-image: -o-linear-gradient(left, #9f78ff, #32cafe);
+	background-image: linear-gradient(to right, #9f78ff, #32cafe);
+	background-repeat: repeat-x;
+}
+
+.nav-link.tab-reject.active {
+	background-image: -webkit-gradient(linear, left top, right top, from(#9f78ff), to(#32cafe));
+	background-image: -webkit-linear-gradient(left, #9f78ff, #32cafe);
+	background-image: -moz-linear-gradient(left, #9f78ff, #32cafe);
+	background-image: -o-linear-gradient(left, #9f78ff, #32cafe);
+	background-image: linear-gradient(to right, #9f78ff, #32cafe);
+	background-repeat: repeat-x;
+}
+
+
+.nav-link .badge-s {
+	background-image: -webkit-gradient(linear, left top, right top, from(#9f78ff), to(#32cafe));
+	background-image: -webkit-linear-gradient(left, #9f78ff, #32cafe);
+	background-image: -moz-linear-gradient(left, #9f78ff, #32cafe);
+	background-image: -o-linear-gradient(left, #9f78ff, #32cafe);
+	background-image: linear-gradient(to right, #9f78ff, #32cafe);
+	background-repeat: repeat-x;
+	color: #fff;
+}
+
+.nav-link.active .badge-s {
+	background-image: -webkit-gradient(linear, left top, right top, from(#ff5858), to(#e888b7));
+	background-image: -webkit-linear-gradient(left, #ff5858, #e888b7);
+	background-image: -moz-linear-gradient(left, #ff5858, #e888b7);
+	background-image: -o-linear-gradient(left, #ff5858, #e888b7);
+	background-image: linear-gradient(to right, #ff5858, #e888b7);
+	background-repeat: repeat-x;
+	color: #fff;
+}
+
+*/
+
+.main-menu.menu-light .navigation>li.open>a {
+	color: #2b345f;
+	color: darkblue;
+}
+
+.main-menu.menu-light .navigation>li ul .active>a {
+	font-weight: 700;
+	color: rgb(0, 0, 139);
+}
+
+
+.nav-link.colornonaktif {
+	background-color: #e0e0e0;
+	/* abu-abu untuk tab non aktif */
+	color: black;
+	border: 1px solid #ccc !important;
+	/* border di semua sisi */
+	padding: 8px 16px;
+	margin-right: -1px;
+	/* biar border tab nyambung */
+	cursor: pointer;
+}
+
+.nav-link.colornonaktif.active {
+	background-color: white;
+	/* putih untuk tab aktif */
+	color: black;
+	font-weight: bold;
+	border-top: 2px solid #000;
+	/* garis atas lebih tebal */
+	border-left: 1px solid #ccc !important;
+	border-right: 1px solid #ccc !important;
+	border-bottom: 1px solid white !important;
+	/* bawah hilang biar nyatu konten */
+	position: relative;
+	top: 1px;
+	/* biar "nindih" border konten */
+}
+
+
+/* Badge di tab aktif tetap merah */
+.merah {
+	background-image: -webkit-gradient(linear, left top, right top, from(#ff5858), to(#e888b7));
+	background-image: -webkit-linear-gradient(left, #ff5858, #e888b7);
+	background-image: -moz-linear-gradient(left, #ff5858, #e888b7);
+	background-image: -o-linear-gradient(left, #ff5858, #e888b7);
+	background-image: linear-gradient(to right, #ff5858, #e888b7);
+	background-repeat: repeat-x;
+	/* background-color: #E57373; */
+	/* merah soft */
+	color: #fff;
+}
+
+.colornonaktif {
+	color: darkslategray;
+}
+
+table.dataTable td,
+table.dataTable th {
+	vertical-align: middle;
+	/* biar isi kolom ke tengah vertikal juga */
+}
