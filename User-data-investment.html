@@ -12,7 +12,7 @@
   <meta name="author" content="ThemeSelect">
   <title>Data Investment</title>
   <link rel="apple-touch-icon" href="app-assets/images/ico/apple-icon-120.png">
-  <link rel="shortcut icon" type="image/x-icon" href="app-assets/images/ico/favicon.ico">
+  <link rel="shortcut icon" type="image/x-icon" href="app-assets/images/logo/logo.png">
   <link href="https://fonts.googleapis.com/css?family=Muli:300,300i,400,400i,600,600i,700,700i%7CComfortaa:300,400,700"
     rel="stylesheet">
   <link href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css" rel="stylesheet">
@@ -39,17 +39,19 @@
   <!-- END Page Level CSS-->
   <!-- BEGIN Custom CSS-->
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 
 
   <!-- END Custom CSS-->
 </head>
 
-<body class="vertical-layout vertical-menu 2-columns   menu-expanded fixed-navbar" data-open="click"
-  data-menu="vertical-menu" data-color="bg-gradient-x-purple-blue" data-col="2-columns">
+
+<body class="vertical-layout vertical-menu 2-columns  menu-collapsed fixed-navbar" data-open="click"
+  data-menu="vertical-menu" data-color="custom-dark" data-col="2-columns">
 
   <nav
     class="header-navbar navbar-expand-md navbar navbar-with-menu navbar-without-dd-arrow fixed-top navbar-semi-light">
-    <div class="navbar-wrapper">
+    <div class="navbar-wrapper" style="background-color: #1E2528 !important;">
       <div class="navbar-container content">
         <div class="collapse navbar-collapse show" id="navbar-mobile">
           <ul class="nav navbar-nav mr-auto float-left">
@@ -65,9 +67,23 @@
           </ul>
           <ul class="nav navbar-nav float-right">
 
+            <!-- Dropdown -->
+            <li class="nav-item navbar-search hide-mobile" style="align-items: center;
+                display: flex;
+                justify-content: center;">
+              <select id="project-location" class="form-control" style="width:100%">
+                <option value="">Search Modul</option>
+                <option value="amsterdam">Amsterdam</option>
+                <option value="berlin">Berlin</option>
+                <option value="frankfurt">Frankfurt</option>
+                <option value="hamburg">Hamburg</option>
+                <option value="munich">Munich</option>
+              </select>
+            </li>
+
             <li class="dropdown dropdown-notification nav-item"><a class="nav-link nav-link-label" href="#"
                 data-toggle="dropdown"><i class="ficon ft-bell bell-shake" id="notification-navbar-link"></i><span
-                  class="badge badge-pill badge-sm badge-danger badge-default badge-up badge-glow">5</span></a>
+                  class="badge badge-pill badge-sm badge-primary badge-default badge-up badge-glow">5</span></a>
               <ul class="dropdown-menu dropdown-menu-media dropdown-menu-right">
                 <div class="arrow_box_right">
                   <li class="dropdown-menu-header">
@@ -142,62 +158,56 @@
   <!-- ////////////////////////////////////////////////////////////////////////////-->
   <!-- sidebar -->
 
-  <div class="main-menu menu-fixed menu-light menu-accordion    menu-shadow " data-scroll-to-active="true"
+  <div class="main-menu  menu-fixed menu-light menu-accordion    menu-shadow " data-scroll-to-active="true"
     data-img="app-assets/images/backgrounds/02.jpg">
     <div class="navbar-header">
       <ul class="nav navbar-nav flex-row">
         <li class="nav-item mr-auto"><a class="navbar-brand" href="index.html"><img class="brand-logo"
               alt="Chameleon admin logo" src="app-assets/images/logo/logo.png" />
-            <h3 class="brand-text">Service Desk</h3>
+            <h3 class="brand-text">PRIMA</h3>
           </a></li>
         <li class="nav-item d-md-none"><a class="nav-link close-navbar"><i class="ft-x"></i></a></li>
       </ul>
     </div>
     <div class="main-menu-content">
       <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
-        <li class=" nav-item menu-content"><a href="index.html"><i class="ft-home"></i><span class="menu-title"
+        <li class=" nav-item menu-content "><a href="index.html"><i class="ft-home"></i><span class="menu-title"
               data-i18n="">Dashboard</span></a>
           <ul class="menu-content">
-            <li class=""><a class="menu-item" href="User-Dashboard.html">Investment</a>
+            <li class=""><a class="menu-item" href="index.html">Company Overview</a>
             </li>
           </ul>
         </li>
-        <li class=" nav-item menu-content"><a href="index.html"><i class="ft-home"></i><span class="menu-title"
-              data-i18n="">Service Desk</span></a>
+        <li class=" nav-item menu-content"><a href="index.html"><i class="ft-airplay"></i><span class="menu-title"
+              data-i18n="">Strategic Decision</span></a>
           <ul class="menu-content">
-            <li class="active"><a class="menu-item" href="User-Dashboard.html">Data Investment</a>
+            <li class="active"><a class="menu-item" href="User-data-investment.html">Investment Proposal</a>
             </li>
             <li class=""><a class="menu-item" href="User-Adm.html">Investment Administration</a>
             </li>
+            <li class=""><a class="menu-item" href="User-Adm.html">Investment Gatekeeping</a>
+            </li>
           </ul>
         </li>
-
       </ul>
     </div>
-    <div class="navigation-background"></div>
+    <!-- <div class="navigation-background"></div> -->
   </div>
 
   <div class="app-content content">
     <div class="content-wrapper">
-      <div class="content-wrapper-before"></div>
+      <div class="content-wrapper-before" style="background-color: #F8F3E9 !important; height: 80px;"></div>
       <div class="content-header row">
-        <div class="content-header-left col-md-4 col-12 mb-2">
-          <h3 class="content-header-title">Data Investment</h3>
+        <div class="content-header-left col-md-4 col-12 mb-2 breadcrumb-fix">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+            <li class="breadcrumb-item active">Investment</li>
+          </ol>
         </div>
-        <div class="content-header-right col-md-8 col-12">
-          <div class="breadcrumbs-top float-md-right">
-            <div class="breadcrumb-wrapper mr-1">
-              <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="index.html">Service Desk</a>
-                </li>
-                <li class="breadcrumb-item active">Data Investment
-                </li>
-              </ol>
-            </div>
-          </div>
-        </div>
+
       </div>
-      <div class="content-body"><!-- Revenue, Hit Rate & Deals -->
+      <div class="content-body" style="margin-top: -10px;"><!-- Revenue, Hit Rate & Deals -->
+
 
 
 
@@ -333,8 +343,8 @@
                           </li>
                           <li class="nav-item">
                             <a class="nav-link tab-done" id="baseIcon-tab4" data-toggle="tab" aria-controls="tabIcon4"
-                              href="#tabIcon4" aria-expanded="false"><i class="ft-check-circle mr-1"></i> Approved<span
-                                style="margin-left: 10px;"
+                              href="#tabIcon4" aria-expanded="false"><i class="ft-check-circle mr-1"></i>
+                              Approved<span style="margin-left: 10px;"
                                 class="badge badge-s badge-pill badge-danger ml">10</span></a>
                           </li>
                           <li class="nav-item">
@@ -368,7 +378,8 @@
                           <tr>
                             <td>1</td>
                             <td>
-                              <p class="badge bg-gradient-directional-success "><i class="ft-check-circle"></i> Open</p>
+                              <p class="badge bg-gradient-directional-success "><i class="ft-check-circle"></i> Open
+                              </p>
                             </td>
                             <td>
                               <div class="btn-group dropup">
@@ -456,3 +467,17 @@
 </body>
 
 </html>
+
+<!-- Tambahkan jQuery dan Select2 JS -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+<script>
+  $(document).ready(function () {
+    $('#project-location').select2({
+      placeholder: "Search Modul",
+      allowClear: true,
+      width: '200px' // kasih fixed width
+    });
+  });
+</script>

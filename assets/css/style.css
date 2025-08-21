@@ -106,7 +106,7 @@ WE WILL RELEASE FUTURE UPDATES SO IN ORDER TO NOT OVERWRITE YOUR STYLES IT'S BET
 	background-image: linear-gradient(to right, #9f78ff, #32cafe);
 	background-repeat: repeat-x;
 }
-
+*/
 
 .nav-link .badge-s {
 	background-image: -webkit-gradient(linear, left top, right top, from(#9f78ff), to(#32cafe));
@@ -128,7 +128,7 @@ WE WILL RELEASE FUTURE UPDATES SO IN ORDER TO NOT OVERWRITE YOUR STYLES IT'S BET
 	color: #fff;
 }
 
-*/
+
 
 .main-menu.menu-light .navigation>li.open>a {
 	color: #2b345f;
@@ -202,4 +202,62 @@ table.dataTable th {
 	/* geser ke samping kanan */
 	position: absolute !important;
 	max-height: none !important;
+}
+
+
+/* Breadcrumb container */
+.breadcrumb {
+	background: none;
+	margin: 0;
+	padding: 0;
+}
+
+/* Non-aktif link */
+.breadcrumb .breadcrumb-item a {
+	color: #A0A0A0 !important;
+	/* abu samar */
+	text-decoration: none;
+}
+
+/* Aktif link */
+.breadcrumb .breadcrumb-item.active {
+	color: #1E2528 !important;
+	/* tegas */
+	font-weight: 600;
+}
+
+/* Separator "-" */
+.breadcrumb-item+.breadcrumb-item::before {
+	color: #A0A0A0 !important;
+	/* abu samar juga */
+	content: "-";
+}
+
+/* default tanpa margin */
+.breadcrumb-fix {
+	margin-top: 0;
+}
+
+/* kalau desktop (min-width 768px ke atas) kasih margin -15px */
+@media (min-width: 768px) {
+	.breadcrumb-fix {
+		margin-top: -15px;
+	}
+}
+
+
+@media (max-width: 767.98px) {
+
+	.header-navbar.navbar-with-menu .navbar-container {
+		display: table;
+		width: 100%;
+		height: auto;
+		margin: 0;
+		padding: 0rem 1rem;
+		background: #1E2528 !important;
+	}
+
+	.hide-mobile {
+		display: none !important;
+	}
 }
