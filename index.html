@@ -293,10 +293,25 @@
                       <li class="nav-item">
                         <a class="nav-link colornonaktif active" id="tab-investment" data-toggle="tab"
                           href="#investment" style="border: none; padding: 8px 15px; font-weight: 500;">
-                          Investment
+                          Investment Proposal & Gatekeeping
                         </a>
                       </li>
                       <li class="nav-item">
+                        <a class="nav-link colornonaktif disabled" id="tab-verification" data-toggle="tab"
+                          href="#verification" style="border: none; padding: 8px 15px; font-weight: 500; 
+     pointer-events: none; opacity: 0.6; cursor: not-allowed;">
+                          Coming Soon
+                        </a>
+                      </li>
+
+                      <li class="nav-item">
+                        <a class="nav-link colornonaktif disabled" id="tab-gatekeeping" data-toggle="tab"
+                          href="#gatekeeping" style="border: none; padding: 8px 15px; font-weight: 500; 
+     pointer-events: none; opacity: 0.6; cursor: not-allowed;">
+                          Coming Soon
+                        </a>
+                      </li>
+                      <!-- <li class="nav-item">
                         <a class="nav-link colornonaktif" id="tab-verification" data-toggle="tab" href="#verification"
                           style="border: none; padding: 8px 15px; font-weight: 500;">
                           Verification
@@ -427,19 +442,7 @@
                           style="border: none; padding: 8px 15px; font-weight: 500;">
                           Gatekeeping
                         </a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link colornonaktif" id="tab-verification" data-toggle="tab" href="#verification"
-                          style="border: none; padding: 8px 15px; font-weight: 500;">
-                          Verification
-                        </a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link colornonaktif" id="tab-gatekeeping" data-toggle="tab" href="#gatekeeping"
-                          style="border: none; padding: 8px 15px; font-weight: 500;">
-                          Gatekeeping
-                        </a>
-                      </li>
+                      </li> -->
                     </ul>
                   </div>
 
@@ -451,9 +454,6 @@
 
               </div>
 
-
-
-
               <div class="card-header mr-2 ml-2">
 
                 <section id="minimal-statistics">
@@ -463,7 +463,7 @@
                       <h4 style="color: darkblue; margin: 0;">2025</h4>
                     </div>
                     <div class="col-md-4 col-12 text-center text-md-right mt-2 mt-md-0">
-                      <button type="button" class="btn round btn-dark btn-min-width mr-1 mb-1">+ Request
+                      <button type="button" class="btn round btn-grey-blue btn-min-width mr-1 mb-1">+ Request
                         Investment</button>
                     </div>
                   </div>
@@ -618,191 +618,266 @@
                     </div>
                   </div> -->
 
+                  <div class="row match-height">
+                    <div class="col-md-8 col-12 pt-5 text-center text-md-left">
+                      <h4 class="text-uppercase black mb-0">BAR CHART - TOP 10 Risk & Cost</h4>
+                    </div>
+
+                    <!-- Top 10 Risk -->
+                    <div class="col-xl-6 col-lg-6 col-md-12">
+                      <div class="card card-transparent">
+                        <div class="card-header bg-transparent pl-0 d-flex justify-content-between align-items-center">
+                          <h5 class="card-title text-bold-700">Top 10 Risk</h5>
+                          <button class="btn btn-sm btn-grey-blue" data-toggle="modal" data-target="#riskModal">
+                            <i class="icon-layers"></i> View data
+                          </button>
+                        </div>
+                        <div class="card-content">
+                          <div id="riskLegend"
+                            style="margin-top:10px; font-size:14px; display:flex; justify-content:center; gap:20px;">
+                          </div>
+                          <canvas id="riskChart" class="height-450"></canvas>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Top 10 Cost -->
+                    <div class="col-xl-6 col-lg-6 col-md-12">
+                      <div class="card card-transparent">
+                        <div class="card-header bg-transparent pl-0 d-flex justify-content-between align-items-center">
+                          <h5 class="card-title text-bold-700">Top 10 Cost</h5>
+                          <button class="btn btn-sm btn-grey-blue" data-toggle="modal" data-target="#biayaModal">
+                            <i class="icon-layers"></i> View data
+                          </button>
+                        </div>
+                        <div class="card-content">
+                          <div id="biayaLegend"
+                            style="margin-top:10px; font-size:14px; display:flex; justify-content:center; gap:20px;">
+                          </div>
+                          <canvas id="biayaChart" class="height-450"></canvas>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Modal Risk -->
+                  <div class="modal fade" id="riskModal" tabindex="-1" role="dialog" aria-labelledby="riskModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-lg" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="riskModalLabel">Top 10 Risk - Data Table</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          <table class="table table-bordered table-striped">
+                            <thead>
+                              <tr>
+                                <th>No</th>
+                                <th>Risk</th>
+                                <th>Score</th>
+                              </tr>
+                            </thead>
+                            <tbody id="riskTableBody">
+                              <!-- Data isi lewat JS -->
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Modal Biaya -->
+                  <div class="modal fade" id="biayaModal" tabindex="-1" role="dialog" aria-labelledby="biayaModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-lg" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="biayaModalLabel">Top 10 Cost - Data Table</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          <table class="table table-bordered table-striped">
+                            <thead>
+                              <tr>
+                                <th>No</th>
+                                <th>Project</th>
+                                <th>Cost (Rp)</th>
+                              </tr>
+                            </thead>
+                            <tbody id="biayaTableBody">
+                              <!-- Data isi lewat JS -->
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
                 </section>
-
-                <!-- <div class="header-flex">
-                  <div class="title-wrap">
-                    <h4 class="card-title">Investasi Reliability</h4>
-                    <span class="text-medium-1 line-height-2 text-uppercase" style="color: darkblue;">2025</span>
-                  </div>
-                  <a class="btn btn-bg-gradient-x-red-pink box-shadow-2 round btn-min-width" href="#" target="_blank">+
-                    Submit Invesment</a>
-                </div> -->
               </div>
-
-              <!-- <div class="card-content collapse show">
-                <div class="card-body pt-0 pb-1 ">
-                  <hr>
-
-                  <div class="row mb-1">
-                    <div
-                      class="col-6 col-sm-3 col-md-6 col-lg-3 border-right-blue-grey border-right-lighten-5 text-center">
-                      <p style="color: black !important;" class="blue-grey lighten-2 mb-0">Total</p>
-                      <p class="font-medium-5 text-bold-400">26</p>
-                    </div>
-                    <div
-                      class="col-6 col-sm-3 col-md-6 col-lg-3 border-right-blue-grey border-right-lighten-5 text-center">
-                      <p style="color: black !important;" class="blue-grey lighten-2 mb-0">Open</p>
-                      <p class="font-medium-5 text-bold-400">2</p>
-                    </div>
-                    <div
-                      class="col-6 col-sm-3 col-md-6 col-lg-3 border-right-blue-grey border-right-lighten-5 text-center">
-                      <p style="color: black !important;" class="blue-grey lighten-2 mb-0">Investment On Progress</p>
-                      <p class="font-medium-5 text-bold-400">6</p>
-                    </div>
-                    <div class="col-6 col-sm-3 col-md-6 col-lg-3 text-center">
-                      <p style="color: black !important;" class="blue-grey lighten-2 mb-0">Closed</p>
-                      <p class="font-medium-5 text-bold-400">19</p>
-                    </div>
-                  </div>
-
-                  <h6 class="text-bold-600"> Task Completed:
-                    <span>19/26</span>
-                  </h6>
-                  <div class="progress progress-sm mt-1 mb-0 box-shadow-2">
-                    <div class="progress-bar bg-gradient-x-warning" role="progressbar" style="width: 46%"
-                      aria-valuenow="46" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                  <br>
-                  <hr>
-                  <div class="card-body pt-0 pb-1 text-center">
-
-                    <span class=" text-center">Departemen <a href="#" class="warning darken-2 text-center">Umum</a>
-                    </span>
-                  </div>
-                </div>
-              </div> -->
-
-
             </div>
           </div>
-
-
-
         </div>
-        <!--/ Emails Products & Avg Deals -->
-        <!-- Chat and Recent Projects -->
-        <div class="row match-height">
-          <div class="col-xl-4 col-lg-6 col-md-12">
-            <div class="card card-transparent">
-              <div class="card-header bg-transparent pl-0">
-                <h5 class="card-title text-bold-700">Total Investment - All Years</h5>
-                <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
-              </div>
-              <div class="card-content">
-                <!-- <div id="project-income-chart" class="height-450 BarChartShadow"></div> -->
-                <canvas id="simple-doughnut-chart" class="height-450 BarChartShadow"></canvas>
-              </div>
-            </div>
-          </div>
-          <div class="col-xl-8 col-lg-6 col-md-12">
-            <h5 class="card-title text-bold-700 my-2">Recent Investment</h5>
-            <div class="card">
-              <div class="card-content">
-                <div id="recent-projects" class="media-list position-relative">
-                  <div class="table-responsive scroll-limited">
-                    <table class="table table-padded table-xl mb-0" id="recent-project-table">
-                      <thead>
-                        <tr>
-                          <th class="border-top-0">Investment Name</th>
-                          <th class="border-top-0">Log</th>
-                          <th class="border-top-0">Request Date</th>
-                          <th class="border-top-0">Status</th>
-                        </tr>
-                      </thead>
-                      <tbody>
+        <div class="col-xl-12 col-lg-12 col-md-12">
+          <h5 class="card-title text-bold-700 my-2">Recent Investment</h5>
+          <div class="card">
+            <div class="card-content">
+              <div id="recent-projects" class="media-list position-relative">
+                <div class="table-responsive scroll-limited">
+                  <table class="table table-padded table-xl mb-0" id="recent-project-table">
+                    <thead>
+                      <tr>
+                        <th class="border-top-0">Investment Name</th>
+                        <th class="border-top-0">Log</th>
+                        <th class="text-center border-top-0">Request Date</th>
+                        <th class="text-center border-top-0">Status</th>
+                        <th class="text-center border-top-0">Risk</th>
+                        <th class="text-center border-top-0">Risk Category</th>
+                        <th class="text-center border-top-0">Biaya</th>
+                      </tr>
+                    </thead>
+                    <tbody>
 
-                        <tr>
-                          <td class="text-truncate align-middle">
-                            <a style="color: black;" href="#">Pembelian straight tube</a>
-                          </td>
-                          <td class="text-truncate pb-0">
-                            <span>Revise by <b>AVP</b> Umum</span>
-                            <p class="font-small-2 text-muted info"> Wait to be revised by Staf Umum</p>
-                          </td>
-                          <td class="text-truncate pb-0">
-                            <span>06 Juli 2025</span>
-                          </td>
-                          <td>
-                            <p class="text-info font-medium-1 mb-0">Open</p>
-                          </td>
-                        </tr>
-
-                        <tr>
-                          <td class="text-truncate align-middle">
-                            <a style="color: black;" href="#">Pembelian unstraight tube</a>
-                          </td>
-                          <td class="text-truncate pb-0">
-                            <span>Sent by <b>Staf</b> Umum</span>
-                            <p class="font-small-2 text-muted info"> Wait to be reviewed by AVP Umum</p>
-                          </td>
-                          <td class="text-truncate pb-0">
-                            <span>05 Juli 2025</span>
-                          </td>
-                          <td>
-                            <p class="text-info font-medium-1 mb-0">Open</p>
-                          </td>
-                        </tr>
-
+                      <tr>
                         <td class="text-truncate align-middle">
-                          <a style="color: black;" href="#">Pembelian tube katalis 2 row</a>
+                          <a style="color: black;" href="#">Pembelian straight tube</a>
+                        </td>
+                        <td class="text-truncate pb-0">
+                          <span>Revise by <b>AVP</b> Umum</span>
+                          <p class="font-small-2 text-muted info"> Wait to be revised by Staf Umum</p>
+                        </td>
+                        <td class="text-center text-truncate pb-0">
+                          <span>06 Juli 2025</span>
+                        </td>
+                        <td>
+                          <p class="text-center text-info font-medium-1 mb-0">Open</p>
+                        </td>
+                        <td class="text-center text-truncate pb-0">
+                          <span>-</span>
+                        </td>
+                        <td class="text-center text-truncate pb-0">
+                          <span>-</span>
+                        </td>
+                        <td>
+                          <p class="text-center text-truncate pb-0">-</p>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="text-truncate align-middle">
+                          <a style="color: black;" href="#">Pembelian unstraight tube</a>
+                        </td>
+                        <td class="text-truncate pb-0">
+                          <span>Sent by <b>Staf</b> Umum</span>
+                          <p class="font-small-2 text-muted info"> Wait to be reviewed by AVP Umum</p>
+                        </td>
+                        <td class="text-center text-truncate pb-0">
+                          <span>05 Juli 2025</span>
+                        </td>
+                        <td>
+                          <p class="text-center text-info font-medium-1 mb-0">Open</p>
+                        </td>
+                        <td class="text-center text-truncate pb-0">
+                          <span>-</span>
+                        </td>
+                        <td class="text-center text-truncate pb-0">
+                          <span>-</span>
+                        </td>
+                        <td>
+                          <p class="text-center text-truncate pb-0">-</p>
+                        </td>
+                      </tr>
+
+                      <td class="text-truncate align-middle">
+                        <a style="color: black;" href="#">Pembelian tube katalis 2 row</a>
+                      </td>
+                      <td class="text-truncate pb-0">
+                        <span>Approved by <b>SVP</b> KP2K</span>
+                        <p class="font-small-2 text-muted warning"> Investment in Procurement</p>
+                      </td>
+                      <td class="text-center text-truncate pb-0">
+                        <span>13 Juni 2025</span>
+                      </td>
+                      <td>
+                        <p class="text-center text-warning font-medium-1 mb-0">In Progress</p>
+                      </td>
+                      <td class="text-center text-truncate pb-0">
+                        <span>-</span>
+                      </td>
+                      <td class="text-center text-truncate pb-0">
+                        <span>-</span>
+                      </td>
+                      <td>
+                        <p class="text-center text-truncate pb-0">-</p>
+                      </td>
+                      </tr>
+
+                      <tr>
+                        <td class="text-truncate align-middle">
+                          <a style="color: black;" href="#">Pengadaan peralatan pabrik NPK</a>
                         </td>
                         <td class="text-truncate pb-0">
                           <span>Approved by <b>SVP</b> KP2K</span>
-                          <p class="font-small-2 text-muted warning"> Investment in Procurement</p>
+                          <p class="font-small-2 text-muted success"> Investment Approved</p>
                         </td>
-                        <td class="text-truncate pb-0">
-                          <span>13 Juni 2025</span>
+                        <td class="text-center text-truncate pb-0">
+                          <span>27 Mei 2025</span>
                         </td>
                         <td>
-                          <p class="text-warning font-medium-1 mb-0">In Progress</p>
+                          <p class="text-center text-success font-medium-1 mb-0">Approved</p>
                         </td>
-                        </tr>
+                        <td class="text-center text-truncate pb-0">
+                          <span>21,25</span>
+                        </td>
+                        <td class="text-center text-center text-truncate pb-0">
+                          <span style="color: orange;">Moderate</span>
+                        </td>
+                        <td class="text-center text-truncate pb-0">
+                          <span> Rp56.721.736.482,00 </span>
+                        </td>
+                      </tr>
 
-                        <tr>
-                          <td class="text-truncate align-middle">
-                            <a style="color: black;" href="#">Pengadaan peralatan pabrik NPK</a>
-                          </td>
-                          <td class="text-truncate pb-0">
-                            <span>Approved by <b>SVP</b> KP2K</span>
-                            <p class="font-small-2 text-muted success"> Investment Approved</p>
-                          </td>
-                          <td class="text-truncate pb-0">
-                            <span>27 Mei 2025</span>
+                      <tr>
+                        <td class="text-truncate align-middle">
+                          <a style="color: black;" href="#">Pengajuan Alat Tempur</a>
+                        </td>
+                        <td class="text-truncate pb-0">
+                          <span>Rejected by <b>AVP</b> KP2K</span>
+                          <p class="font-small-2 text-muted danger"> Investment Rejected</p>
+                        </td>
+                        <td class="text-center text-truncate pb-0">
+                          <span>02 April 2025</span>
+                        </td>
+                        <td>
+                          <p class="text-center text-danger font-medium-1 mb-0">Rejected</p>
+                        </td>
+                        <td class="text-center text-truncate pb-0">
+                          <span>-</span>
+                        </td>
+                        <td class="text-center text-truncate pb-0">
+                          <span>-</span>
+                        </td>
+                        <td>
+                          <p class="text-center text-truncate pb-0">-</p>
+                        </td>
+                      </tr>
 
-                          </td>
-                          <td>
-                            <p class="text-success font-medium-1 mb-0">Approved</p>
-                          </td>
-                        </tr>
-
-                        <tr>
-                          <td class="text-truncate align-middle">
-                            <a style="color: black;" href="#">Pengajuan Alat Tempur</a>
-                          </td>
-                          <td class="text-truncate pb-0">
-                            <span>Rejected by <b>AVP</b> KP2K</span>
-                            <p class="font-small-2 text-muted danger"> Investment Rejected</p>
-                          </td>
-                          <td class="text-truncate pb-0">
-                            <span>02 April 2025</span>
-                          </td>
-                          <td>
-                            <p class="text-danger font-medium-1 mb-0">Rejected</p>
-                          </td>
-                        </tr>
-
-                      </tbody>
-                    </table>
-                  </div>
+                    </tbody>
+                  </table>
                 </div>
               </div>
             </div>
           </div>
         </div>
-
       </div>
+
     </div>
+  </div>
   </div>
   <!-- ////////////////////////////////////////////////////////////////////////////-->
 
@@ -872,4 +947,202 @@
 
   // Aktifkan feather icon setelah load
   feather.replace();
+</script>
+
+<script>
+  // ================== DATA DUMMY ==================
+  const investments = [
+    "Pengadaan peralatan pabrik NPK",
+    "Revitalisasi Pabrik Urea",
+    "Modernisasi Sistem Boiler",
+    "Upgrade Jaringan Listrik",
+    "Perbaikan Tangki Ammonia",
+    "Proyek Pipa Distribusi Gas",
+    "Digitalisasi Plant Monitoring",
+    "Pembangunan Gudang Baru",
+    "Perawatan Kilang H₂O₂",
+    "Pengadaan Forklift & Crane"
+  ];
+
+  const riskValues = [21.25, 35.12, 18.7, 27.5, 31.8, 15.4, 22.9, 19.2, 28.6, 24.1];
+  const riskCategories = [
+    "Moderate", "Critical", "Less Critical", "Moderate", "Critical",
+    "Non Critical", "Moderate", "Less Critical", "Moderate", "Moderate"
+  ];
+
+  const biayaValues = [
+    56721736482, 120000000000, 80000000000, 60000000000, 75000000000,
+    35000000000, 42000000000, 25000000000, 38000000000, 50000000000
+  ];
+
+  // ================== MAPPING WARNA KATEGORI ==================
+  const riskColors = {
+    "Non Critical": "#4CAF50",  // hijau fresh, ga terlalu soft, ga neon
+    "Less Critical": "#FFEB3B", // kuning cerah tapi lembut (bukan #FFFF00)
+    "Moderate": "#FF9800",      // oranye sedang
+    "Critical": "#F44336",      // merah sedang
+    "More Critical": "#795548", // cokelat natural
+    "High Critical": "#616161"  // abu tua netral
+  };
+
+  const riskEmoji = {
+    "Non Critical": "🟩",
+    "Less Critical": "🟨",
+    "Moderate": "🟧",
+    "Critical": "🟥",
+    "More Critical": "🟫",
+    "High Critical": "⬛"
+  };
+
+  // ================== HELPER UNTUK FORMAT BIAYA ==================
+  function formatBiaya(value) {
+    if (value >= 1_000_000_000) {
+      return "Rp " + (value / 1_000_000_000).toFixed(0) + "M";
+    } else if (value >= 1_000_000) {
+      return "Rp " + (value / 1_000_000).toFixed(0) + "Jt";
+    }
+    return "Rp " + value.toLocaleString("id-ID");
+  }
+
+  // ================== RISK CHART ==================
+  const sortedRisk = investments.map((inv, i) => ({
+    name: inv,
+    value: riskValues[i],
+    category: riskCategories[i],
+    color: riskColors[riskCategories[i]]
+  })).sort((a, b) => b.value - a.value);
+
+  const riskChart = new Chart(document.getElementById("riskChart"), {
+    type: "bar",
+    data: {
+      labels: sortedRisk.map(d => d.name),
+      datasets: [{
+        label: "Risk Value",
+        data: sortedRisk.map(d => d.value),
+        backgroundColor: sortedRisk.map(d => d.color), // flat solid
+        borderColor: "transparent", // no border
+        borderWidth: 0
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      scales: {
+        y: { beginAtZero: true, title: { display: true, text: "Risk Score" } },
+        x: { ticks: { maxRotation: 45, minRotation: 30 } }
+      },
+      plugins: {
+        datalabels: {
+          color: "#000",
+          anchor: "end",
+          align: "top",
+          formatter: function (value) {
+            return value;
+          }
+        },
+        legend: { display: false } // ❌ legend bawaan dimatiin
+      }
+    },
+    plugins: [ChartDataLabels]
+  });
+
+  // ================== GENERATE LEGEND DINAMIS ==================
+  const uniqueCategories = [...new Set(sortedRisk.map(d => d.category))];
+  const legendHTML = uniqueCategories.map(cat => `
+  <span style="display:flex;align-items:center;gap:5px;margin-right:10px;">
+    <span style="width:15px;height:15px;background:${riskColors[cat]};
+      display:inline-block;border-radius:3px;"></span>
+    ${cat}
+  </span>
+`).join("");
+
+  document.getElementById("riskLegend").innerHTML = legendHTML;
+
+  // ================== BIAYA CHART ==================
+  const sortedBiaya = investments.map((inv, i) => ({
+    name: inv,
+    value: biayaValues[i]
+  })).sort((a, b) => b.value - a.value);
+
+  new Chart(document.getElementById("biayaChart"), {
+    type: "bar",
+    data: {
+      labels: sortedBiaya.map(d => d.name),
+      datasets: [{
+        label: "Investment Cost",
+        data: sortedBiaya.map(d => d.value),
+        backgroundColor: "#2196F3", // biru flat
+        borderColor: "#1E88E5",
+        borderWidth: 1
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      scales: {
+        y: {
+          beginAtZero: true,
+          suggestedMax: Math.max(...sortedBiaya.map(d => d.value)) * 1.1,
+          title: { display: true, text: "Biaya (Rp)" },
+          ticks: {
+            callback: function (value) {
+              return "Rp" + value.toLocaleString("id-ID");
+            }
+          }
+        },
+        x: { ticks: { maxRotation: 45, minRotation: 30 } }
+      },
+      plugins: {
+        datalabels: {
+          color: "#000",
+          anchor: "end",
+          align: "top",
+          formatter: function (value) {
+            return formatBiaya(value);
+          }
+        },
+        tooltip: {
+          callbacks: {
+            label: function (context) {
+              return formatBiaya(context.raw);
+            }
+          }
+        },
+        legend: { display: false } // ❌ legend bawaan dimatiin
+      }
+    },
+    plugins: [ChartDataLabels]
+  });
+
+
+  // ================== LEGEND BIAYA ==================
+  document.getElementById("biayaLegend").innerHTML = `
+  <span style="display:flex;align-items:center;gap:5px;">
+    <span style="width:15px;height:15px;background:#42A5F5;
+      display:inline-block;border-radius:3px;"></span>
+    Investment Cost
+  </span>
+`;
+</script>
+
+
+<script>
+  $('#riskModal').on('show.bs.modal', function () {
+    let tbody = document.getElementById("riskTableBody");
+    tbody.innerHTML = "";
+    riskChart.data.labels.forEach((label, i) => {
+      let val = riskChart.data.datasets[0].data[i];
+      tbody.innerHTML += `<tr><td>${i + 1}</td><td>${label}</td><td>${val}</td></tr>`;
+    });
+  });
+
+  $('#biayaModal').on('show.bs.modal', function () {
+    let tbody = document.getElementById("biayaTableBody");
+    tbody.innerHTML = "";
+    biayaChart.data.labels.forEach((label, i) => {
+      let val = biayaChart.data.datasets[0].data[i];
+      tbody.innerHTML += `<tr><td>${i + 1}</td><td>${label}</td><td>Rp ${val.toLocaleString()}</td></tr>`;
+    });
+  });
+
 </script>
