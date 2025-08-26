@@ -109,22 +109,24 @@ WE WILL RELEASE FUTURE UPDATES SO IN ORDER TO NOT OVERWRITE YOUR STYLES IT'S BET
 */
 
 .nav-link .badge-s {
-	background-image: -webkit-gradient(linear, left top, right top, from(#9f78ff), to(#32cafe));
+	background-color: darkgrey;
+	/* background-image: -webkit-gradient(linear, left top, right top, from(#9f78ff), to(#32cafe));
 	background-image: -webkit-linear-gradient(left, #9f78ff, #32cafe);
 	background-image: -moz-linear-gradient(left, #9f78ff, #32cafe);
 	background-image: -o-linear-gradient(left, #9f78ff, #32cafe);
 	background-image: linear-gradient(to right, #9f78ff, #32cafe);
-	background-repeat: repeat-x;
-	color: #fff;
+	background-repeat: repeat-x; */
+	color: #000;
 }
 
 .nav-link.active .badge-s {
-	background-image: -webkit-gradient(linear, left top, right top, from(#ff5858), to(#e888b7));
+	background-color: #1b2942;
+	/* background-image: -webkit-gradient(linear, left top, right top, from(#ff5858), to(#e888b7));
 	background-image: -webkit-linear-gradient(left, #ff5858, #e888b7);
 	background-image: -moz-linear-gradient(left, #ff5858, #e888b7);
 	background-image: -o-linear-gradient(left, #ff5858, #e888b7);
 	background-image: linear-gradient(to right, #ff5858, #e888b7);
-	background-repeat: repeat-x;
+	background-repeat: repeat-x; */
 	color: #fff;
 }
 
