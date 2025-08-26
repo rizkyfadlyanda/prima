@@ -26,7 +26,7 @@
             $html.removeClass('loading').addClass('loaded');
         }, 1200);
 
-        $.app.menu.init(true);
+        $.app.menu.init(compactMenu);
 
         // Navigation configurations
         var config = {

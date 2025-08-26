@@ -263,3 +263,18 @@ table.dataTable th {
 		display: none !important;
 	}
 }
+
+
+.main-menu {
+	width: 260px;
+	/* tetap fixed */
+}
+
+.main-menu .navigation>li>a,
+.main-menu .menu-content a {
+	white-space: normal !important;
+	/* boleh turun baris */
+	text-overflow: unset !important;
+	word-wrap: break-word;
+	/* potong kata kalau kepanjangan */
+}
