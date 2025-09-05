@@ -39,6 +39,8 @@
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
   <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
 
 
 
@@ -103,6 +105,60 @@
 
   .scroll-right {
     right: 0;
+  }
+</style>
+
+<style>
+  /* Style input biar modern */
+  .date-filter-input {
+    max-width: 250px;
+    border: 1px solid #e0e6ed;
+    border-radius: 12px;
+    padding: 8px 12px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #34495e;
+    background: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    transition: all 0.2s ease-in-out;
+  }
+
+  .date-filter-input:focus {
+    border-color: #4e73df;
+    /* warna biru dashboard */
+    box-shadow: 0 0 0 3px rgba(78, 115, 223, 0.2);
+    outline: none;
+  }
+
+  /* Styling pop-up calendar */
+  .daterangepicker {
+    border-radius: 12px !important;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .daterangepicker .calendar-table {
+    border-radius: 8px !important;
+  }
+
+  .daterangepicker td.active,
+  .daterangepicker td.active:hover {
+    background-color: #4e73df !important;
+    color: #fff !important;
+  }
+
+  .daterangepicker td.in-range {
+    background-color: rgba(78, 115, 223, 0.15) !important;
+  }
+
+  .daterangepicker .drp-buttons {
+    text-align: right;
+  }
+
+  .daterangepicker .drp-buttons .btn {
+    border-radius: 8px;
+    padding: 6px 14px;
+    font-size: 13px;
   }
 </style>
 
@@ -345,138 +401,6 @@
                           Coming Soon
                         </a>
                       </li>
-                      <!-- <li class="nav-item">
-                        <a class="nav-link colornonaktif" id="tab-verification" data-toggle="tab" href="#verification"
-                          style="border: none; padding: 8px 15px; font-weight: 500;">
-                          Verification
-                        </a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link colornonaktif" id="tab-gatekeeping" data-toggle="tab" href="#gatekeeping"
-                          style="border: none; padding: 8px 15px; font-weight: 500;">
-                          Gatekeeping
-                        </a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link colornonaktif" id="tab-verification" data-toggle="tab" href="#verification"
-                          style="border: none; padding: 8px 15px; font-weight: 500;">
-                          Verification
-                        </a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link colornonaktif" id="tab-gatekeeping" data-toggle="tab" href="#gatekeeping"
-                          style="border: none; padding: 8px 15px; font-weight: 500;">
-                          Gatekeeping
-                        </a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link colornonaktif" id="tab-verification" data-toggle="tab" href="#verification"
-                          style="border: none; padding: 8px 15px; font-weight: 500;">
-                          Verification
-                        </a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link colornonaktif" id="tab-gatekeeping" data-toggle="tab" href="#gatekeeping"
-                          style="border: none; padding: 8px 15px; font-weight: 500;">
-                          Gatekeeping
-                        </a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link colornonaktif" id="tab-verification" data-toggle="tab" href="#verification"
-                          style="border: none; padding: 8px 15px; font-weight: 500;">
-                          Verification
-                        </a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link colornonaktif" id="tab-gatekeeping" data-toggle="tab" href="#gatekeeping"
-                          style="border: none; padding: 8px 15px; font-weight: 500;">
-                          Gatekeeping
-                        </a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link colornonaktif" id="tab-verification" data-toggle="tab" href="#verification"
-                          style="border: none; padding: 8px 15px; font-weight: 500;">
-                          Verification
-                        </a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link colornonaktif" id="tab-gatekeeping" data-toggle="tab" href="#gatekeeping"
-                          style="border: none; padding: 8px 15px; font-weight: 500;">
-                          Gatekeeping
-                        </a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link colornonaktif" id="tab-verification" data-toggle="tab" href="#verification"
-                          style="border: none; padding: 8px 15px; font-weight: 500;">
-                          Verification
-                        </a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link colornonaktif" id="tab-gatekeeping" data-toggle="tab" href="#gatekeeping"
-                          style="border: none; padding: 8px 15px; font-weight: 500;">
-                          Gatekeeping
-                        </a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link colornonaktif" id="tab-verification" data-toggle="tab" href="#verification"
-                          style="border: none; padding: 8px 15px; font-weight: 500;">
-                          Verification
-                        </a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link colornonaktif" id="tab-gatekeeping" data-toggle="tab" href="#gatekeeping"
-                          style="border: none; padding: 8px 15px; font-weight: 500;">
-                          Gatekeeping
-                        </a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link colornonaktif" id="tab-verification" data-toggle="tab" href="#verification"
-                          style="border: none; padding: 8px 15px; font-weight: 500;">
-                          Verification
-                        </a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link colornonaktif" id="tab-gatekeeping" data-toggle="tab" href="#gatekeeping"
-                          style="border: none; padding: 8px 15px; font-weight: 500;">
-                          Gatekeeping
-                        </a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link colornonaktif" id="tab-verification" data-toggle="tab" href="#verification"
-                          style="border: none; padding: 8px 15px; font-weight: 500;">
-                          Verification
-                        </a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link colornonaktif" id="tab-gatekeeping" data-toggle="tab" href="#gatekeeping"
-                          style="border: none; padding: 8px 15px; font-weight: 500;">
-                          Gatekeeping
-                        </a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link colornonaktif" id="tab-verification" data-toggle="tab" href="#verification"
-                          style="border: none; padding: 8px 15px; font-weight: 500;">
-                          Verification
-                        </a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link colornonaktif" id="tab-gatekeeping" data-toggle="tab" href="#gatekeeping"
-                          style="border: none; padding: 8px 15px; font-weight: 500;">
-                          Gatekeeping
-                        </a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link colornonaktif" id="tab-verification" data-toggle="tab" href="#verification"
-                          style="border: none; padding: 8px 15px; font-weight: 500;">
-                          Verification
-                        </a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link colornonaktif" id="tab-gatekeeping" data-toggle="tab" href="#gatekeeping"
-                          style="border: none; padding: 8px 15px; font-weight: 500;">
-                          Gatekeeping
-                        </a>
-                      </li> -->
                     </ul>
                   </div>
 
@@ -493,11 +417,23 @@
                 <section id="minimal-statistics">
                   <div class="row align-items-center mt-3 mb-1">
                     <div class="col-md-8 col-12 text-center text-md-left">
-                      <h4 class="text-uppercase black mb-0">Investment Request - Company Overview</h4>
-                      <h4 style="color: darkblue; margin: 0;">2025</h4>
+                      <h4 class="text-uppercase black mb-2">Investment Request - Company Overview</h4>
+
+                      <!-- Date Range Picker -->
+                      <div class="d-flex align-items-center">
+                        <span class="mr-2 font-weight-bold" style="color: #2c3e50; font-size: 14px;">📅 Filter
+                          Date:</span>
+                        <input type="text" id="daterange" class="form-control form-control-sm date-filter-input"
+                          placeholder="Select date range" />
+                      </div>
                     </div>
+
+
+                    <!-- Tambahkan script Flatpickr -->
+                    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+                    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
                     <div class="col-md-4 col-12 text-center text-md-right mt-2 mt-md-0">
-                      <button type="button" class="btn round btn-grey-blue btn-min-width mr-1 mb-1">+ Request
+                      <button type="button" class="btn btn-grey-blue btn-min-width mr-1 mb-1 mt-3">+ Request
                         Investment</button>
                     </div>
                   </div>
@@ -513,25 +449,7 @@
                               </div>
                               <div class="media-body text-right align-self-bottom mt-3">
                                 <span class="d-block mb-1 black font-medium-1">Total</span>
-                                <h1 class="info mb-0">43</h1>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-6 col-md-12">
-                      <div class="card"
-                        style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important; border-radius: 12px !important;">
-                        <div class="card-content">
-                          <div class="card-body">
-                            <div class="media d-flex">
-                              <div class="align-self-top">
-                                <i class="icon-envelope-letter icon-opacity warning font-large-4"></i>
-                              </div>
-                              <div class="media-body text-right align-self-bottom mt-3">
-                                <span class="d-block mb-1 black font-medium-1">In Progress</span>
-                                <h1 class="warning mb-0">6</h1>
+                                <h1 class="info mb-0">188</h1>
                               </div>
                             </div>
                           </div>
@@ -549,7 +467,25 @@
                               </div>
                               <div class="media-body text-right align-self-bottom mt-3">
                                 <span class="d-block mb-1 black font-medium-1">Approved</span>
-                                <h1 class="success mb-0">30</h1>
+                                <h1 class="success mb-0">147</h1>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-6 col-md-12">
+                      <div class="card"
+                        style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important; border-radius: 12px !important;">
+                        <div class="card-content">
+                          <div class="card-body">
+                            <div class="media d-flex">
+                              <div class="align-self-top">
+                                <i class="icon-list icon-opacity warning font-large-4"></i>
+                              </div>
+                              <div class="media-body text-right align-self-bottom mt-3">
+                                <span class="d-block mb-1 black font-medium-1">Partially Approved</span>
+                                <h1 class="warning mb-0">5</h1>
                               </div>
                             </div>
                           </div>
@@ -567,7 +503,7 @@
                               </div>
                               <div class="media-body text-right align-self-bottom mt-3">
                                 <span class="d-block mb-1 black font-medium-1">Rejected</span>
-                                <h1 class="danger mb-0">7</h1>
+                                <h1 class="danger mb-0">36</h1>
                               </div>
                             </div>
                           </div>
@@ -697,7 +633,7 @@
                   <!-- Modal Risk -->
                   <div class="modal fade" id="riskModal" tabindex="-1" role="dialog" aria-labelledby="riskModalLabel"
                     aria-hidden="true">
-                    <div class="modal-dialog modal-lg" role="document">
+                    <div style="max-width: 1200px;" class="modal-dialog modal-lg" role="document">
                       <div class="modal-content">
                         <div class="modal-header">
                           <h5 class="modal-title" id="riskModalLabel">Top 10 Risk - Data Table</h5>
@@ -706,22 +642,234 @@
                           </button>
                         </div>
                         <div class="modal-body">
-                          <table class="table table-bordered table-striped">
-                            <thead>
-                              <tr>
-                                <th>No</th>
-                                <th>Risk</th>
-                                <th>Score</th>
-                              </tr>
-                            </thead>
-                            <tbody id="riskTableBody">
-                              <!-- Data isi lewat JS -->
-                            </tbody>
-                          </table>
+                          <div class="table-responsive">
+                            <table class="table table-bordered table-striped">
+                              <thead>
+                                <tr>
+                                  <th>No</th>
+                                  <th>Tag Number</th>
+                                  <th>Equipment Name</th>
+                                  <th>Investment Description</th>
+                                  <th>Risk Level</th>
+                                  <th>Cost</th>
+                                </tr>
+                              </thead>
+                              <tbody id="riskTableBody">
+                                <tr>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">1</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">E63-EF2101A-D</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">Cooling tower for Urea Plant</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">Pembelian cell 4 Row (Row A s.d D) Cooling Tower Urea</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">More Critical</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">Rp30.000.000.000,00</p>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">2</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">E52-EF602</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">COOLING TOWER FOR CRYSTALIZER PART</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">Ganti Satu Unit Shell Small Cooling Tower</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">More Critical</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">Rp8.000.000.000,00</p>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">3</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">E81-P802A-B</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">Sulfuric acid transfer pump</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">Pengadaan material untuk upgrade dari carboon steel
+                                      seamless ke stainless steel SS316 untuk replacement line asam sulfat dari tank
+                                      asam sulfat ke preneutralizer section</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">More Critical</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">Rp15.000.000.000,00</p>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">4</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">E81-TK801A-B</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">SULPHURIC ACID STORAGE TANK A-B</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">Pengadaan material untuk upgrade dari carboon steel
+                                      seamless ke stainless steel SS316 untuk replacement line asam sulfat dari loading
+                                      SA Jetty ke Tank SA</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">More Critical</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">Rp75.000.000.000,00</p>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">5</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">E81-P802A</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">SULPHURIC ACID TRANSFER PUMP A</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">Penggantian Pompa Unit</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">More Critical</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">Rp900.000.000,00</p>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">6</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">E63-GI7001</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">Generator Turbin Gas 2</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">1 (satu) unit PD Online monitoring untuk GTG-2</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">More Critical</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">Rp1.200.000.000,00</p>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">7</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">E91-B2051</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">MV Panel for Air Compressor</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">1 (satu) unit Motor MV Panel 2400V rating min 800kW</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">More Critical</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">Rp800.000.000,00</p>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">8</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">E52-PIC708</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">Control valve for vent the second steam silencer (52-FG703)
+                                    </p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">Ganti Control Valve</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">Critical</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">Rp900.000.000,00</p>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">9</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">E52-PIC706</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">Control valve for vent the third steam silencer (52-FG703)
+                                    </p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">Ganti Control Valve</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">Critical</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">Rp900.000.000,00</p>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">10</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">E81-MM361</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">Motor for Granulator</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">1 (satu) unit Motor MV 6000V 300kW uprating kW + 10-20%
+                                      bila tersedia dan kompatible</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">Critical</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">Rp2.500.000.000,00</p>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
+
 
                   <!-- Modal Biaya -->
                   <div class="modal fade" id="biayaModal" tabindex="-1" role="dialog" aria-labelledby="biayaModalLabel"
@@ -735,18 +883,228 @@
                           </button>
                         </div>
                         <div class="modal-body">
-                          <table class="table table-bordered table-striped">
-                            <thead>
-                              <tr>
-                                <th>No</th>
-                                <th>Project</th>
-                                <th>Cost (Rp)</th>
-                              </tr>
-                            </thead>
-                            <tbody id="biayaTableBody">
-                              <!-- Data isi lewat JS -->
-                            </tbody>
-                          </table>
+                          <div class="table-responsive">
+                            <table style=" width: 100%;" class="table table-bordered table-striped">
+                              <thead>
+                                <tr>
+                                  <th>No</th>
+                                  <th class="w-25">Tag Number</th>
+                                  <th>Equipment Name</th>
+                                  <th>Investment Description</th>
+                                  <th>Risk Level</th>
+                                  <th>Cost</th>
+                                </tr>
+                              </thead>
+                              <tbody id="biayaTableBody">
+                                <tr>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">1</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">E81-TK801A-B</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">SULPHURIC ACID STORAGE TANK A-B</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">Pengadaan material untuk upgrade dari carboon steel
+                                      seamless ke stainless steel SS316 untuk replacement line asam sulfat dari loading
+                                      SA Jetty ke Tank SA</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">More Critical</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">Rp75.000.000.000,00</p>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">2</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">E62-EA101</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">CARBAMATE CONDENSER NO. 1</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">Penggantian Heat Exchanger</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">Critical</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">Rp35.000.000.000,00</p>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">3</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">E63-EF2101A-D</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">Cooling tower for Urea Plant</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">Pembelian cell 4 Row (Row A s.d D) Cooling Tower Urea</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">More Critical</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">Rp30.000.000.000,00</p>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">4</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">E52-FD302</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">FLUDIZING COOLER</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">Pengadaan Perforate Plate Dan H-Beam</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">Critical</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">Rp30.000.000.000,00</p>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">5</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">E52-FC301</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">CYCLONE INS HOT</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">Pengadaan Pembelian Cyclon Baru</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">Moderate</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">Rp20.000.000.000,00</p>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">6</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">E53-DA1002B</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">Degasifier</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">Pengadaan Unit Baru Degasifier</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">Moderate</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">Rp20.000.000.000,00</p>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">7</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">E81-P802A-B</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">Sulfuric acid transfer pump</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">Pengadaan material untuk upgrade dari carboon steel
+                                      seamless ke stainless steel SS316 untuk replacement line asam sulfat dari tank
+                                      asam sulfat ke preneutralizer section</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">More Critical</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">Rp15.000.000.000,00</p>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">8</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">E63-GI7001</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">Generator Gas Turbin PIM-2</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">Pergantian 1 (satu) Unit Load Gear C/W Bearing</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">Critical</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">Rp15.000.000.000,00</p>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">9</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">E61-TE4000 A/B, E61-TE4001A/B, E61-TE4002, E61-TE4003,
+                                      E61-TE4200 A/B, E61-TE4201A/B, E61-TE4202, E61-TE4203</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">Temperature Bearing Turbine pabrik Ammonia-2</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">Pembelian Temperature Bearing Turbine</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">Moderate</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">Rp15.000.000.000,00</p>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">10</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">E81-P312A-B</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">GRANULATOR PRE-SCRUBBER PUMP A</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">Pengadaan material piping liquor granulator pree-crubber
+                                      pump A</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">Critical</p>
+                                  </td>
+                                  <td class="text-truncate align-middle">
+                                    <p style="color: black;">Rp12.000.000.000,00</p>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -986,29 +1344,34 @@
 
 <script>
   // ================== DATA DUMMY ==================
+
+  // Data Top 10 Risk
   const investments = [
-    "Pengadaan peralatan pabrik NPK",
-    "Revitalisasi Pabrik Urea",
-    "Modernisasi Sistem Boiler",
-    "Upgrade Jaringan Listrik",
-    "Perbaikan Tangki Ammonia",
-    "Proyek Pipa Distribusi Gas",
-    "Digitalisasi Plant Monitoring",
-    "Pembangunan Gudang Baru",
-    "Perawatan Kilang H₂O₂",
-    "Pengadaan Forklift & Crane"
+    "Pembelian Cell 4 Row Cooling Tower Urea",
+    "Ganti Shell Small Cooling Tower",
+    "Upgrade Pipa H2SO4 CS → SS316 Preneutralizer",
+    "Pengadaan Pipa SA CS → SS316 (Jetty–Tank)",
+    "Penggantian Pompa Unit",
+    "PD Online Monitoring GTG-2",
+    "Motor MV Panel 2400V ≥800kW",
+    "Ganti Control Valve E52-PIC708",
+    "Ganti Control Valve E52-PIC706e",
+    "Motor MV 6000V 300kW (+10–20% Uprating)"
   ];
 
-  const riskValues = [21.25, 35.12, 18.7, 27.5, 31.8, 15.4, 22.9, 19.2, 28.6, 24.1];
+  const riskValues = [56.25, 56.25, 56.25, 56.25, 55.25, 55.25, 55.25, 48.75, 48.75, 46.75];
+
   const riskCategories = [
-    "Moderate", "Critical", "Less Critical", "Moderate", "Critical",
-    "Non Critical", "Moderate", "Less Critical", "Moderate", "Moderate"
+    "More Critical", "More Critical", "More Critical", "More Critical", "More Critical",
+    "More Critical", "More Critical", "Critical", "Critical", "Critical"
   ];
+
 
   const biayaValues = [
-    56721736482, 120000000000, 80000000000, 60000000000, 75000000000,
-    35000000000, 42000000000, 25000000000, 38000000000, 50000000000
+    30000000000, 8000000000, 15000000000, 75000000000, 900000000,
+    1200000000, 800000000, 900000000, 900000000, 2500000000
   ];
+
 
   // ================== MAPPING WARNA KATEGORI ==================
   const riskColors = {
@@ -1054,8 +1417,8 @@
       datasets: [{
         label: "Risk Value",
         data: sortedRisk.map(d => d.value),
-        backgroundColor: sortedRisk.map(d => d.color), // flat solid
-        borderColor: "transparent", // no border
+        backgroundColor: sortedRisk.map(d => d.color),
+        borderColor: "transparent",
         borderWidth: 0
       }]
     },
@@ -1063,8 +1426,20 @@
       responsive: true,
       maintainAspectRatio: false,
       scales: {
-        y: { beginAtZero: true, title: { display: true, text: "Risk Score" } },
-        x: { ticks: { maxRotation: 45, minRotation: 30 } }
+        y: {
+          beginAtZero: true,
+          title: { display: true, text: "Risk Score" }
+        },
+        x: {
+          ticks: {
+            maxRotation: 45,
+            minRotation: 30,
+            font: {
+              weight: "bold",   // 🔥 bikin tebal
+              size: 12          // bisa juga atur ukuran biar makin jelas
+            }
+          }
+        }
       },
       plugins: {
         datalabels: {
@@ -1075,11 +1450,12 @@
             return value;
           }
         },
-        legend: { display: false } // ❌ legend bawaan dimatiin
+        legend: { display: false }
       }
     },
     plugins: [ChartDataLabels]
   });
+
 
   // ================== GENERATE LEGEND DINAMIS ==================
   const uniqueCategories = [...new Set(sortedRisk.map(d => d.category))];
@@ -1093,10 +1469,48 @@
 
   document.getElementById("riskLegend").innerHTML = legendHTML;
 
+
+  // Data Top 10 Cost
+  const investmentsCost = [
+    "Upgrade Pipa SA CS → SS316 (Jetty–Tank)",
+    "Penggantian Heat Exchanger",
+    "Pembelian Cell 4 Row Cooling Tower Urea",
+    "Pengadaan Perforate Plate & H-Beam",
+    "Pengadaan Cyclone Baru",
+    "Pengadaan Degasifier Baru",
+    "Upgrade Pipa SA CS → SS316 (Preneutralizer)",
+    "Pergantian Load Gear + Bearing",
+    "Pembelian Temp Bearing Turbine",
+    "Pengadaan Piping Liquor Granulator Pump A"
+  ];
+
+
+  const riskValuesCost = [56.25, 56.25, 56.25, 56.25, 55.25, 55.25, 55.25, 48.75, 48.75, 46.75];
+
+  const riskCategoriesCost = [
+    "More Critical",
+    "Critical",
+    "More Critical",
+    "Critical",
+    "Moderate",
+    "Moderate",
+    "More Critical",
+    "Critical",
+    "Moderate",
+    "Critical"
+  ];
+
+
+  const biayaValuesCost = [
+    75000000000, 35000000000, 30000000000, 30000000000, 20000000000,
+    20000000000, 15000000000, 15000000000, 15000000000, 12000000000
+  ];
+
   // ================== BIAYA CHART ==================
-  const sortedBiaya = investments.map((inv, i) => ({
+
+  const sortedBiaya = investmentsCost.map((inv, i) => ({
     name: inv,
-    value: biayaValues[i]
+    value: biayaValuesCost[i]
   })).sort((a, b) => b.value - a.value);
 
   new Chart(document.getElementById("biayaChart"), {
@@ -1122,10 +1536,23 @@
           ticks: {
             callback: function (value) {
               return "Rp" + value.toLocaleString("id-ID");
+            },
+            font: {
+              weight: "bold",  // 🔥 bikin tebal angka di sumbu Y
+              size: 12
             }
           }
         },
-        x: { ticks: { maxRotation: 45, minRotation: 30 } }
+        x: {
+          ticks: {
+            maxRotation: 45,
+            minRotation: 30,
+            font: {
+              weight: "bold",  // 🔥 bikin tebal label di sumbu X
+              size: 12
+            }
+          }
+        }
       },
       plugins: {
         datalabels: {
@@ -1134,6 +1561,9 @@
           align: "top",
           formatter: function (value) {
             return formatBiaya(value);
+          },
+          font: {
+            weight: "bold" // 🔥 biar angka di atas batang juga bold
           }
         },
         tooltip: {
@@ -1143,11 +1573,12 @@
             }
           }
         },
-        legend: { display: false } // ❌ legend bawaan dimatiin
+        legend: { display: false }
       }
     },
     plugins: [ChartDataLabels]
   });
+
 
 
   // ================== LEGEND BIAYA ==================
@@ -1180,4 +1611,39 @@
     });
   });
 
+</script>
+
+
+<!-- JS -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+
+<script>
+  $(function () {
+    var thisYear = moment().year();
+    var start = moment(thisYear + "-01-01", "YYYY-MM-DD");
+    var end = moment();
+
+    $('#daterange').daterangepicker({
+      opens: 'left',
+      startDate: start,
+      endDate: end,
+      locale: {
+        format: 'DD MMM YYYY',
+        separator: ' - '
+      },
+      ranges: {
+        'Today': [moment(), moment()],
+        'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+        'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+        'This Month': [moment().startOf('month'), moment().endOf('month')],
+        'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')],
+        'This Year': [moment().startOf('year'), moment()],
+        'Last Year': [moment().subtract(1, 'year').startOf('year'), moment().subtract(1, 'year').endOf('year')]
+      }
+    }, function (start, end) {
+      console.log("Range dipilih: " + start.format('DD MMM YYYY') + ' - ' + end.format('DD MMM YYYY'));
+    });
+  });
 </script>
