@@ -278,3 +278,44 @@ table.dataTable th {
 	word-wrap: break-word;
 	/* potong kata kalau kepanjangan */
 }
+
+
+
+
+
+/* MENU BIAR TURUN KE BAWAH (MENU UTAMA) */
+
+
+
+
+/* parent flex */
+.nav-item.menu-content>a {
+	display: flex;
+	align-items: center;
+	gap: .75rem;
+	/* jarak icon ke teks */
+}
+
+/* kotak icon tetap ukurannya */
+.nav-item.menu-content>a i {
+	flex: 0 0 40px;
+	/* lebar & tinggi fix, contoh 40px */
+	height: 40px;
+	width: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/* teks bisa wrap */
+.nav-item.menu-content>a .menu-title {
+	white-space: normal !important;
+	overflow-wrap: anywhere;
+	word-break: break-word;
+	line-height: 1.25;
+	flex: 1 1 auto;
+	/* ambil sisa ruang */
+	min-width: 0;
+	/* wajib agar wrap jalan */
+	display: block;
+}
