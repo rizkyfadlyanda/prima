@@ -319,3 +319,197 @@ table.dataTable th {
 	/* wajib agar wrap jalan */
 	display: block;
 }
+
+
+
+/* Style input biar modern */
+.date-filter-input {
+	max-width: 250px;
+	border: 1px solid #e0e6ed;
+	border-radius: 12px;
+	padding: 8px 12px;
+	font-size: 14px;
+	font-weight: 500;
+	color: #34495e;
+	background: #fff;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+	transition: all 0.2s ease-in-out;
+}
+
+.date-filter-input:focus {
+	border-color: #4e73df;
+	/* warna biru dashboard */
+	box-shadow: 0 0 0 3px rgba(78, 115, 223, 0.2);
+	outline: none;
+}
+
+/* Styling pop-up calendar */
+.daterangepicker {
+	border-radius: 12px !important;
+	font-family: 'Poppins', sans-serif;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.daterangepicker .calendar-table {
+	border-radius: 8px !important;
+}
+
+.daterangepicker td.active,
+.daterangepicker td.active:hover {
+	background-color: #4e73df !important;
+	color: #fff !important;
+}
+
+.daterangepicker td.in-range {
+	background-color: rgba(78, 115, 223, 0.15) !important;
+}
+
+.daterangepicker .drp-buttons {
+	text-align: right;
+}
+
+.daterangepicker .drp-buttons .btn {
+	border-radius: 8px;
+	padding: 6px 14px;
+	font-size: 13px;
+}
+
+
+
+.btn-noncritical {
+	background-color: #4CAF50;
+	color: #fff;
+}
+
+.btn-noncritical:hover {
+	background-color: #45a049;
+}
+
+.btn-lesscritical {
+	background-color: #FFEB3B;
+	color: #000;
+}
+
+.btn-lesscritical:hover {
+	background-color: #fdd835;
+}
+
+.btn-moderate {
+	background-color: #FF9800;
+	color: #fff;
+}
+
+.btn-moderate:hover {
+	background-color: #fb8c00;
+}
+
+.btn-critical {
+	background-color: #F44336;
+	color: #fff;
+}
+
+.btn-critical:hover {
+	background-color: #e53935;
+}
+
+.btn-morecritical {
+	background-color: #795548;
+	color: #fff;
+}
+
+.btn-morecritical:hover {
+	background-color: #6d4c41;
+}
+
+.btn-highcritical {
+	background-color: #616161;
+	color: #fff;
+}
+
+.btn-highcritical:hover {
+	background-color: #424242;
+}
+
+
+/* Button risk */
+
+.risk-btn {
+	position: relative;
+	overflow: hidden;
+	transition: all 0.25s ease-in-out;
+}
+
+/* Efek aktif */
+.risk-btn.active {
+	transform: scale(1.07);
+	font-weight: bold;
+	border: 2px solid #00008b;
+}
+
+/* Glow per kategori */
+.btn-critical.active {
+	box-shadow: 0 0 15px rgba(220, 53, 69, 0.8);
+	/* merah */
+}
+
+.btn-highcritical.active {
+	box-shadow: 0 0 15px rgba(255, 0, 0, 0.8);
+	/* merah pekat */
+}
+
+.btn-morecritical.active {
+	box-shadow: 0 0 15px rgba(255, 165, 0, 0.8);
+	/* oranye */
+}
+
+.btn-moderate.active {
+	box-shadow: 0 0 15px rgba(255, 193, 7, 0.8);
+	/* kuning */
+}
+
+.btn-lesscritical.active {
+	box-shadow: 0 0 15px rgba(0, 123, 255, 0.8);
+	/* biru */
+}
+
+.btn-noncritical.active {
+	box-shadow: 0 0 15px rgba(40, 167, 69, 0.8);
+	/* hijau */
+}
+
+/* Ripple effect pakai ::before */
+.risk-btn::before {
+	content: "";
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 0;
+	height: 0;
+	background: rgba(255, 255, 255, 0.4);
+	border-radius: 50%;
+	transform: translate(-50%, -50%);
+	transition: width 0.4s ease, height 0.4s ease, opacity 0.6s ease;
+	opacity: 0;
+	z-index: 0;
+}
+
+.risk-btn:active::before {
+	width: 200%;
+	height: 200%;
+	opacity: 0;
+	transition: 0s;
+}
+
+/* Centang tetap muncul di ::after */
+.risk-btn.active::after {
+	content: "✓";
+	position: absolute;
+	right: 6px;
+	/* lebih mepet tapi tetap ada jarak */
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 14px;
+	font-weight: bold;
+	color: #fff;
+	pointer-events: none;
+}
