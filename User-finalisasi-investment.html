@@ -518,7 +518,7 @@
                                                     <label>Simulasi Anggaran</label>
                                                     <input type="text" class="form-control" id="simulasiAnggaran"
                                                         placeholder="Rp" disabled>
-                                                    <label class="mt-2">Deviasi</label>
+                                                    <label class="mt-1">Deviasi</label>
                                                     <input type="text" class="form-control" id="deviasiAnggaran"
                                                         placeholder="Rp" disabled>
 
@@ -607,7 +607,9 @@
                                                             </div>
                                                         </td>
                                                     </tr>
-                                                    <!-- <tr>
+                                                    <tr>
+                                                        <td style="text-align:center;"><input type="checkbox"
+                                                                class="rowCheck"></td>
                                                         <td>3</td>
                                                         <td style="text-align: center;"></td>
                                                         <td>Peralatan Pabrik</td>
@@ -617,7 +619,7 @@
                                                         <td style="color: #616161;"><b>Very High</b></td>
                                                         <td>3</td>
                                                         <td>Multi Years</td>
-                                                        <td>4,510,990,000</td>
+                                                        <td class="biaya">4,510,990,000</td>
                                                         <td>
                                                             <div class="btn-group dropup">
                                                                 <button class="btn btn-link dropdown-toggle"
@@ -633,7 +635,7 @@
                                                             </div>
                                                         </td>
                                                     </tr>
-                                                    <tr>
+                                                    <!--<tr>
                                                         <td>4</td>
                                                         <td style="text-align: center;"></td>
                                                         <td>Peralatan Pabrik</td>
@@ -941,7 +943,6 @@
 
 
 <script>
-
     document.querySelectorAll('.risk-btn').forEach(btn => {
         btn.addEventListener('click', function () {
             this.classList.toggle('active'); // toggle state
@@ -954,7 +955,7 @@
             .map(btn => btn.dataset.risk);
 
         document.querySelectorAll('#riskTable tbody tr').forEach(row => {
-            let risk = row.cells[6].textContent.trim();
+            let risk = row.cells[7].textContent.trim();
             if (activeRisks.length === 0 || activeRisks.includes(risk)) {
                 row.style.display = '';
             } else {
