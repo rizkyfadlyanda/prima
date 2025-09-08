@@ -313,10 +313,12 @@
                                         </li>
                                     </ul>
                                 </li>
+                                <li class="active"><a class="menu-item"
+                                        href="User-finalisasi-investment.html">Finalisasi</a>
+                                </li>
                             </ul>
                         </li>
-                        <li class="active"><a class="menu-item" href="User-finalisasi-investment.html">Finalisasi</a>
-                        </li>
+
                     </ul>
                 </li>
 
@@ -501,7 +503,8 @@
 
                                                 <div class="col-md-2">
                                                     <label>Target Anggaran</label>
-                                                    <input type="text" class="form-control" placeholder="Rp">
+                                                    <input type="text" class="form-control" id="targetAnggaran"
+                                                        placeholder="Rp">
                                                     <label class="mt-1">Tahun</label>
                                                     <select class="form-control">
                                                         <option>2025</option>
@@ -513,9 +516,11 @@
                                                 </div>
                                                 <div class="col-md-2">
                                                     <label>Simulasi Anggaran</label>
-                                                    <input type="text" class="form-control" placeholder="Rp" disabled>
-                                                    <label class="mt-1">Deviasi</label>
-                                                    <input type="text" class="form-control" placeholder="Rp" disabled>
+                                                    <input type="text" class="form-control" id="simulasiAnggaran"
+                                                        placeholder="Rp" disabled>
+                                                    <label class="mt-2">Deviasi</label>
+                                                    <input type="text" class="form-control" id="deviasiAnggaran"
+                                                        placeholder="Rp" disabled>
 
                                                 </div>
                                             </div>
@@ -527,6 +532,9 @@
                                                 id="riskTable">
                                                 <thead>
                                                     <tr>
+                                                        <th style="text-align: center;">
+                                                            <input type="checkbox" id="selectAll">
+                                                        </th>
                                                         <th>No</th>
                                                         <th style="text-align: center;">Full Edit</th>
                                                         <th style="text-align: center; min-width: 200px;">Jenis
@@ -544,6 +552,8 @@
                                                 </thead>
                                                 <tbody>
                                                     <tr>
+                                                        <td style="text-align:center;"><input type="checkbox"
+                                                                class="rowCheck"></td>
                                                         <td>1</td>
                                                         <td style="text-align: center;"></td>
                                                         <td>Peralatan Pabrik</td>
@@ -553,7 +563,7 @@
                                                         <td style="color: #F44336;"><b>Extreme</b></td>
                                                         <td>1</td>
                                                         <td>Single</td>
-                                                        <td>3,254,120,000</td>
+                                                        <td class="biaya">3,254,120,000</td>
                                                         <td>
                                                             <div class="btn-group dropup">
                                                                 <button class="btn btn-link dropdown-toggle"
@@ -570,6 +580,8 @@
                                                         </td>
                                                     </tr>
                                                     <tr>
+                                                        <td style="text-align:center;"><input type="checkbox"
+                                                                class="rowCheck"></td>
                                                         <td>2</td>
                                                         <td style="text-align: center;"></td>
                                                         <td>Peralatan Pabrik</td>
@@ -579,7 +591,7 @@
                                                         <td style="color: #F44336;"><b>Extreme</b></td>
                                                         <td>2</td>
                                                         <td>Multi Years</td>
-                                                        <td>1,876,500,000</td>
+                                                        <td class="biaya">1,876,500,000</td>
                                                         <td>
                                                             <div class="btn-group dropup">
                                                                 <button class="btn btn-link dropdown-toggle"
@@ -595,7 +607,7 @@
                                                             </div>
                                                         </td>
                                                     </tr>
-                                                    <tr>
+                                                    <!-- <tr>
                                                         <td>3</td>
                                                         <td style="text-align: center;"></td>
                                                         <td>Peralatan Pabrik</td>
@@ -802,7 +814,7 @@
                                                                 </div>
                                                             </div>
                                                         </td>
-                                                    </tr>
+                                                    </tr> -->
                                                 </tbody>
                                             </table>
 
@@ -950,4 +962,63 @@
             }
         });
     }
+</script>
+
+
+
+<!-- Script Multiple Table-->
+<script>
+    $(document).ready(function () {
+        function formatRupiah(angka) {
+            if (!angka) return "Rp 0";
+            return "Rp " + angka.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+        }
+
+        function parseRupiah(rp) {
+            return parseInt(rp.replace(/[^0-9]/g, "")) || 0;
+        }
+
+        function hitung() {
+            let total = 0;
+            $("#riskTable tbody tr").each(function () {
+                if ($(this).find(".rowCheck").is(":checked")) {
+                    let biaya = parseRupiah($(this).find(".biaya").text());
+                    total += biaya;
+                }
+            });
+
+            $("#simulasiAnggaran").val(formatRupiah(total));
+
+            let target = parseRupiah($("#targetAnggaran").val());
+            let deviasi = target - total;
+
+            $("#deviasiAnggaran").val(formatRupiah(Math.abs(deviasi)));
+
+            if (deviasi < 0) {
+                $("#deviasiAnggaran").css({ "background-color": "#F44336", "color": "white", "font-weight": "bold" });
+            } else {
+                $("#deviasiAnggaran").css({ "background-color": "#ffffff", "color": "black", "font-weight": "normal" });
+            }
+        }
+
+        // event: check/uncheck
+        $("#selectAll").on("change", function () {
+            $(".rowCheck").prop("checked", this.checked);
+            hitung();
+        });
+
+        $(document).on("change", ".rowCheck", function () {
+            if (!this.checked) {
+                $("#selectAll").prop("checked", false);
+            }
+            hitung();
+        });
+
+        // event: user ketik target anggaran
+        $("#targetAnggaran").on("keyup change", function () {
+            let angka = parseRupiah($(this).val());
+            $(this).val(formatRupiah(angka));
+            hitung();
+        });
+    });
 </script>
