@@ -526,6 +526,29 @@
                                             </div>
                                         </div>
 
+                                        <style>
+                                            /* Kolom pertama (checkbox) */
+                                            #riskTable th:nth-child(1),
+                                            #riskTable td:nth-child(1) {
+                                                position: sticky;
+                                                left: 0;
+                                                background: #fff;
+                                                z-index: 10;
+                                                border-right: 2px solid #ddd;
+                                            }
+
+                                            /* Kolom kedua (No) */
+                                            #riskTable th:nth-child(2),
+                                            #riskTable td:nth-child(2) {
+                                                position: sticky;
+                                                left: 60px;
+                                                /* sesuaikan lebar kolom pertama */
+                                                background: #fff;
+                                                z-index: 10;
+                                                border-right: 2px solid #ddd;
+                                            }
+                                        </style>
+
 
                                         <div class="table-responsive mt-3">
                                             <table class="table table-striped table-bordered zero-configuration"
@@ -1030,7 +1053,14 @@
         });
 
 
+
+
+
+
+
+
         // FITUR EDITTT START HERE >>>>>>>
+        // Klik Action → Edit
         $(document).on("click", ".dropdown-item", function (e) {
             e.preventDefault();
             let action = $(this).text().trim();
@@ -1039,6 +1069,9 @@
             if (action === "Edit") {
                 let biayaCell = row.find(".biaya");
                 let currentValue = parseRupiah(biayaCell.text());
+
+                // Simpan nilai lama di data attribute
+                biayaCell.data("old-value", biayaCell.text());
 
                 // Ganti cell dengan input text
                 biayaCell.html(`
@@ -1051,20 +1084,21 @@
             }
         });
 
-        // Event: format saat user ketik
-        $(document).on("keyup", ".edit-biaya", function () {
-            let angka = parseRupiah($(this).val()); // ambil angka murni
-            $(this).val(formatRupiah(angka));       // tampilkan dengan format Rp
+        // Event: auto-format rupiah saat ketik
+        $(document).on("keyup", ".edit-biaya", function (e) {
+            if (e.key !== "Escape") { // biar esc nggak ganggu format
+                let angka = parseRupiah($(this).val());
+                $(this).val(formatRupiah(angka));
+            }
         });
 
-        // Event: selesai edit (blur atau Enter)
+        // Event: selesai edit (Enter atau blur)
         $(document).on("blur keypress", ".edit-biaya", function (e) {
             if (e.type === "blur" || e.key === "Enter") {
                 let input = $(this);
-                let newValue = parseRupiah(input.val()); // angka murni
-                let formatted = formatRupiah(newValue);  // format ke Rp
+                let newValue = parseRupiah(input.val());
+                let formatted = formatRupiah(newValue);
 
-                // Replace input dengan teks kembali
                 input.closest("td").text(formatted);
 
                 // Hitung ulang total
@@ -1072,6 +1106,14 @@
             }
         });
 
+        // Event: cancel edit (Esc)
+        $(document).on("keydown", ".edit-biaya", function (e) {
+            if (e.key === "Escape") {
+                let input = $(this);
+                let oldValue = input.closest("td").data("old-value"); // ambil backup
+                input.closest("td").text(oldValue); // balikin ke nilai awal
+            }
+        });
 
 
     });
