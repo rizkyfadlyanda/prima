@@ -546,7 +546,7 @@
                                                         <th style="text-align: center;">Risk</th>
                                                         <th style="text-align: center;">Score</th>
                                                         <th style="text-align: center;">Single / Multi Years</th>
-                                                        <th style="text-align: center;">Biaya</th>
+                                                        <th style="text-align: center; min-width: 200px;">Biaya</th>
                                                         <th style="text-align: center;">Final</th>
                                                     </tr>
                                                 </thead>
@@ -944,7 +944,12 @@
 
 <!-- Script Multiple Table-->
 <script>
+
     $(document).ready(function () {
+        $("#riskTable tbody .biaya").each(function () {
+            let angka = parseRupiah($(this).text());
+            $(this).text(formatRupiah(angka));
+        });
 
         document.querySelectorAll('.risk-btn').forEach(btn => {
             btn.addEventListener('click', function () {
@@ -1025,7 +1030,7 @@
         });
 
 
-        // fitur edit 
+        // FITUR EDITTT START HERE >>>>>>>
         $(document).on("click", ".dropdown-item", function (e) {
             e.preventDefault();
             let action = $(this).text().trim();
