@@ -1023,5 +1023,51 @@
             $(this).val(formatRupiah(angka));
             hitung();
         });
+
+
+        // fitur edit 
+        $(document).on("click", ".dropdown-item", function (e) {
+            e.preventDefault();
+            let action = $(this).text().trim();
+            let row = $(this).closest("tr");
+
+            if (action === "Edit") {
+                let biayaCell = row.find(".biaya");
+                let currentValue = parseRupiah(biayaCell.text());
+
+                // Ganti cell dengan input text
+                biayaCell.html(`
+            <input type="text" class="form-control form-control-sm edit-biaya" 
+                   value="${formatRupiah(currentValue)}" style="min-width:150px;">
+        `);
+
+                // Fokuskan input
+                biayaCell.find("input").focus().select();
+            }
+        });
+
+        // Event: format saat user ketik
+        $(document).on("keyup", ".edit-biaya", function () {
+            let angka = parseRupiah($(this).val()); // ambil angka murni
+            $(this).val(formatRupiah(angka));       // tampilkan dengan format Rp
+        });
+
+        // Event: selesai edit (blur atau Enter)
+        $(document).on("blur keypress", ".edit-biaya", function (e) {
+            if (e.type === "blur" || e.key === "Enter") {
+                let input = $(this);
+                let newValue = parseRupiah(input.val()); // angka murni
+                let formatted = formatRupiah(newValue);  // format ke Rp
+
+                // Replace input dengan teks kembali
+                input.closest("td").text(formatted);
+
+                // Hitung ulang total
+                hitung();
+            }
+        });
+
+
+
     });
 </script>
