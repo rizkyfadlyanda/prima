@@ -942,34 +942,34 @@
 </script>
 
 
-<script>
-    document.querySelectorAll('.risk-btn').forEach(btn => {
-        btn.addEventListener('click', function () {
-            this.classList.toggle('active'); // toggle state
-            filterTable();
-        });
-    });
-
-    function filterTable() {
-        let activeRisks = Array.from(document.querySelectorAll('.risk-btn.active'))
-            .map(btn => btn.dataset.risk);
-
-        document.querySelectorAll('#riskTable tbody tr').forEach(row => {
-            let risk = row.cells[7].textContent.trim();
-            if (activeRisks.length === 0 || activeRisks.includes(risk)) {
-                row.style.display = '';
-            } else {
-                row.style.display = 'none';
-            }
-        });
-    }
-</script>
-
-
-
 <!-- Script Multiple Table-->
 <script>
     $(document).ready(function () {
+
+        document.querySelectorAll('.risk-btn').forEach(btn => {
+            btn.addEventListener('click', function () {
+                this.classList.toggle('active'); // toggle state
+                filterTable();
+            });
+        });
+
+        function filterTable() {
+            let activeRisks = Array.from(document.querySelectorAll('.risk-btn.active'))
+                .map(btn => btn.dataset.risk);
+
+            document.querySelectorAll('#riskTable tbody tr').forEach(row => {
+                let risk = row.cells[7].textContent.trim();
+                if (activeRisks.length === 0 || activeRisks.includes(risk)) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+
+            // setelah filter, hitung ulang
+            hitung();
+        }
+
         function formatRupiah(angka) {
             if (!angka) return "Rp 0";
             return "Rp " + angka.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
@@ -982,7 +982,8 @@
         function hitung() {
             let total = 0;
             $("#riskTable tbody tr").each(function () {
-                if ($(this).find(".rowCheck").is(":checked")) {
+                // cek apakah row visible DAN dicentang
+                if ($(this).is(":visible") && $(this).find(".rowCheck").is(":checked")) {
                     let biaya = parseRupiah($(this).find(".biaya").text());
                     total += biaya;
                 }
@@ -1001,6 +1002,7 @@
                 $("#deviasiAnggaran").css({ "background-color": "#ffffff", "color": "black", "font-weight": "normal" });
             }
         }
+
 
         // event: check/uncheck
         $("#selectAll").on("change", function () {
