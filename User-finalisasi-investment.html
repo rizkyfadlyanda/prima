@@ -185,6 +185,15 @@
         }
     </style>
 
+    <style>
+        .edited {
+            background-color: #fff949 !important;
+            color: #000000cc !important;
+            /* hijau muda */
+            transition: background-color 0.5s ease;
+        }
+    </style>
+
     <!-- END Custom CSS-->
 </head>
 
@@ -694,6 +703,7 @@
                                                                 </button>
                                                                 <div class="dropdown-menu">
                                                                     <a class="dropdown-item" href="#">Edit</a>
+                                                                    <a class="dropdown-item" href="#">Reset</a>
                                                                     <a class="dropdown-item" href="#">Approve</a>
                                                                     <a class="dropdown-item" href="#">Postpone</a>
                                                                     <a class="dropdown-item" href="#">Reject</a>
@@ -722,6 +732,7 @@
                                                                 </button>
                                                                 <div class="dropdown-menu">
                                                                     <a class="dropdown-item" href="#">Edit</a>
+                                                                    <a class="dropdown-item" href="#">Reset</a>
                                                                     <a class="dropdown-item" href="#">Approve</a>
                                                                     <a class="dropdown-item" href="#">Postpone</a>
                                                                     <a class="dropdown-item" href="#">Reject</a>
@@ -750,6 +761,7 @@
                                                                 </button>
                                                                 <div class="dropdown-menu">
                                                                     <a class="dropdown-item" href="#">Edit</a>
+                                                                    <a class="dropdown-item" href="#">Reset</a>
                                                                     <a class="dropdown-item" href="#">Approve</a>
                                                                     <a class="dropdown-item" href="#">Postpone</a>
                                                                     <a class="dropdown-item" href="#">Reject</a>
@@ -1160,6 +1172,7 @@
 
         // FITUR EDITTT START HERE >>>>>>> gas
         // Klik Action → Edit
+        // Klik Action (Edit / Reset)
         $(document).on("click", ".dropdown-item", function (e) {
             e.preventDefault();
             let action = $(this).text().trim();
@@ -1169,52 +1182,72 @@
                 let biayaCell = row.find(".biaya");
                 let currentValue = parseRupiah(biayaCell.text());
 
-                // Simpan nilai lama di data attribute
+                // Simpan original hanya sekali
+                if (!biayaCell.data("original")) {
+                    biayaCell.data("original", biayaCell.text());
+                }
+
+                // Simpan nilai lama (sebelum user edit) untuk Esc
                 biayaCell.data("old-value", biayaCell.text());
 
-                // Ganti cell dengan input text
+                // Ubah jadi input
                 biayaCell.html(`
             <input type="text" class="form-control form-control-sm edit-biaya" 
                    value="${formatRupiah(currentValue)}" style="min-width:150px;">
         `);
 
-                // Fokuskan input
                 biayaCell.find("input").focus().select();
+            }
+
+            if (action === "Reset") {
+                let biayaCell = row.find(".biaya");
+                let originalValue = biayaCell.data("original");
+
+                if (originalValue) {
+                    biayaCell.text(originalValue).removeClass("edited"); // hapus highlight edited
+                    hitung();
+                } else {
+                    alert("Tidak ada data awal untuk di-reset.");
+                }
             }
         });
 
-        // Event: auto-format rupiah saat ketik
+        // Auto-format saat ketik
         $(document).on("keyup", ".edit-biaya", function (e) {
-            if (e.key !== "Escape") { // biar esc nggak ganggu format
+            if (e.key !== "Escape") {
                 let angka = parseRupiah($(this).val());
                 $(this).val(formatRupiah(angka));
             }
         });
 
-        // Event: selesai edit (Enter atau blur)
+        // Save saat Enter / blur
         $(document).on("blur keypress", ".edit-biaya", function (e) {
             if (e.type === "blur" || e.key === "Enter") {
                 let input = $(this);
+                let oldValue = input.closest("td").data("old-value"); // ambil nilai lama
                 let newValue = parseRupiah(input.val());
                 let formatted = formatRupiah(newValue);
 
-                input.closest("td").text(formatted);
+                // Cek dulu, kalau beda baru tandai edited
+                if (formatted !== oldValue) {
+                    input.closest("td").text(formatted).addClass("edited");
+                } else {
+                    input.closest("td").text(oldValue).removeClass("edited");
+                }
 
-                // Hitung ulang total
                 hitung();
             }
         });
 
-        // Event: cancel edit (Esc)
+        // Cancel saat Esc
         $(document).on("keydown", ".edit-biaya", function (e) {
             if (e.key === "Escape") {
                 let input = $(this);
-                let oldValue = input.closest("td").data("old-value"); // ambil backup
-                input.closest("td").text(oldValue); // balikin ke nilai awal
+                let oldValue = input.closest("td").data("old-value");
+                input.closest("td").text(oldValue); // balikin ke nilai sebelum edit
+                // tidak ditandai edited, karena dibatalkan
             }
         });
-
-
     });
 </script>
 
