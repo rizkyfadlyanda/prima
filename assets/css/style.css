@@ -513,3 +513,47 @@ table.dataTable th {
 	color: #fff;
 	pointer-events: none;
 }
+
+
+.edit-tahun {
+	background-color: #f9f9fb;
+	/* warna abu-abu lembut */
+	border: 1px solid #d1d5db;
+	/* border tipis abu */
+	border-radius: 6px;
+	/* sudut membulat */
+	padding: 4px 8px;
+	font-size: 13px;
+	font-weight: 500;
+	color: #333;
+	appearance: none;
+	/* hilangkan default arrow */
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	cursor: pointer;
+	transition: all 0.2s ease-in-out;
+	text-align: center;
+	min-width: 70px;
+}
+
+/* Tambahin custom arrow biar rapih */
+.edit-tahun::after {
+	content: "▾";
+	position: absolute;
+	right: 8px;
+	pointer-events: none;
+}
+
+/* efek hover */
+.edit-tahun:hover {
+	border-color: #2563eb;
+	/* biru elegan */
+	box-shadow: 0 0 4px rgba(37, 99, 235, 0.2);
+}
+
+/* efek focus */
+.edit-tahun:focus {
+	border-color: #2563eb;
+	outline: none;
+	background-color: #eef2ff;
+}
