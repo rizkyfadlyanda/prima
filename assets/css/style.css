@@ -560,10 +560,13 @@ table.dataTable th {
 
 
 
-/* Warna kuning kalem */
+/* Warna kuning ijoo */
 .rowCheck-row {
 	background-color: #e2ffdc !important;
 }
+
+
+/* Warna kuning kalem */
 
 .highlight-row {
 	background-color: #fff8dc !important;
