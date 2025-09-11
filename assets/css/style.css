@@ -557,3 +557,14 @@ table.dataTable th {
 	outline: none;
 	background-color: #eef2ff;
 }
+
+
+
+/* Warna kuning kalem */
+.rowCheck-row {
+	background-color: #e2ffdc !important;
+}
+
+.highlight-row {
+	background-color: #fff8dc !important;
+}

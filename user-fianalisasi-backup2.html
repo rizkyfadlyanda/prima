@@ -102,29 +102,6 @@
     </style>
 
 
-    <style>
-        /* Kolom pertama (checkbox) */
-        #riskTable th:nth-child(1),
-        #riskTable td:nth-child(1) {
-            position: sticky;
-            left: 0;
-            background: #fff;
-            z-index: 10;
-            border-right: 2px solid #ddd;
-        }
-
-        /* Kolom kedua (No) */
-        #riskTable th:nth-child(2),
-        #riskTable td:nth-child(2) {
-            position: sticky;
-            left: 60px;
-            /* sesuaikan lebar kolom pertama */
-            background: #fff;
-            z-index: 10;
-            border-right: 2px solid #ddd;
-        }
-    </style>
-
 
     <style>
         .checkbox-group {
@@ -612,59 +589,63 @@
 
                                         <div class="checkbox-group mt-5">
                                             <label class="checkbox-label">
-                                                <input type="checkbox" class="toggle-col" data-col="1" checked>
-                                                <span></span> No
+                                                <input type="checkbox" class="toggle-col" data-col="0" checked>
+                                                <span></span> Highlight
                                             </label>
                                             <label class="checkbox-label">
                                                 <input type="checkbox" class="toggle-col" data-col="2" checked>
-                                                <span></span> Full Edit
+                                                <span></span> No
                                             </label>
                                             <label class="checkbox-label">
                                                 <input type="checkbox" class="toggle-col" data-col="3" checked>
-                                                <span></span> Jenis Investasi
+                                                <span></span> Full Edit
                                             </label>
                                             <label class="checkbox-label">
                                                 <input type="checkbox" class="toggle-col" data-col="4" checked>
-                                                <span></span> Tag Number
+                                                <span></span> Jenis Investasi
                                             </label>
                                             <label class="checkbox-label">
                                                 <input type="checkbox" class="toggle-col" data-col="5" checked>
-                                                <span></span> Equipment Name
+                                                <span></span> Tag Number
                                             </label>
                                             <label class="checkbox-label">
                                                 <input type="checkbox" class="toggle-col" data-col="6" checked>
-                                                <span></span> Investment Description
+                                                <span></span> Equipment Name
                                             </label>
                                             <label class="checkbox-label">
                                                 <input type="checkbox" class="toggle-col" data-col="7" checked>
-                                                <span></span> Risk
+                                                <span></span> Investment Description
                                             </label>
                                             <label class="checkbox-label">
                                                 <input type="checkbox" class="toggle-col" data-col="8" checked>
-                                                <span></span> Score
+                                                <span></span> Risk
                                             </label>
                                             <label class="checkbox-label">
                                                 <input type="checkbox" class="toggle-col" data-col="9" checked>
-                                                <span></span> Single / Multi Years
+                                                <span></span> Score
                                             </label>
                                             <label class="checkbox-label">
                                                 <input type="checkbox" class="toggle-col" data-col="10" checked>
-                                                <span></span> UAC
+                                                <span></span> Single / Multi Years
                                             </label>
                                             <label class="checkbox-label">
                                                 <input type="checkbox" class="toggle-col" data-col="11" checked>
-                                                <span></span> Year 1
+                                                <span></span> EAC
                                             </label>
                                             <label class="checkbox-label">
                                                 <input type="checkbox" class="toggle-col" data-col="12" checked>
-                                                <span></span> Year 2
+                                                <span></span> Year 1
                                             </label>
                                             <label class="checkbox-label">
                                                 <input type="checkbox" class="toggle-col" data-col="13" checked>
-                                                <span></span> Year 3
+                                                <span></span> Year 2
                                             </label>
                                             <label class="checkbox-label">
                                                 <input type="checkbox" class="toggle-col" data-col="14" checked>
+                                                <span></span> Year 3
+                                            </label>
+                                            <label class="checkbox-label">
+                                                <input type="checkbox" class="toggle-col" data-col="15" checked>
                                                 <span></span> Final
                                             </label>
                                         </div>
@@ -675,29 +656,76 @@
                                                 id="riskTable">
                                                 <thead>
                                                     <tr>
-                                                        <th style="text-align: center;">
+                                                        <th style="text-align: center; vertical-align: middle;">
+                                                            Highlight</th>
+                                                        <th style="text-align: center; vertical-align: middle;">
                                                             <input type="checkbox" id="selectAll">
                                                         </th>
-                                                        <th>No</th>
-                                                        <th style="text-align: center;">Full Edit</th>
-                                                        <th style="text-align: center; min-width: 200px;">Jenis
+                                                        <th style="text-align: center; vertical-align: middle;">No</th>
+                                                        <th style="text-align: center; vertical-align: middle;">Full
+                                                            Edit</th>
+                                                        <th
+                                                            style="text-align: center; vertical-align: middle; min-width: 200px;">
+                                                            Jenis
                                                             Investasi</th>
-                                                        <th style="text-align: center;">Tag Number</th>
-                                                        <th style="text-align: center;">Equipment Name</th>
-                                                        <th style="text-align: center; min-width: 400px;">Investment
+                                                        <th style="text-align: center; vertical-align: middle;">Tag
+                                                            Number</th>
+                                                        <th style="text-align: center; vertical-align: middle;">
+                                                            Equipment Name</th>
+                                                        <th
+                                                            style="text-align: center; vertical-align: middle; min-width: 400px;">
+                                                            Investment
                                                             Description</th>
-                                                        <th style="text-align: center; min-width: 150px;">Risk</th>
-                                                        <th style="text-align: center;">Score</th>
-                                                        <th style="text-align: center;">Single / Multi Years</th>
-                                                        <th style="text-align: center;">EAC</th>
-                                                        <th style="text-align: center;">2026</th>
-                                                        <th style="text-align: center;">2027</th>
-                                                        <th style="text-align: center;">2028</th>
-                                                        <th style="text-align: center;">Final</th>
+                                                        <th
+                                                            style="text-align: center; vertical-align: middle; min-width: 150px;">
+                                                            Risk</th>
+                                                        <th style="text-align: center; vertical-align: middle;">Score
+                                                        </th>
+                                                        <th style="text-align: center; vertical-align: middle;">Single /
+                                                            Multi Years</th>
+                                                        <th style="text-align: center; vertical-align: middle;">EAC</th>
+
+                                                        <th class="tahun-col" data-tahun="2026"
+                                                            style="text-align: center; vertical-align: middle;">
+                                                            <select class="edit-tahun">
+                                                                <option value="2026" selected>2026</option>
+                                                                <option value="2027">2027</option>
+                                                                <option value="2028">2028</option>
+                                                                <option value="2029">2029</option>
+                                                                <option value="2030">2030</option>
+                                                            </select>
+                                                        </th>
+
+                                                        <th class="tahun-col" data-tahun="2027"
+                                                            style="text-align: center; vertical-align: middle;">
+                                                            <select class="edit-tahun">
+                                                                <option value="2026">2026</option>
+                                                                <option value="2027" selected>2027</option>
+                                                                <option value="2028">2028</option>
+                                                                <option value="2029">2029</option>
+                                                                <option value="2030">2030</option>
+                                                            </select>
+                                                        </th>
+
+                                                        <th class="tahun-col" data-tahun="2028"
+                                                            style="text-align: center; vertical-align: middle;">
+                                                            <select class="edit-tahun">
+                                                                <option value="2026">2026</option>
+                                                                <option value="2027">2027</option>
+                                                                <option value="2028" selected>2028</option>
+                                                                <option value="2029">2029</option>
+                                                                <option value="2030">2030</option>
+                                                            </select>
+                                                        </th>
+
+                                                        <th style="text-align: center; vertical-align: middle;">Final
+                                                        </th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
                                                     <tr>
+                                                        <td style="text-align: center;"><input type="checkbox"
+                                                                class="highlight-check"></td>
                                                         <td style="text-align:center;"><input type="checkbox"
                                                                 class="rowCheck"></td>
                                                         <td>1</td>
@@ -710,9 +738,9 @@
                                                         <td>1</td>
                                                         <td>Single</td>
                                                         <td class="biaya-eac">Rp 1.000</td>
-                                                        <td class="biaya-2026">Rp 500</td>
-                                                        <td class="biaya-2027">Rp 200</td>
-                                                        <td class="biaya-2028">Rp 300</td>
+                                                        <td class="biaya biaya-2026">Rp 500</td>
+                                                        <td class="biaya biaya-2027">Rp 200</td>
+                                                        <td class="biaya biaya-2028">Rp 300</td>
                                                         <td>
                                                             <div class="btn-group dropup">
                                                                 <button class="btn btn-link dropdown-toggle"
@@ -730,6 +758,8 @@
                                                         </td>
                                                     </tr>
                                                     <tr>
+                                                        <td style="text-align: center;"><input type="checkbox"
+                                                                class="highlight-check"></td>
                                                         <td style="text-align:center;"><input type="checkbox"
                                                                 class="rowCheck"></td>
                                                         <td>2</td>
@@ -742,9 +772,9 @@
                                                         <td>2</td>
                                                         <td>Multi Years</td>
                                                         <td class="biaya-eac">Rp 1.000</td>
-                                                        <td class="biaya-2026">Rp 500</td>
-                                                        <td class="biaya-2027">Rp 200</td>
-                                                        <td class="biaya-2028">Rp 300</td>
+                                                        <td class="biaya biaya-2026">Rp 500</td>
+                                                        <td class="biaya biaya-2027">Rp 200</td>
+                                                        <td class="biaya biaya-2028">Rp 300</td>
                                                         <td>
                                                             <div class="btn-group dropup">
                                                                 <button class="btn btn-link dropdown-toggle"
@@ -762,6 +792,8 @@
                                                         </td>
                                                     </tr>
                                                     <tr>
+                                                        <td style="text-align: center;"><input type="checkbox"
+                                                                class="highlight-check"></td>
                                                         <td style="text-align:center;"><input type="checkbox"
                                                                 class="rowCheck"></td>
                                                         <td>3</td>
@@ -774,9 +806,9 @@
                                                         <td>3</td>
                                                         <td>Multi Years</td>
                                                         <td class="biaya-eac">Rp 1.000</td>
-                                                        <td class="biaya-2026">Rp 500</td>
-                                                        <td class="biaya-2027">Rp 200</td>
-                                                        <td class="biaya-2028">Rp 300</td>
+                                                        <td class="biaya biaya-2026">Rp 500</td>
+                                                        <td class="biaya biaya-2027">Rp 200</td>
+                                                        <td class="biaya biaya-2028">Rp 300</td>
                                                         <td>
                                                             <div class="btn-group dropup">
                                                                 <button class="btn btn-link dropdown-toggle"
@@ -1121,7 +1153,7 @@
                 .map(btn => btn.dataset.risk);
 
             document.querySelectorAll('#riskTable tbody tr').forEach(row => {
-                let risk = row.cells[7].textContent.trim(); //7 harus diganti sesuai dengan kolum biayanya
+                let risk = row.cells[8].textContent.trim(); //7 harus diganti sesuai dengan kolum biayanya
                 if (activeRisks.length === 0 || activeRisks.includes(risk)) {
                     row.style.display = '';
                 } else {
@@ -1168,6 +1200,7 @@
             }
         }
 
+
         // event ketika ganti tahun
         $("#tahunDropdown").on("change", function () {
             hitung();
@@ -1200,42 +1233,40 @@
         // FITUR EDITTT START HERE >>>>>>> gas
         // Klik Action → Edit
         // Klik Action (Edit / Reset)
+        // Klik Edit / Reset di dropdown
         $(document).on("click", ".dropdown-item", function (e) {
             e.preventDefault();
             let action = $(this).text().trim();
             let row = $(this).closest("tr");
 
             if (action === "Edit") {
-                let biayaCell = row.find(".biaya");
-                let currentValue = parseRupiah(biayaCell.text());
+                row.find(".biaya").each(function () {
+                    let cell = $(this);
+                    let currentValue = parseRupiah(cell.text());
 
-                // Simpan original hanya sekali
-                if (!biayaCell.data("original")) {
-                    biayaCell.data("original", biayaCell.text());
-                }
+                    if (!cell.data("original")) {
+                        cell.data("original", cell.text());
+                    }
+                    cell.data("old-value", cell.text());
 
-                // Simpan nilai lama (sebelum user edit) untuk Esc
-                biayaCell.data("old-value", biayaCell.text());
-
-                // Ubah jadi input
-                biayaCell.html(`
+                    cell.html(`
             <input type="text" class="form-control form-control-sm edit-biaya" 
-                   value="${formatRupiah(currentValue)}" style="min-width:150px;">
+                   value="${formatRupiah(currentValue)}" style="min-width:100px;">
         `);
+                });
 
-                biayaCell.find("input").focus().select();
+                row.find(".edit-biaya").first().focus().select();
             }
 
-            if (action === "Reset") {
-                let biayaCell = row.find(".biaya");
-                let originalValue = biayaCell.data("original");
 
-                if (originalValue) {
-                    biayaCell.text(originalValue).removeClass("edited"); // hapus highlight edited
-                    hitung();
-                } else {
-                    alert("Tidak ada data awal untuk di-reset.");
-                }
+            if (action === "Reset") {
+                row.find("td.biaya").each(function () {
+                    let originalValue = $(this).data("original");
+                    if (originalValue) {
+                        $(this).text(originalValue).removeClass("edited");
+                    }
+                });
+                hitung();
             }
         });
 
@@ -1251,15 +1282,15 @@
         $(document).on("blur keypress", ".edit-biaya", function (e) {
             if (e.type === "blur" || e.key === "Enter") {
                 let input = $(this);
-                let oldValue = input.closest("td").data("old-value"); // ambil nilai lama
+                let cell = input.closest("td");
+                let oldValue = cell.data("old-value");
                 let newValue = parseRupiah(input.val());
                 let formatted = formatRupiah(newValue);
 
-                // Cek dulu, kalau beda baru tandai edited
                 if (formatted !== oldValue) {
-                    input.closest("td").text(formatted).addClass("edited");
+                    cell.text(formatted).addClass("edited");
                 } else {
-                    input.closest("td").text(oldValue).removeClass("edited");
+                    cell.text(oldValue).removeClass("edited");
                 }
 
                 hitung();
@@ -1270,11 +1301,12 @@
         $(document).on("keydown", ".edit-biaya", function (e) {
             if (e.key === "Escape") {
                 let input = $(this);
-                let oldValue = input.closest("td").data("old-value");
-                input.closest("td").text(oldValue); // balikin ke nilai sebelum edit
-                // tidak ditandai edited, karena dibatalkan
+                let cell = input.closest("td");
+                let oldValue = cell.data("old-value");
+                cell.text(oldValue).removeClass("edited");
             }
         });
+
     });
 </script>
 
@@ -1292,6 +1324,21 @@
                     row.cells[colIndex].style.display = "none";
                 }
             }
+        });
+    });
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll(".highlight-check").forEach(cb => {
+            cb.addEventListener("change", function () {
+                const row = this.closest("tr");
+                if (this.checked) {
+                    row.classList.add("highlight-row");
+                } else {
+                    row.classList.remove("highlight-row");
+                }
+            });
         });
     });
 </script>
