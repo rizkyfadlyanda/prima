@@ -102,29 +102,6 @@
     </style>
 
 
-    <style>
-        /* Kolom pertama (checkbox) */
-        #riskTable th:nth-child(1),
-        #riskTable td:nth-child(1) {
-            position: sticky;
-            left: 0;
-            background: #fff;
-            z-index: 10;
-            border-right: 2px solid #ddd;
-        }
-
-        /* Kolom kedua (No) */
-        #riskTable th:nth-child(2),
-        #riskTable td:nth-child(2) {
-            position: sticky;
-            left: 60px;
-            /* sesuaikan lebar kolom pertama */
-            background: #fff;
-            z-index: 10;
-            border-right: 2px solid #ddd;
-        }
-    </style>
-
 
     <style>
         .checkbox-group {
@@ -612,59 +589,63 @@
 
                                         <div class="checkbox-group mt-5">
                                             <label class="checkbox-label">
-                                                <input type="checkbox" class="toggle-col" data-col="1" checked>
-                                                <span></span> No
+                                                <input type="checkbox" class="toggle-col" data-col="0" checked>
+                                                <span></span> Highlight
                                             </label>
                                             <label class="checkbox-label">
                                                 <input type="checkbox" class="toggle-col" data-col="2" checked>
-                                                <span></span> Full Edit
+                                                <span></span> No
                                             </label>
                                             <label class="checkbox-label">
                                                 <input type="checkbox" class="toggle-col" data-col="3" checked>
-                                                <span></span> Jenis Investasi
+                                                <span></span> Full Edit
                                             </label>
                                             <label class="checkbox-label">
                                                 <input type="checkbox" class="toggle-col" data-col="4" checked>
-                                                <span></span> Tag Number
+                                                <span></span> Jenis Investasi
                                             </label>
                                             <label class="checkbox-label">
                                                 <input type="checkbox" class="toggle-col" data-col="5" checked>
-                                                <span></span> Equipment Name
+                                                <span></span> Tag Number
                                             </label>
                                             <label class="checkbox-label">
                                                 <input type="checkbox" class="toggle-col" data-col="6" checked>
-                                                <span></span> Investment Description
+                                                <span></span> Equipment Name
                                             </label>
                                             <label class="checkbox-label">
                                                 <input type="checkbox" class="toggle-col" data-col="7" checked>
-                                                <span></span> Risk
+                                                <span></span> Investment Description
                                             </label>
                                             <label class="checkbox-label">
                                                 <input type="checkbox" class="toggle-col" data-col="8" checked>
-                                                <span></span> Score
+                                                <span></span> Risk
                                             </label>
                                             <label class="checkbox-label">
                                                 <input type="checkbox" class="toggle-col" data-col="9" checked>
-                                                <span></span> Single / Multi Years
+                                                <span></span> Score
                                             </label>
                                             <label class="checkbox-label">
                                                 <input type="checkbox" class="toggle-col" data-col="10" checked>
-                                                <span></span> UAC
+                                                <span></span> Single / Multi Years
                                             </label>
                                             <label class="checkbox-label">
                                                 <input type="checkbox" class="toggle-col" data-col="11" checked>
-                                                <span></span> Year 1
+                                                <span></span> EAC
                                             </label>
                                             <label class="checkbox-label">
                                                 <input type="checkbox" class="toggle-col" data-col="12" checked>
-                                                <span></span> Year 2
+                                                <span></span> Year 1
                                             </label>
                                             <label class="checkbox-label">
                                                 <input type="checkbox" class="toggle-col" data-col="13" checked>
-                                                <span></span> Year 3
+                                                <span></span> Year 2
                                             </label>
                                             <label class="checkbox-label">
                                                 <input type="checkbox" class="toggle-col" data-col="14" checked>
+                                                <span></span> Year 3
+                                            </label>
+                                            <label class="checkbox-label">
+                                                <input type="checkbox" class="toggle-col" data-col="15" checked>
                                                 <span></span> Final
                                             </label>
                                         </div>
@@ -675,33 +656,53 @@
                                                 id="riskTable">
                                                 <thead>
                                                     <tr>
-                                                        <th style="text-align: center; vertical-align: middle;">
+                                                        <th style="text-align: center; vertical-align: middle;"
+                                                            rowspan="2">
+                                                            Highlight</th>
+                                                        <th style="text-align: center; vertical-align: middle;"
+                                                            rowspan="2">
                                                             <input type="checkbox" id="selectAll">
                                                         </th>
-                                                        <th style="text-align: center; vertical-align: middle;">No</th>
-                                                        <th style="text-align: center; vertical-align: middle;">Full
+                                                        <th style="text-align: center; vertical-align: middle;"
+                                                            rowspan="2">No</th>
+                                                        <th style="text-align: center; vertical-align: middle;"
+                                                            rowspan="2">Full
                                                             Edit</th>
-                                                        <th
-                                                            style="text-align: center; vertical-align: middle; min-width: 200px;">
+                                                        <th style="text-align: center; vertical-align: middle; min-width: 200px;"
+                                                            rowspan="2">
                                                             Jenis
                                                             Investasi</th>
-                                                        <th style="text-align: center; vertical-align: middle;">Tag
+                                                        <th style="text-align: center; vertical-align: middle;"
+                                                            rowspan="2">Tag
                                                             Number</th>
-                                                        <th style="text-align: center; vertical-align: middle;">
+                                                        <th style="text-align: center; vertical-align: middle;"
+                                                            rowspan="2">
                                                             Equipment Name</th>
-                                                        <th
-                                                            style="text-align: center; vertical-align: middle; min-width: 400px;">
+                                                        <th style="text-align: center; vertical-align: middle; min-width: 400px;"
+                                                            rowspan="2">
                                                             Investment
                                                             Description</th>
-                                                        <th
-                                                            style="text-align: center; vertical-align: middle; min-width: 150px;">
+                                                        <th style="text-align: center; vertical-align: middle; min-width: 150px;"
+                                                            rowspan="2">
                                                             Risk</th>
-                                                        <th style="text-align: center; vertical-align: middle;">Score
+                                                        <th style="text-align: center; vertical-align: middle;"
+                                                            rowspan="2">Score
                                                         </th>
-                                                        <th style="text-align: center; vertical-align: middle;">Single /
+                                                        <th style="text-align: center; vertical-align: middle;"
+                                                            rowspan="2">Single /
                                                             Multi Years</th>
-                                                        <th style="text-align: center; vertical-align: middle;">EAC</th>
 
+                                                        <th colspan="4"
+                                                            style="text-align: center; vertical-align: middle;">Biaya
+                                                        </th>
+
+                                                        <th style="text-align: center; vertical-align: middle;"
+                                                            rowspan="2">Final
+                                                        </th>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <th style="text-align: center; vertical-align: middle;">EAC</th>
                                                         <th class="tahun-col" data-tahun="2026"
                                                             style="text-align: center; vertical-align: middle;">
                                                             <select class="edit-tahun">
@@ -712,7 +713,6 @@
                                                                 <option value="2030">2030</option>
                                                             </select>
                                                         </th>
-
                                                         <th class="tahun-col" data-tahun="2027"
                                                             style="text-align: center; vertical-align: middle;">
                                                             <select class="edit-tahun">
@@ -723,7 +723,6 @@
                                                                 <option value="2030">2030</option>
                                                             </select>
                                                         </th>
-
                                                         <th class="tahun-col" data-tahun="2028"
                                                             style="text-align: center; vertical-align: middle;">
                                                             <select class="edit-tahun">
@@ -734,13 +733,12 @@
                                                                 <option value="2030">2030</option>
                                                             </select>
                                                         </th>
-
-                                                        <th style="text-align: center; vertical-align: middle;">Final
-                                                        </th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
                                                     <tr>
+                                                        <td style="text-align: center;"><input type="checkbox"
+                                                                class="highlight-check"></td>
                                                         <td style="text-align:center;"><input type="checkbox"
                                                                 class="rowCheck"></td>
                                                         <td>1</td>
@@ -773,6 +771,8 @@
                                                         </td>
                                                     </tr>
                                                     <tr>
+                                                        <td style="text-align: center;"><input type="checkbox"
+                                                                class="highlight-check"></td>
                                                         <td style="text-align:center;"><input type="checkbox"
                                                                 class="rowCheck"></td>
                                                         <td>2</td>
@@ -805,6 +805,8 @@
                                                         </td>
                                                     </tr>
                                                     <tr>
+                                                        <td style="text-align: center;"><input type="checkbox"
+                                                                class="highlight-check"></td>
                                                         <td style="text-align:center;"><input type="checkbox"
                                                                 class="rowCheck"></td>
                                                         <td>3</td>
@@ -1164,7 +1166,7 @@
                 .map(btn => btn.dataset.risk);
 
             document.querySelectorAll('#riskTable tbody tr').forEach(row => {
-                let risk = row.cells[7].textContent.trim(); //7 harus diganti sesuai dengan kolum biayanya
+                let risk = row.cells[8].textContent.trim(); //7 harus diganti sesuai dengan kolum biayanya
                 if (activeRisks.length === 0 || activeRisks.includes(risk)) {
                     row.style.display = '';
                 } else {
@@ -1335,6 +1337,21 @@
                     row.cells[colIndex].style.display = "none";
                 }
             }
+        });
+    });
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll(".highlight-check").forEach(cb => {
+            cb.addEventListener("change", function () {
+                const row = this.closest("tr");
+                if (this.checked) {
+                    row.classList.add("highlight-row");
+                } else {
+                    row.classList.remove("highlight-row");
+                }
+            });
         });
     });
 </script>
