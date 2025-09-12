@@ -571,3 +571,86 @@ table.dataTable th {
 .highlight-row {
 	background-color: #fff8dc !important;
 }
+
+
+
+
+/*  */
+.checkbox-wrapper {
+	width: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 12px;
+	/* jarak antar checkbox */
+	margin: 0 auto;
+}
+
+.custom-checkbox {
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+}
+
+.custom-checkbox input {
+	display: none;
+	/* sembunyikan input asli */
+}
+
+.checkmark {
+	width: 18px;
+	height: 18px;
+	border: 2px solid #bbb;
+	border-radius: 4px;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 14px;
+	font-weight: bold;
+	transition: all 0.25s ease;
+}
+
+/* =====================
+   Checkbox BIRU (rowCheck)
+   ===================== */
+.custom-checkbox.blue .checkmark {
+	border-color: #0d6efd;
+	/* biru bootstrap */
+	color: transparent;
+}
+
+.custom-checkbox.blue input:checked+.checkmark {
+	background-color: #0d6efd;
+	color: #fff;
+}
+
+.custom-checkbox.blue input:checked+.checkmark::after {
+	content: "✓";
+	position: absolute;
+	color: #fff;
+	font-size: 14px;
+}
+
+/* =====================
+   Checkbox ORANYE (highlight-check)
+   ===================== */
+.custom-checkbox.orange .checkmark {
+	border-color: #ff8800;
+	/* orange */
+	color: transparent;
+}
+
+.custom-checkbox.orange input:checked+.checkmark {
+	background-color: #ff8800;
+	color: #fff;
+}
+
+.custom-checkbox.orange input:checked+.checkmark::after {
+	content: "!";
+	position: absolute;
+	color: #fff;
+	font-size: 14px;
+}
