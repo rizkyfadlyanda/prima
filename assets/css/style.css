@@ -576,6 +576,8 @@ table.dataTable th {
 
 
 /*  */
+
+/*  */
 .checkbox-wrapper {
 	width: 50px;
 	display: flex;
@@ -637,20 +639,30 @@ table.dataTable th {
 /* =====================
    Checkbox ORANYE (highlight-check)
    ===================== */
-.custom-checkbox.orange .checkmark {
-	border-color: #ff8800;
-	/* orange */
-	color: transparent;
+/* Sembunyikan checkbox asli */
+.custom-checkbox input[type="checkbox"] {
+	display: none;
 }
 
-.custom-checkbox.orange input:checked+.checkmark {
+/* Tampilan custom */
+.custom-checkbox .checkmark {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	width: 19px;
+	height: 19px;
+	border: 1px solid #ff8800;
+	border-radius: 4px;
+	font-size: 14px;
+	font-weight: bold;
+	color: #ff8800;
+	/* tanda seru awalnya orange */
+	cursor: pointer;
+}
+
+/* Kalau dicentang */
+.custom-checkbox input:checked+.checkmark {
 	background-color: #ff8800;
 	color: #fff;
-}
-
-.custom-checkbox.orange input:checked+.checkmark::after {
-	content: "!";
-	position: absolute;
-	color: #fff;
-	font-size: 14px;
+	/* tanda seru jadi putih */
 }
