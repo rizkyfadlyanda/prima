@@ -42,6 +42,7 @@
     <!-- BEGIN Custom CSS-->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
     <!-- Feather Icons CDN -->
@@ -322,6 +323,8 @@
                             <ul class="menu-content">
                                 <li class="active"><a class="menu-item" href="User-qc-permintaan.html">Request</a>
                                 </li>
+                                <li class=""><a class="menu-item" href="User-qc-fpj.html">FPJ</a>
+                                </li>
                                 <li class=""><a class="menu-item" href="User-qc-reviewer.html">Reviewer</a>
                                 </li>
                                 <li class=""><a class="menu-item" href="User-qc-approval.html">Approval</a>
@@ -464,22 +467,6 @@
                                                                 <a class="nav-link colornonaktif" id="tab-investment"
                                                                     data-toggle="tab" href="#investment"
                                                                     style="border: none; padding: 8px 15px; font-weight: 500;">
-                                                                    Rejected <span style="margin-left: 5px;"
-                                                                        class="badge badge-s badge-pill badge-danger ml">2</span>
-                                                                </a>
-                                                            </li>
-                                                            <li class="nav-item">
-                                                                <a class="nav-link colornonaktif" id="tab-investment"
-                                                                    data-toggle="tab" href="#investment"
-                                                                    style="border: none; padding: 8px 15px; font-weight: 500;">
-                                                                    Approved - Rejected <span style="margin-left: 5px;"
-                                                                        class="badge badge-s badge-pill badge-danger ml">2</span>
-                                                                </a>
-                                                            </li>
-                                                            <li class="nav-item">
-                                                                <a class="nav-link colornonaktif" id="tab-investment"
-                                                                    data-toggle="tab" href="#investment"
-                                                                    style="border: none; padding: 8px 15px; font-weight: 500;">
                                                                     Cancelled <span style="margin-left: 5px;"
                                                                         class="badge badge-s badge-pill badge-danger ml">2</span>
                                                                 </a>
@@ -509,26 +496,23 @@
                                                 <thead>
                                                     <tr>
                                                         <th>No</th>
-                                                        <th>Status</th>
                                                         <th>Action</th>
                                                         <th>Purchase Order</th>
-                                                        <th>Material</th>
-                                                        <th style="min-width: 200px;">Material Description</th>
-                                                        <th>Material Document</th>
-                                                        <th>Qty in OPUn</th>
-                                                        <th>Order Price Unit</th>
-                                                        <th style="min-width: 200px;">Log</th>
-                                                        <th>Submission Date</th>
+                                                        <th>GR Number</th>
+
+                                                        <th>Status FPJ</th>
+                                                        <th>Department FPJ</th>
+                                                        <th>Durasi FPJ</th>
+                                                        <th>Result</th>
+                                                        <th>Document Return</th>
+                                                        <th>SLA</th>
+                                                        <th>Keterangan</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
 
                                                     <tr>
                                                         <td>1</td>
-                                                        <td>
-                                                            <p class="badge bg-gradient-directional-danger"><i
-                                                                    class="ft-check-circle"></i> Open</p>
-                                                        </td>
                                                         <td>
                                                             <div class="btn-group dropup">
                                                                 <button class="btn btn-link dropdown-toggle"
@@ -545,21 +529,21 @@
                                                             </div>
                                                         </td>
                                                         <td>5400013887</td>
-                                                        <td>-</td>
-                                                        <td>DC INSULATION RESISTANCE TESTER MIT1025</td>
                                                         <td>5006703598</td>
-                                                        <td>1</td>
-                                                        <td>UN</td>
-                                                        <td>-</td>
-                                                        <td>2025-07-28 14:29:13</td>
+                                                        <td>Yes</td>
+                                                        <td>Keandalan</td>
+                                                        <td>4 Hari</td>
+                                                        <td>
+                                                            <p class="badge bg-gradient-directional-success"><i
+                                                                    class="ft-check-circle"></i> Accept</p>
+                                                        </td>
+                                                        <td class="document-return" style="cursor:pointer;">Yes</td>
+                                                        <td>2 hari</td>
+                                                        <td></td>
                                                     </tr>
 
                                                     <tr>
                                                         <td>2</td>
-                                                        <td>
-                                                            <p class="badge bg-gradient-directional-danger"><i
-                                                                    class="ft-check-circle"></i> Open</p>
-                                                        </td>
                                                         <td>
                                                             <div class="btn-group dropup">
                                                                 <button class="btn btn-link dropdown-toggle"
@@ -575,23 +559,23 @@
                                                                 </div>
                                                             </div>
                                                         </td>
-                                                        <td>5400014074</td>
-                                                        <td>-</td>
-                                                        <td>DETERGEN RINSO; 1 KG</td>
-                                                        <td>5006700667</td>
-                                                        <td>10</td>
-                                                        <td>EA</td>
-                                                        <td>-</td>
-                                                        <td>2025-07-28 14:29:13</td>
+                                                        <td>5400018738</td>
+                                                        <td>5006598703</td>
+                                                        <td>Yes</td>
+                                                        <td>Keandalan</td>
+                                                        <td>2 Hari</td>
+                                                        <td>
+                                                            <p class="badge bg-gradient-directional-danger"><i
+                                                                    class="ft-x"></i> Reject</p>
+                                                        </td>
+                                                        <td class="document-return" style="cursor:pointer;">Yes</td>
+                                                        <td>7 hari</td>
+                                                        <td></td>
                                                     </tr>
 
                                                     <tr>
                                                         <td>3</td>
                                                         <td>
-                                                            <p class="badge bg-gradient-directional-danger"><i
-                                                                    class="ft-check-circle"></i> Open</p>
-                                                        </td>
-                                                        <td>
                                                             <div class="btn-group dropup">
                                                                 <button class="btn btn-link dropdown-toggle"
                                                                     type="button" data-toggle="dropdown"
@@ -606,1007 +590,21 @@
                                                                 </div>
                                                             </div>
                                                         </td>
-                                                        <td>5000006302</td>
-                                                        <td>-</td>
-                                                        <td>EMERGENCY STOP VALVE FOR STEAM TURBINE;</td>
-                                                        <td>5006703603</td>
-                                                        <td>1</td>
-                                                        <td>LOT</td>
-                                                        <td>-</td>
-                                                        <td>2025-07-28 14:29:13</td>
+                                                        <td>5400013887</td>
+                                                        <td>5009870365</td>
+                                                        <td>Yes</td>
+                                                        <td>Keandalan</td>
+                                                        <td>5 Hari</td>
+                                                        <td>
+                                                            <p class="badge bg-gradient-directional-yellow"><i
+                                                                    class="ft-flag"></i> Accept-Reject</p>
+                                                        </td>
+                                                        <td class="document-return" style="cursor:pointer;">No</td>
+                                                        <td>2 hari</td>
+                                                        <td></td>
                                                     </tr>
 
-                                                    <tr>
-                                                        <td>4</td>
-                                                        <td>
-                                                            <p class="badge bg-gradient-directional-danger"><i
-                                                                    class="ft-check-circle"></i> Open</p>
-                                                        </td>
-                                                        <td>
-                                                            <div class="btn-group dropup">
-                                                                <button class="btn btn-link dropdown-toggle"
-                                                                    type="button" data-toggle="dropdown"
-                                                                    aria-haspopup="true" aria-expanded="false">
-                                                                    Take Action
-                                                                </button>
-                                                                <div class="dropdown-menu">
-                                                                    <a class="dropdown-item" href="#">Action</a>
-                                                                    <a class="dropdown-item" href="#">Another action</a>
-                                                                    <a class="dropdown-item" href="#">Something else
-                                                                        here</a>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>5400013117</td>
-                                                        <td>-</td>
-                                                        <td>FLOW TRANSMITTER(VORTEX);181250 KG/H</td>
-                                                        <td>5006706997</td>
-                                                        <td>1</td>
-                                                        <td>UN</td>
-                                                        <td>-</td>
-                                                        <td>2025-07-28 14:29:13</td>
-                                                    </tr>
 
-                                                    <tr>
-                                                        <td>5</td>
-                                                        <td>
-                                                            <p class="badge bg-gradient-directional-danger"><i
-                                                                    class="ft-check-circle"></i> Open</p>
-                                                        </td>
-                                                        <td>
-                                                            <div class="btn-group dropup">
-                                                                <button class="btn btn-link dropdown-toggle"
-                                                                    type="button" data-toggle="dropdown"
-                                                                    aria-haspopup="true" aria-expanded="false">
-                                                                    Take Action
-                                                                </button>
-                                                                <div class="dropdown-menu">
-                                                                    <a class="dropdown-item" href="#">Action</a>
-                                                                    <a class="dropdown-item" href="#">Another action</a>
-                                                                    <a class="dropdown-item" href="#">Something else
-                                                                        here</a>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>5400013117</td>
-                                                        <td>-</td>
-                                                        <td>FLOW TRANSMITTER(VORTEX);3477 KG/H</td>
-                                                        <td>5006706997</td>
-                                                        <td>1</td>
-                                                        <td>UN</td>
-                                                        <td>-</td>
-                                                        <td>2025-07-28 14:29:13</td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <td>6</td>
-                                                        <td>
-                                                            <p class="badge bg-gradient-directional-danger"><i
-                                                                    class="ft-check-circle"></i> Open</p>
-                                                        </td>
-                                                        <td>
-                                                            <div class="btn-group dropup">
-                                                                <button class="btn btn-link dropdown-toggle"
-                                                                    type="button" data-toggle="dropdown"
-                                                                    aria-haspopup="true" aria-expanded="false">
-                                                                    Take Action
-                                                                </button>
-                                                                <div class="dropdown-menu">
-                                                                    <a class="dropdown-item" href="#">Action</a>
-                                                                    <a class="dropdown-item" href="#">Another action</a>
-                                                                    <a class="dropdown-item" href="#">Something else
-                                                                        here</a>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>5400013117</td>
-                                                        <td>-</td>
-                                                        <td>FLOW TRANSMITTER(VORTEX);64200 KG/H</td>
-                                                        <td>5006706997</td>
-                                                        <td>1</td>
-                                                        <td>UN</td>
-                                                        <td>-</td>
-                                                        <td>2025-07-28 14:29:13</td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <td>7</td>
-                                                        <td>
-                                                            <p class="badge bg-gradient-directional-success"><i
-                                                                    class="ft-x-circle"></i> Closed</p>
-                                                        </td>
-                                                        <td>
-                                                            <div class="btn-group dropup">
-                                                                <button class="btn btn-link dropdown-toggle"
-                                                                    type="button" data-toggle="dropdown"
-                                                                    aria-haspopup="true" aria-expanded="false">
-                                                                    Take Action
-                                                                </button>
-                                                                <div class="dropdown-menu">
-                                                                    <a class="dropdown-item" href="#">Action</a>
-                                                                    <a class="dropdown-item" href="#">Another action</a>
-                                                                    <a class="dropdown-item" href="#">Something else
-                                                                        here</a>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>5400014106</td>
-                                                        <td>-</td>
-                                                        <td>INFORMA COUNCIL KURSI TAMU;10499727</td>
-                                                        <td>5006703602</td>
-                                                        <td>10</td>
-                                                        <td>EA</td>
-                                                        <td>-</td>
-                                                        <td>2025-07-28 14:29:13</td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <td>8</td>
-                                                        <td>
-                                                            <p class="badge bg-gradient-directional-success"><i
-                                                                    class="ft-x-circle"></i> Closed</p>
-                                                        </td>
-                                                        <td>
-                                                            <div class="btn-group dropup">
-                                                                <button class="btn btn-link dropdown-toggle"
-                                                                    type="button" data-toggle="dropdown"
-                                                                    aria-haspopup="true" aria-expanded="false">
-                                                                    Take Action
-                                                                </button>
-                                                                <div class="dropdown-menu">
-                                                                    <a class="dropdown-item" href="#">Action</a>
-                                                                    <a class="dropdown-item" href="#">Another action</a>
-                                                                    <a class="dropdown-item" href="#">Something else
-                                                                        here</a>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>5400014104</td>
-                                                        <td>-</td>
-                                                        <td>METERAN 5 METER TOHO</td>
-                                                        <td>5006703679</td>
-                                                        <td>1</td>
-                                                        <td>BOX</td>
-                                                        <td>-</td>
-                                                        <td>2025-07-28 14:29:13</td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <td>9</td>
-                                                        <td>
-                                                            <p class="badge bg-gradient-directional-success"><i
-                                                                    class="ft-x-circle"></i> Closed</p>
-                                                        </td>
-                                                        <td>
-                                                            <div class="btn-group dropup">
-                                                                <button class="btn btn-link dropdown-toggle"
-                                                                    type="button" data-toggle="dropdown"
-                                                                    aria-haspopup="true" aria-expanded="false">
-                                                                    Take Action
-                                                                </button>
-                                                                <div class="dropdown-menu">
-                                                                    <a class="dropdown-item" href="#">Action</a>
-                                                                    <a class="dropdown-item" href="#">Another action</a>
-                                                                    <a class="dropdown-item" href="#">Something else
-                                                                        here</a>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>5400013570</td>
-                                                        <td>-</td>
-                                                        <td>NOMEX ® COVERALL MULTI COLORS</td>
-                                                        <td>5006703677</td>
-                                                        <td>200</td>
-                                                        <td>PAA</td>
-                                                        <td>-</td>
-                                                        <td>2025-07-28 14:29:13</td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <td>10</td>
-                                                        <td>
-                                                            <p class="badge bg-gradient-directional-success"><i
-                                                                    class="ft-x-circle"></i> Closed</p>
-                                                        </td>
-                                                        <td>
-                                                            <div class="btn-group dropup">
-                                                                <button class="btn btn-link dropdown-toggle"
-                                                                    type="button" data-toggle="dropdown"
-                                                                    aria-haspopup="true" aria-expanded="false">
-                                                                    Take Action
-                                                                </button>
-                                                                <div class="dropdown-menu">
-                                                                    <a class="dropdown-item" href="#">Action</a>
-                                                                    <a class="dropdown-item" href="#">Another action</a>
-                                                                    <a class="dropdown-item" href="#">Something else
-                                                                        here</a>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>5400013569</td>
-                                                        <td>-</td>
-                                                        <td>NOMEX ® COVERALL MULTI COLORS</td>
-                                                        <td>5006703605</td>
-                                                        <td>200</td>
-                                                        <td>PAA</td>
-                                                        <td>-</td>
-                                                        <td>2025-07-28 14:29:13</td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <td>11</td>
-                                                        <td>
-                                                            <p class="badge bg-gradient-directional-success"><i
-                                                                    class="ft-check-circle"></i> Open</p>
-                                                        </td>
-                                                        <td>
-                                                            <div class="btn-group dropup">
-                                                                <button class="btn btn-link dropdown-toggle"
-                                                                    type="button" data-toggle="dropdown"
-                                                                    aria-haspopup="true" aria-expanded="false">
-                                                                    Take Action
-                                                                </button>
-                                                                <div class="dropdown-menu">
-                                                                    <a class="dropdown-item" href="#">Action</a>
-                                                                    <a class="dropdown-item" href="#">Another action</a>
-                                                                    <a class="dropdown-item" href="#">Something else
-                                                                        here</a>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>5400013080</td>
-                                                        <td>-</td>
-                                                        <td>PRESSURE DIFFERENTIAL TRANSMITTER 0-0.25</td>
-                                                        <td>5006703601</td>
-                                                        <td>1</td>
-                                                        <td>UN</td>
-                                                        <td>-</td>
-                                                        <td>2025-07-28 14:29:13</td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <td>12</td>
-                                                        <td>
-                                                            <p class="badge bg-gradient-directional-success"><i
-                                                                    class="ft-check-circle"></i> Open</p>
-                                                        </td>
-                                                        <td>
-                                                            <div class="btn-group dropup">
-                                                                <button class="btn btn-link dropdown-toggle"
-                                                                    type="button" data-toggle="dropdown"
-                                                                    aria-haspopup="true" aria-expanded="false">
-                                                                    Take Action
-                                                                </button>
-                                                                <div class="dropdown-menu">
-                                                                    <a class="dropdown-item" href="#">Action</a>
-                                                                    <a class="dropdown-item" href="#">Another action</a>
-                                                                    <a class="dropdown-item" href="#">Something else
-                                                                        here</a>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>5400013080</td>
-                                                        <td>-</td>
-                                                        <td>PRESSURE DIFFERENTIAL TRANSMITTER 0-5</td>
-                                                        <td>5006703601</td>
-                                                        <td>1</td>
-                                                        <td>UN</td>
-                                                        <td>-</td>
-                                                        <td>2025-07-28 14:29:13</td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <td>13</td>
-                                                        <td>
-                                                            <p class="badge bg-gradient-directional-success"><i
-                                                                    class="ft-check-circle"></i> Open</p>
-                                                        </td>
-                                                        <td>
-                                                            <div class="btn-group dropup">
-                                                                <button class="btn btn-link dropdown-toggle"
-                                                                    type="button" data-toggle="dropdown"
-                                                                    aria-haspopup="true" aria-expanded="false">
-                                                                    Take Action
-                                                                </button>
-                                                                <div class="dropdown-menu">
-                                                                    <a class="dropdown-item" href="#">Action</a>
-                                                                    <a class="dropdown-item" href="#">Another action</a>
-                                                                    <a class="dropdown-item" href="#">Something else
-                                                                        here</a>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>5400014074</td>
-                                                        <td>-</td>
-                                                        <td>SABUN KRIM B29 COLEK C460;KUNING</td>
-                                                        <td>5006700667</td>
-                                                        <td>10</td>
-                                                        <td>EA</td>
-                                                        <td>-</td>
-                                                        <td>2025-07-28 14:29:13</td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <td>14</td>
-                                                        <td>
-                                                            <p class="badge bg-gradient-directional-success"><i
-                                                                    class="ft-check-circle"></i> Open</p>
-                                                        </td>
-                                                        <td>
-                                                            <div class="btn-group dropup">
-                                                                <button class="btn btn-link dropdown-toggle"
-                                                                    type="button" data-toggle="dropdown"
-                                                                    aria-haspopup="true" aria-expanded="false">
-                                                                    Take Action
-                                                                </button>
-                                                                <div class="dropdown-menu">
-                                                                    <a class="dropdown-item" href="#">Action</a>
-                                                                    <a class="dropdown-item" href="#">Another action</a>
-                                                                    <a class="dropdown-item" href="#">Something else
-                                                                        here</a>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>5400014074</td>
-                                                        <td>-</td>
-                                                        <td>SAPU LIDI; PAKAI GAGANG</td>
-                                                        <td>5006700667</td>
-                                                        <td>5</td>
-                                                        <td>EA</td>
-                                                        <td>-</td>
-                                                        <td>2025-07-28 14:29:13</td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <td>15</td>
-                                                        <td>
-                                                            <p class="badge bg-gradient-directional-success"><i
-                                                                    class="ft-check-circle"></i> Open</p>
-                                                        </td>
-                                                        <td>
-                                                            <div class="btn-group dropup">
-                                                                <button class="btn btn-link dropdown-toggle"
-                                                                    type="button" data-toggle="dropdown"
-                                                                    aria-haspopup="true" aria-expanded="false">
-                                                                    Take Action
-                                                                </button>
-                                                                <div class="dropdown-menu">
-                                                                    <a class="dropdown-item" href="#">Action</a>
-                                                                    <a class="dropdown-item" href="#">Another action</a>
-                                                                    <a class="dropdown-item" href="#">Something else
-                                                                        here</a>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>5400014074</td>
-                                                        <td>-</td>
-                                                        <td>SAPU PEL KARET;GAGANG</td>
-                                                        <td>5006700667</td>
-                                                        <td>5</td>
-                                                        <td>EA</td>
-                                                        <td>-</td>
-                                                        <td>2025-07-28 14:29:13</td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <td>16</td>
-                                                        <td>
-                                                            <p class="badge bg-gradient-directional-success"><i
-                                                                    class="ft-check-circle"></i> Open</p>
-                                                        </td>
-                                                        <td>
-                                                            <div class="btn-group dropup">
-                                                                <button class="btn btn-link dropdown-toggle"
-                                                                    type="button" data-toggle="dropdown"
-                                                                    aria-haspopup="true" aria-expanded="false">
-                                                                    Take Action
-                                                                </button>
-                                                                <div class="dropdown-menu">
-                                                                    <a class="dropdown-item" href="#">Action</a>
-                                                                    <a class="dropdown-item" href="#">Another action</a>
-                                                                    <a class="dropdown-item" href="#">Something else
-                                                                        here</a>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>5400014074</td>
-                                                        <td>-</td>
-                                                        <td>SAPU PLASTIK PAKAI GAGANG;NAGATA</td>
-                                                        <td>5006700667</td>
-                                                        <td>10</td>
-                                                        <td>EA</td>
-                                                        <td>-</td>
-                                                        <td>2025-07-28 14:29:13</td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <td>17</td>
-                                                        <td>
-                                                            <p class="badge bg-gradient-directional-success"><i
-                                                                    class="ft-check-circle"></i> Open</p>
-                                                        </td>
-                                                        <td>
-                                                            <div class="btn-group dropup">
-                                                                <button class="btn btn-link dropdown-toggle"
-                                                                    type="button" data-toggle="dropdown"
-                                                                    aria-haspopup="true" aria-expanded="false">
-                                                                    Take Action
-                                                                </button>
-                                                                <div class="dropdown-menu">
-                                                                    <a class="dropdown-item" href="#">Action</a>
-                                                                    <a class="dropdown-item" href="#">Another action</a>
-                                                                    <a class="dropdown-item" href="#">Something else
-                                                                        here</a>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>5400014074</td>
-                                                        <td>-</td>
-                                                        <td>SENTER KEPALA WATER PROOF; QYD</td>
-                                                        <td>5006700667</td>
-                                                        <td>15</td>
-                                                        <td>EA</td>
-                                                        <td>-</td>
-                                                        <td>2025-07-28 14:29:13</td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <td>18</td>
-                                                        <td>
-                                                            <p class="badge bg-gradient-directional-success"><i
-                                                                    class="ft-check-circle"></i> Open</p>
-                                                        </td>
-                                                        <td>
-                                                            <div class="btn-group dropup">
-                                                                <button class="btn btn-link dropdown-toggle"
-                                                                    type="button" data-toggle="dropdown"
-                                                                    aria-haspopup="true" aria-expanded="false">
-                                                                    Take Action
-                                                                </button>
-                                                                <div class="dropdown-menu">
-                                                                    <a class="dropdown-item" href="#">Action</a>
-                                                                    <a class="dropdown-item" href="#">Another action</a>
-                                                                    <a class="dropdown-item" href="#">Something else
-                                                                        here</a>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>5400014074</td>
-                                                        <td>-</td>
-                                                        <td>SENTER LED Q953; 80W IPX4; QYD</td>
-                                                        <td>5006700667</td>
-                                                        <td>5</td>
-                                                        <td>EA</td>
-                                                        <td>-</td>
-                                                        <td>2025-07-28 14:29:13</td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <td>19</td>
-                                                        <td>
-                                                            <p class="badge bg-gradient-directional-success"><i
-                                                                    class="ft-check-circle"></i> Open</p>
-                                                        </td>
-                                                        <td>
-                                                            <div class="btn-group dropup">
-                                                                <button class="btn btn-link dropdown-toggle"
-                                                                    type="button" data-toggle="dropdown"
-                                                                    aria-haspopup="true" aria-expanded="false">
-                                                                    Take Action
-                                                                </button>
-                                                                <div class="dropdown-menu">
-                                                                    <a class="dropdown-item" href="#">Action</a>
-                                                                    <a class="dropdown-item" href="#">Another action</a>
-                                                                    <a class="dropdown-item" href="#">Something else
-                                                                        here</a>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>5400014293</td>
-                                                        <td>4003464</td>
-                                                        <td>DIESEL FUEL:HSD FUEL</td>
-                                                        <td>5006704640</td>
-                                                        <td>24,000</td>
-                                                        <td>L</td>
-                                                        <td>-</td>
-                                                        <td>2025-07-28 14:29:13</td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <td>20</td>
-                                                        <td>
-                                                            <p class="badge bg-gradient-directional-success"><i
-                                                                    class="ft-check-circle"></i> Open</p>
-                                                        </td>
-                                                        <td>
-                                                            <div class="btn-group dropup">
-                                                                <button class="btn btn-link dropdown-toggle"
-                                                                    type="button" data-toggle="dropdown"
-                                                                    aria-haspopup="true" aria-expanded="false">
-                                                                    Take Action
-                                                                </button>
-                                                                <div class="dropdown-menu">
-                                                                    <a class="dropdown-item" href="#">Action</a>
-                                                                    <a class="dropdown-item" href="#">Another action</a>
-                                                                    <a class="dropdown-item" href="#">Something else
-                                                                        here</a>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>5400014293</td>
-                                                        <td>4003464</td>
-                                                        <td>DIESEL FUEL:HSD FUEL</td>
-                                                        <td>5006704640</td>
-                                                        <td>16,000</td>
-                                                        <td>L</td>
-                                                        <td>-</td>
-                                                        <td>2025-07-28 14:29:13</td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <td>21</td>
-                                                        <td>
-                                                            <p class="badge bg-gradient-directional-success"><i
-                                                                    class="ft-check-circle"></i> Open</p>
-                                                        </td>
-                                                        <td>
-                                                            <div class="btn-group dropup">
-                                                                <button class="btn btn-link dropdown-toggle"
-                                                                    type="button" data-toggle="dropdown"
-                                                                    aria-haspopup="true" aria-expanded="false">
-                                                                    Take Action
-                                                                </button>
-                                                                <div class="dropdown-menu">
-                                                                    <a class="dropdown-item" href="#">Action</a>
-                                                                    <a class="dropdown-item" href="#">Another action</a>
-                                                                    <a class="dropdown-item" href="#">Something else
-                                                                        here</a>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>5400014097</td>
-                                                        <td>6141268</td>
-                                                        <td>SEAL,STRIP:JOINT SEALANT;2.5X7MMX15M</td>
-                                                        <td>5006700720</td>
-                                                        <td>21</td>
-                                                        <td>ROL</td>
-                                                        <td>-</td>
-                                                        <td>2025-07-28 14:29:13</td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <td>22</td>
-                                                        <td>
-                                                            <p class="badge bg-gradient-directional-success"><i
-                                                                    class="ft-check-circle"></i> Open</p>
-                                                        </td>
-                                                        <td>
-                                                            <div class="btn-group dropup">
-                                                                <button class="btn btn-link dropdown-toggle"
-                                                                    type="button" data-toggle="dropdown"
-                                                                    aria-haspopup="true" aria-expanded="false">
-                                                                    Take Action
-                                                                </button>
-                                                                <div class="dropdown-menu">
-                                                                    <a class="dropdown-item" href="#">Action</a>
-                                                                    <a class="dropdown-item" href="#">Another action</a>
-                                                                    <a class="dropdown-item" href="#">Something else
-                                                                        here</a>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>5400013841</td>
-                                                        <td>6145804</td>
-                                                        <td>VALVE,GLOBE:3/4IN;800LB;SW;BB;OSY;A105</td>
-                                                        <td>5006706998</td>
-                                                        <td>72</td>
-                                                        <td>EA</td>
-                                                        <td>-</td>
-                                                        <td>2025-07-28 14:29:13</td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <td>23</td>
-                                                        <td>
-                                                            <p class="badge bg-gradient-directional-success"><i
-                                                                    class="ft-check-circle"></i> Open</p>
-                                                        </td>
-                                                        <td>
-                                                            <div class="btn-group dropup">
-                                                                <button class="btn btn-link dropdown-toggle"
-                                                                    type="button" data-toggle="dropdown"
-                                                                    aria-haspopup="true" aria-expanded="false">
-                                                                    Take Action
-                                                                </button>
-                                                                <div class="dropdown-menu">
-                                                                    <a class="dropdown-item" href="#">Action</a>
-                                                                    <a class="dropdown-item" href="#">Another action</a>
-                                                                    <a class="dropdown-item" href="#">Something else
-                                                                        here</a>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>5400013966</td>
-                                                        <td>6161836</td>
-                                                        <td>PLYWOOD,CONSTRUC:6MMX1220MMX2440MM</td>
-                                                        <td>5006703599</td>
-                                                        <td>8</td>
-                                                        <td>SHT</td>
-                                                        <td>-</td>
-                                                        <td>2025-07-28 14:29:13</td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <td>24</td>
-                                                        <td>
-                                                            <p class="badge bg-gradient-directional-success"><i
-                                                                    class="ft-check-circle"></i> Open</p>
-                                                        </td>
-                                                        <td>
-                                                            <div class="btn-group dropup">
-                                                                <button class="btn btn-link dropdown-toggle"
-                                                                    type="button" data-toggle="dropdown"
-                                                                    aria-haspopup="true" aria-expanded="false">
-                                                                    Take Action
-                                                                </button>
-                                                                <div class="dropdown-menu">
-                                                                    <a class="dropdown-item" href="#">Action</a>
-                                                                    <a class="dropdown-item" href="#">Another action</a>
-                                                                    <a class="dropdown-item" href="#">Something else
-                                                                        here</a>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>5400013966</td>
-                                                        <td>6161836</td>
-                                                        <td>PLYWOOD,CONSTRUC:6MMX1220MMX2440MM</td>
-                                                        <td>5006703599</td>
-                                                        <td>20</td>
-                                                        <td>SHT</td>
-                                                        <td>-</td>
-                                                        <td>2025-07-28 14:29:13</td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <td>25</td>
-                                                        <td>
-                                                            <p class="badge bg-gradient-directional-success"><i
-                                                                    class="ft-check-circle"></i> Open</p>
-                                                        </td>
-                                                        <td>
-                                                            <div class="btn-group dropup">
-                                                                <button class="btn btn-link dropdown-toggle"
-                                                                    type="button" data-toggle="dropdown"
-                                                                    aria-haspopup="true" aria-expanded="false">
-                                                                    Take Action
-                                                                </button>
-                                                                <div class="dropdown-menu">
-                                                                    <a class="dropdown-item" href="#">Action</a>
-                                                                    <a class="dropdown-item" href="#">Another action</a>
-                                                                    <a class="dropdown-item" href="#">Something else
-                                                                        here</a>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>5400013966</td>
-                                                        <td>6161837</td>
-                                                        <td>MULTIPLEX;16MMX4FTX8FT</td>
-                                                        <td>5006703599</td>
-                                                        <td>10</td>
-                                                        <td>SHT</td>
-                                                        <td>-</td>
-                                                        <td>2025-07-28 14:29:13</td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <td>26</td>
-                                                        <td>
-                                                            <p class="badge bg-gradient-directional-success"><i
-                                                                    class="ft-check-circle"></i> Open</p>
-                                                        </td>
-                                                        <td>
-                                                            <div class="btn-group dropup">
-                                                                <button class="btn btn-link dropdown-toggle"
-                                                                    type="button" data-toggle="dropdown"
-                                                                    aria-haspopup="true" aria-expanded="false">
-                                                                    Take Action
-                                                                </button>
-                                                                <div class="dropdown-menu">
-                                                                    <a class="dropdown-item" href="#">Action</a>
-                                                                    <a class="dropdown-item" href="#">Another action</a>
-                                                                    <a class="dropdown-item" href="#">Something else
-                                                                        here</a>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>5400013966</td>
-                                                        <td>6161837</td>
-                                                        <td>MULTIPLEX;16MMX4FTX8FT</td>
-                                                        <td>5006703599</td>
-                                                        <td>8</td>
-                                                        <td>SHT</td>
-                                                        <td>-</td>
-                                                        <td>2025-07-28 14:29:13</td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <td>27</td>
-                                                        <td>
-                                                            <p class="badge bg-gradient-directional-success"><i
-                                                                    class="ft-check-circle"></i> Open</p>
-                                                        </td>
-                                                        <td>
-                                                            <div class="btn-group dropup">
-                                                                <button class="btn btn-link dropdown-toggle"
-                                                                    type="button" data-toggle="dropdown"
-                                                                    aria-haspopup="true" aria-expanded="false">
-                                                                    Take Action
-                                                                </button>
-                                                                <div class="dropdown-menu">
-                                                                    <a class="dropdown-item" href="#">Action</a>
-                                                                    <a class="dropdown-item" href="#">Another action</a>
-                                                                    <a class="dropdown-item" href="#">Something else
-                                                                        here</a>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>5400013966</td>
-                                                        <td>6161838</td>
-                                                        <td>PLYWOOD,CONSTRUC:12MMX1220MMX2440MM</td>
-                                                        <td>5006703599</td>
-                                                        <td>10</td>
-                                                        <td>SHT</td>
-                                                        <td>-</td>
-                                                        <td>2025-07-28 14:29:13</td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <td>28</td>
-                                                        <td>
-                                                            <p class="badge bg-gradient-directional-success"><i
-                                                                    class="ft-check-circle"></i> Open</p>
-                                                        </td>
-                                                        <td>
-                                                            <div class="btn-group dropup">
-                                                                <button class="btn btn-link dropdown-toggle"
-                                                                    type="button" data-toggle="dropdown"
-                                                                    aria-haspopup="true" aria-expanded="false">
-                                                                    Take Action
-                                                                </button>
-                                                                <div class="dropdown-menu">
-                                                                    <a class="dropdown-item" href="#">Action</a>
-                                                                    <a class="dropdown-item" href="#">Another action</a>
-                                                                    <a class="dropdown-item" href="#">Something else
-                                                                        here</a>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>5400013966</td>
-                                                        <td>6161838</td>
-                                                        <td>PLYWOOD,CONSTRUC:12MMX1220MMX2440MM</td>
-                                                        <td>5006703599</td>
-                                                        <td>8</td>
-                                                        <td>SHT</td>
-                                                        <td>-</td>
-                                                        <td>2025-07-28 14:29:13</td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <td>29</td>
-                                                        <td>
-                                                            <p class="badge bg-gradient-directional-success"><i
-                                                                    class="ft-check-circle"></i> Open</p>
-                                                        </td>
-                                                        <td>
-                                                            <div class="btn-group dropup">
-                                                                <button class="btn btn-link dropdown-toggle"
-                                                                    type="button" data-toggle="dropdown"
-                                                                    aria-haspopup="true" aria-expanded="false">
-                                                                    Take Action
-                                                                </button>
-                                                                <div class="dropdown-menu">
-                                                                    <a class="dropdown-item" href="#">Action</a>
-                                                                    <a class="dropdown-item" href="#">Another action</a>
-                                                                    <a class="dropdown-item" href="#">Something else
-                                                                        here</a>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>5400013966</td>
-                                                        <td>6161839</td>
-                                                        <td>PLYWOOD,CONSTRUC:15MMX1220MMX2440MM</td>
-                                                        <td>5006703599</td>
-                                                        <td>10</td>
-                                                        <td>SHT</td>
-                                                        <td>-</td>
-                                                        <td>2025-07-28 14:29:13</td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <td>30</td>
-                                                        <td>
-                                                            <p class="badge bg-gradient-directional-success"><i
-                                                                    class="ft-check-circle"></i> Open</p>
-                                                        </td>
-                                                        <td>
-                                                            <div class="btn-group dropup">
-                                                                <button class="btn btn-link dropdown-toggle"
-                                                                    type="button" data-toggle="dropdown"
-                                                                    aria-haspopup="true" aria-expanded="false">
-                                                                    Take Action
-                                                                </button>
-                                                                <div class="dropdown-menu">
-                                                                    <a class="dropdown-item" href="#">Action</a>
-                                                                    <a class="dropdown-item" href="#">Another action</a>
-                                                                    <a class="dropdown-item" href="#">Something else
-                                                                        here</a>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>5400013841</td>
-                                                        <td>6208000</td>
-                                                        <td>GLOBE VALVE: A105; 1IN; 800#; SW; BB</td>
-                                                        <td>5006706998</td>
-                                                        <td>1</td>
-                                                        <td>EA</td>
-                                                        <td>-</td>
-                                                        <td>2025-07-28 14:29:13</td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <td>31</td>
-                                                        <td>
-                                                            <p class="badge bg-gradient-directional-success"><i
-                                                                    class="ft-check-circle"></i> Open</p>
-                                                        </td>
-                                                        <td>
-                                                            <div class="btn-group dropup">
-                                                                <button class="btn btn-link dropdown-toggle"
-                                                                    type="button" data-toggle="dropdown"
-                                                                    aria-haspopup="true" aria-expanded="false">
-                                                                    Take Action
-                                                                </button>
-                                                                <div class="dropdown-menu">
-                                                                    <a class="dropdown-item" href="#">Action</a>
-                                                                    <a class="dropdown-item" href="#">Another action</a>
-                                                                    <a class="dropdown-item" href="#">Something else
-                                                                        here</a>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>5400013734</td>
-                                                        <td>6211340</td>
-                                                        <td>GLAND PACKING;D132/100X16</td>
-                                                        <td>5006709172</td>
-                                                        <td>2</td>
-                                                        <td>ROL</td>
-                                                        <td>-</td>
-                                                        <td>2025-07-28 14:29:13</td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <td>32</td>
-                                                        <td>
-                                                            <p class="badge bg-gradient-directional-success"><i
-                                                                    class="ft-check-circle"></i> Open</p>
-                                                        </td>
-                                                        <td>
-                                                            <div class="btn-group dropup">
-                                                                <button class="btn btn-link dropdown-toggle"
-                                                                    type="button" data-toggle="dropdown"
-                                                                    aria-haspopup="true" aria-expanded="false">
-                                                                    Take Action
-                                                                </button>
-                                                                <div class="dropdown-menu">
-                                                                    <a class="dropdown-item" href="#">Action</a>
-                                                                    <a class="dropdown-item" href="#">Another action</a>
-                                                                    <a class="dropdown-item" href="#">Something else
-                                                                        here</a>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>5400013734</td>
-                                                        <td>6211341</td>
-                                                        <td>GLAND PACKING;D 90/65X12,5</td>
-                                                        <td>5006709172</td>
-                                                        <td>2</td>
-                                                        <td>ROL</td>
-                                                        <td>-</td>
-                                                        <td>2025-07-28 14:29:13</td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <td>33</td>
-                                                        <td>
-                                                            <p class="badge bg-gradient-directional-success"><i
-                                                                    class="ft-check-circle"></i> Open</p>
-                                                        </td>
-                                                        <td>
-                                                            <div class="btn-group dropup">
-                                                                <button class="btn btn-link dropdown-toggle"
-                                                                    type="button" data-toggle="dropdown"
-                                                                    aria-haspopup="true" aria-expanded="false">
-                                                                    Take Action
-                                                                </button>
-                                                                <div class="dropdown-menu">
-                                                                    <a class="dropdown-item" href="#">Action</a>
-                                                                    <a class="dropdown-item" href="#">Another action</a>
-                                                                    <a class="dropdown-item" href="#">Something else
-                                                                        here</a>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>5400013734</td>
-                                                        <td>6211343</td>
-                                                        <td>GLAND PACKING;D180/150X15</td>
-                                                        <td>5006709172</td>
-                                                        <td>1</td>
-                                                        <td>ROL</td>
-                                                        <td>-</td>
-                                                        <td>2025-07-28 14:29:13</td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <td>34</td>
-                                                        <td>
-                                                            <p class="badge bg-gradient-directional-success"><i
-                                                                    class="ft-check-circle"></i> Open</p>
-                                                        </td>
-                                                        <td>
-                                                            <div class="btn-group dropup">
-                                                                <button class="btn btn-link dropdown-toggle"
-                                                                    type="button" data-toggle="dropdown"
-                                                                    aria-haspopup="true" aria-expanded="false">
-                                                                    Take Action
-                                                                </button>
-                                                                <div class="dropdown-menu">
-                                                                    <a class="dropdown-item" href="#">Action</a>
-                                                                    <a class="dropdown-item" href="#">Another action</a>
-                                                                    <a class="dropdown-item" href="#">Something else
-                                                                        here</a>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>5400013734</td>
-                                                        <td>6211344</td>
-                                                        <td>GLAND PACKING;D80/60X10</td>
-                                                        <td>5006709172</td>
-                                                        <td>1</td>
-                                                        <td>ROL</td>
-                                                        <td>-</td>
-                                                        <td>2025-07-28 14:29:13</td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <td>35</td>
-                                                        <td>
-                                                            <p class="badge bg-gradient-directional-success"><i
-                                                                    class="ft-check-circle"></i> Open</p>
-                                                        </td>
-                                                        <td>
-                                                            <div class="btn-group dropup">
-                                                                <button class="btn btn-link dropdown-toggle"
-                                                                    type="button" data-toggle="dropdown"
-                                                                    aria-haspopup="true" aria-expanded="false">
-                                                                    Take Action
-                                                                </button>
-                                                                <div class="dropdown-menu">
-                                                                    <a class="dropdown-item" href="#">Action</a>
-                                                                    <a class="dropdown-item" href="#">Another action</a>
-                                                                    <a class="dropdown-item" href="#">Something else
-                                                                        here</a>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                        <td>5400013757</td>
-                                                        <td>6217581</td>
-                                                        <td>TEMPERATURE ELEMENT; MT-14WEIS-012-HWF</td>
-                                                        <td>5006707280</td>
-                                                        <td>2</td>
-                                                        <td>EA</td>
-                                                        <td>-</td>
-                                                        <td>2025-07-28 14:29:13</td>
-                                                    </tr>
 
 
                                                 </tbody>
@@ -1696,4 +694,31 @@
 
     // Aktifkan feather icon setelah load
     feather.replace();
+</script>
+
+
+<script>
+    document.querySelectorAll(".document-return").forEach(cell => {
+        cell.addEventListener("click", async () => {
+            const { value: result } = await Swal.fire({
+                title: "Pilih status Document Return",
+                text: "Apakah dokumen sudah dikembalikan?",
+                icon: "question",
+                showCancelButton: true,
+                confirmButtonText: "Yes",
+                cancelButtonText: "No",
+                reverseButtons: true
+            });
+
+            if (result) {
+                cell.textContent = "Yes";
+                // cell.style.color = "green";
+                // cell.style.fontWeight = "bold";
+            } else if (result === false) {
+                cell.textContent = "No";
+                // cell.style.color = "red";
+                // cell.style.fontWeight = "bold";
+            }
+        });
+    });
 </script>

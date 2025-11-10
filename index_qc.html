@@ -1,0 +1,1514 @@
+<!DOCTYPE html>
+<html class="loading" lang="en" data-textdirection="ltr">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta name="description"
+        content="Chameleon Admin is a modern Bootstrap 4 webapp &amp; admin dashboard html template with a large number of components, elegant design, clean and organized code.">
+    <meta name="keywords"
+        content="admin template, Chameleon admin template, dashboard template, gradient admin template, responsive admin template, webapp, eCommerce dashboard, analytic dashboard">
+    <meta name="author" content="ThemeSelect">
+    <title>Dashboard Company Overview</title>
+    <link rel="apple-touch-icon" href="app-assets/images/ico/apple-icon-120.png">
+    <link rel="shortcut icon" type="image/x-icon" href="app-assets/images/logo/logo.png">
+    <link
+        href="https://fonts.googleapis.com/css?family=Muli:300,300i,400,400i,600,600i,700,700i%7CComfortaa:300,400,700"
+        rel="stylesheet">
+    <link href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css" rel="stylesheet">
+    <!-- BEGIN VENDOR CSS-->
+    <link rel="stylesheet" type="text/css" href="app-assets/css/vendors.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/tables/datatable/datatables.min.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/charts/chartist.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/charts/chartist-plugin-tooltip.css">
+    <!-- END VENDOR CSS-->
+    <!-- BEGIN CHAMELEON  CSS-->
+    <link rel="stylesheet" type="text/css" href="app-assets/css/app.css">
+    <!-- END CHAMELEON  CSS-->
+    <!-- BEGIN Page Level CSS-->
+    <link rel="stylesheet" type="text/css" href="app-assets/css/core/menu/menu-types/vertical-menu.css">
+
+    <link rel="stylesheet" type="text/css" href="app-assets/css/core/colors/palette-gradient.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/css/core/colors/palette-gradient.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/css/pages/chat-application.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/css/pages/dashboard-analytics.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/css/pages/project.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/fonts/simple-line-icons/style.min.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/css/pages/advanced-cards.css">
+    <!-- END Page Level CSS-->
+    <!-- BEGIN Custom CSS-->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
+
+
+
+    <!-- END Custom CSS-->
+</head>
+
+
+
+
+<!-- Feather Icons CDN -->
+<script src="https://unpkg.com/feather-icons"></script>
+
+<style>
+    .dataTables_length select {
+        height: auto !important;
+        padding: 5px 10px !important;
+        font-size: 14px;
+    }
+
+    .tab-wrapper {
+        position: relative;
+        padding: 5px 40px;
+        /* border-bottom: 1px solid #ddd; */
+    }
+
+    .tab-scroll {
+        overflow-x: auto;
+        white-space: nowrap;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    .tab-scroll::-webkit-scrollbar {
+        display: none;
+    }
+
+    .nav-tabs {
+        display: inline-flex;
+        flex-wrap: nowrap;
+        border-bottom: none;
+    }
+
+    .nav-item {
+        flex: 0 0 auto;
+    }
+
+    .scroll-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 30px;
+        height: 40px;
+        background: white;
+        border: none;
+        z-index: 1;
+        cursor: pointer;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .scroll-left {
+        left: 0;
+    }
+
+    .scroll-right {
+        right: 0;
+    }
+</style>
+
+<style>
+    /* Style input biar modern */
+    .date-filter-input {
+        max-width: 250px;
+        border: 1px solid #e0e6ed;
+        border-radius: 12px;
+        padding: 8px 12px;
+        font-size: 14px;
+        font-weight: 500;
+        color: #34495e;
+        background: #fff;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+        transition: all 0.2s ease-in-out;
+    }
+
+    .date-filter-input:focus {
+        border-color: #4e73df;
+        /* warna biru dashboard */
+        box-shadow: 0 0 0 3px rgba(78, 115, 223, 0.2);
+        outline: none;
+    }
+
+    /* Styling pop-up calendar */
+    .daterangepicker {
+        border-radius: 12px !important;
+        font-family: 'Poppins', sans-serif;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .daterangepicker .calendar-table {
+        border-radius: 8px !important;
+    }
+
+    .daterangepicker td.active,
+    .daterangepicker td.active:hover {
+        background-color: #4e73df !important;
+        color: #fff !important;
+    }
+
+    .daterangepicker td.in-range {
+        background-color: rgba(78, 115, 223, 0.15) !important;
+    }
+
+    .daterangepicker .drp-buttons {
+        text-align: right;
+    }
+
+    .daterangepicker .drp-buttons .btn {
+        border-radius: 8px;
+        padding: 6px 14px;
+        font-size: 13px;
+    }
+</style>
+
+<body class="vertical-layout vertical-menu 2-columns  menu-expanded fixed-navbar" data-open="click"
+    data-menu="vertical-menu" data-color="custom-dark" data-col="2-columns">
+
+    <nav
+        class="header-navbar navbar-expand-md navbar navbar-with-menu navbar-without-dd-arrow fixed-top navbar-semi-light">
+        <div class="navbar-wrapper" style="background-color: #1E2528 !important;">
+            <div class="navbar-container content">
+                <div class="collapse navbar-collapse show" id="navbar-mobile">
+                    <ul class="nav navbar-nav mr-auto float-left">
+                        <li class="nav-item mobile-menu d-md-none mr-auto"><a
+                                class="nav-link nav-menu-main menu-toggle hidden-xs" href="#"><i
+                                    class="ft-menu font-large-1"></i></a></li>
+                        <li class="nav-item d-none d-md-block"><a class="nav-link nav-menu-main menu-toggle hidden-xs"
+                                href="#"><i class="ft-menu"></i></a></li>
+
+                        <li class="dropdown nav-item mega-dropdown d-none d-md-block"><a
+                                class="dropdown-toggle nav-link" href="#">Dashboard Company Overview</a>
+                        </li>
+
+
+                    </ul>
+                    <ul class="nav navbar-nav float-right">
+
+                        <!-- Dropdown -->
+                        <li class="nav-item navbar-search hide-mobile" style="align-items: center;
+                display: flex;
+                justify-content: center;">
+                            <select id="project-location" class="form-control" style="width:100%">
+                                <option value="">Search Modul</option>
+                                <option value="amsterdam">Amsterdam</option>
+                                <option value="berlin">Berlin</option>
+                                <option value="frankfurt">Frankfurt</option>
+                                <option value="hamburg">Hamburg</option>
+                                <option value="munich">Munich</option>
+                            </select>
+                        </li>
+
+
+                        <li class="dropdown dropdown-notification nav-item"><a class="nav-link nav-link-label" href="#"
+                                data-toggle="dropdown"><i class="ficon ft-bell bell-shake"
+                                    id="notification-navbar-link"></i><span
+                                    class="badge badge-pill badge-sm badge-primary badge-default badge-up badge-glow">5</span></a>
+                            <ul class="dropdown-menu dropdown-menu-media dropdown-menu-right">
+                                <div class="arrow_box_right">
+                                    <li class="dropdown-menu-header">
+                                        <h6 class="dropdown-header m-0"><span class="grey darken-2">Notifications</span>
+                                        </h6>
+                                    </li>
+                                    <li class="scrollable-container media-list w-100"><a href="javascript:void(0)">
+                                            <div class="media">
+                                                <div class="media-left align-self-center"><i
+                                                        class="ft-share warning font-medium-4 mt-2"></i>
+                                                </div>
+                                                <div class="media-body">
+                                                    <h6 class="media-heading warning">Revise by AVP Umum</h6>
+                                                    <p class="notification-text font-small-3 text-muted text-bold-600">
+                                                        Pembelian straight tube
+                                                    </p><small>
+                                                        <time class="media-meta text-muted"
+                                                            datetime="2015-06-11T18:29:20+08:00">3:30
+                                                            PM</time></small>
+                                                </div>
+                                            </div>
+                                        </a><a href="javascript:void(0)">
+                                            <div class="media">
+                                                <div class="media-left align-self-center"><i
+                                                        class="ft-save font-medium-4 mt-2 success"></i>
+                                                </div>
+                                                <div class="media-body">
+                                                    <h6 class="media-heading success">Approved by SVP KP2K</h6>
+                                                    <p class="notification-text font-small-3 text-muted text-bold-600">
+                                                        Pembelian tube katalis 2
+                                                        row</p>
+                                                    <small>
+                                                        <time class="media-meta text-muted"
+                                                            datetime="2015-06-11T18:29:20+08:00">10:05
+                                                            AM</time></small>
+                                                </div>
+                                            </div>
+                                        </a><a href="javascript:void(0)">
+                                            <div class="media">
+                                                <div class="media-left align-self-center"><i
+                                                        class="ft-repeat font-medium-4 mt-2 danger"></i>
+                                                </div>
+                                                <div class="media-body">
+                                                    <h6 class="media-heading danger">Rejected by AVP KP2K</h6>
+                                                    <p class="notification-text font-small-3 text-muted text-bold-600">
+                                                        Pengajuan Alat Tempur</p>
+                                                    <small>
+                                                        <time class="media-meta text-muted"
+                                                            datetime="2015-06-11T18:29:20+08:00">Yesterday</time></small>
+                                                </div>
+                                            </div>
+                                    </li>
+
+                                </div>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown dropdown-user nav-item"><a
+                                class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown">
+                                <span class="avatar avatar-online"><img
+                                        src="app-assets/images/portrait/small/avatar-s-19.png" alt="avatar"></span></a>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <div class="arrow_box_right"><a class="dropdown-item" href="#"><span
+                                            class="avatar avatar-online"><img
+                                                src="app-assets/images/portrait/small/avatar-s-19.png"
+                                                alt="avatar"><span class="user-name text-bold-700 ml-1">John
+                                                Doe</span></span></a>
+                                    <div class="dropdown-divider"></div><a class="dropdown-item"
+                                        href="user-profile.html"><i class="ft-user"></i> Edit Profile</a><a
+                                        class="dropdown-item" href="email-application.html"><i class="ft-mail"></i> My
+                                        Inbox</a><a class="dropdown-item" href="project-summary.html"><i
+                                            class="ft-check-square"></i> Task</a><a class="dropdown-item"
+                                        href="chat-application.html"><i class="ft-message-square"></i> Chats</a>
+                                    <div class="dropdown-divider"></div><a class="dropdown-item" href="login.html"><i
+                                            class="ft-power"></i>
+                                        Logout</a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <!-- ////////////////////////////////////////////////////////////////////////////-->
+
+
+    <div class="main-menu  menu-fixed menu-light menu-accordion    menu-shadow " data-scroll-to-active="true"
+        data-img="app-assets/images/backgrounds/02.jpg">
+        <div class="navbar-header">
+            <ul class="nav navbar-nav flex-row">
+                <li class="nav-item mr-auto"><a class="navbar-brand" href="index.html"><img class="brand-logo"
+                            alt="Chameleon admin logo" src="app-assets/images/logo/logo.png" />
+                        <h3 class="brand-text">PRIMA</h3>
+                    </a></li>
+                <li class="nav-item d-md-none"><a class="nav-link close-navbar"><i class="ft-x"></i></a></li>
+            </ul>
+        </div>
+        <div class="main-menu-content">
+            <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
+
+                <li class=" nav-item menu-content "><a href="index.html"><i class="ft-home"></i><span class="menu-title"
+                            data-i18n="">Dashboard</span></a>
+                    <ul class="menu-content">
+                        <li class="active"><a class="menu-item" href="index.html">Company Overview</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class=" nav-item menu-content"><a href="index.html"><i class="ft-activity"></i><span
+                            class="menu-title" data-i18n="">Inspection & Health Monitoring</span></a>
+                    <ul class="menu-content">
+                        <li class="disabled"><a class="menu-item" href="coming-soon.html">Equipment History & Report</a>
+                        </li>
+                        <li class="disabled"><a class="menu-item" href="coming-soon.html">Asset Health Monitoring</a>
+                        </li>
+                        <li class="disabled"><a class="menu-item" href="coming-soon.html">Bad Actor</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class=" nav-item menu-content"><a href="index.html"><i class="ft-airplay"></i><span
+                            class="menu-title" data-i18n="">Strategic Decision</span></a>
+                    <ul class="menu-content">
+                        <li class="">
+                            <a style="padding-left: 39px !important; display:flex; align-items:center; gap:8px;"
+                                href="index.html">
+                                <img src="app-assets/images/logo/sprint.jpg" alt="Sprint Logo"
+                                    style="width:45px; height:auto;">
+                                <span class="menu-title" data-i18n="">Investment Proposal &
+                                    Gatekeeping</span>
+                            </a>
+                            <ul class="menu-content">
+                                <li class=""><a class="menu-item" href="">Investment Proposal</a>
+                                    <ul class="menu-content">
+                                        <li class=""><a class="menu-item" href="User-data-investment.html">Request</a>
+                                        </li>
+                                        <li class=""><a class="menu-item"
+                                                href="User-reviewer-investment.html">Reviewer</a>
+                                        </li>
+                                        <li class=""><a class="menu-item"
+                                                href="User-approval-investment.html">Approval</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class=""><a class="menu-item" href="">Verification Process</a>
+                                    <ul class="menu-content">
+                                        <li class=""><a class="menu-item" href="User-inbox-verification.html">Inbox</a>
+                                        </li>
+                                        <li class=""><a class="menu-item"
+                                                href="User-verif-verification.html">Verification</a>
+                                        </li>
+                                        <li class=""><a class="menu-item"
+                                                href="User-reviewer-verification.html">Reviewer</a>
+                                        </li>
+                                        <li class=""><a class="menu-item"
+                                                href="User-approval-verification.html">Approval</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class=""><a class="menu-item" href="">Gatekeeping Process</a>
+                                    <ul class="menu-content">
+                                        <li class=""><a class="menu-item" href="User-inbox-gatekeeping.html">Inbox</a>
+                                        </li>
+                                        <li class=""><a class="menu-item"
+                                                href="User-evaluation-gatekeeping.html">Evaluation</a>
+                                        </li>
+                                        <li class=""><a class="menu-item"
+                                                href="User-reviewer-gatekeeping.html">Reviewer</a>
+                                        </li>
+                                        <li class=""><a class="menu-item"
+                                                href="User-approval-gatekeeping.html">Approval</a>
+                                        </li>
+
+                                    </ul>
+                                </li>
+                                <li class=""><a class="menu-item" href="User-finalisasi-investment.html">Finalisasi</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class=""><a class="menu-item" href="User-data-investment.html">Quality Control (QC)</a>
+                            <ul class="menu-content">
+                                <li class=""><a class="menu-item" href="User-qc-permintaan.html">Request</a>
+                                </li>
+                                <li class=""><a class="menu-item" href="User-qc-fpj.html">FPJ</a>
+                                </li>
+                                <li class=""><a class="menu-item" href="User-qc-reviewer.html">Reviewer</a>
+                                </li>
+                                <li class=""><a class="menu-item" href="User-qc-approval.html">Approval</a>
+                                </li>
+                            </ul>
+                        </li>
+
+
+                    </ul>
+                </li>
+
+                <li class=" nav-item menu-content"><a href="index.html"><i class="ft-shield"></i><span
+                            class="menu-title" data-i18n="">Equipment Integrity</span></a>
+                    <ul class="menu-content">
+                        <li class="disabled"><a class="menu-item" href="coming-soon.html">Equipment Compliance</a>
+                        </li>
+                        <li class="disabled"><a class="menu-item" href="coming-soon.html">Remaining Life Management</a>
+                        </li>
+                        <li class="disabled"><a class="menu-item" href="coming-soon.html">Risk Based Inspection</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class=" nav-item menu-content"><a href="index.html"><i class="ft-sliders"></i><span
+                            class="menu-title" data-i18n="">Service Desk</span></a>
+                    <ul class="menu-content">
+                        <li class="disabled"><a class="menu-item" href="coming-soon.html">Failure Investigation</a>
+                        </li>
+                        <li class="disabled"><a class="menu-item" href="coming-soon.html">Non Destructive
+                                Examination</a>
+                        </li>
+                        <li class="disabled"><a class="menu-item" href="coming-soon.html">Quality Control Incoming
+                                Material</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class=" nav-item menu-content"><a href="index.html"><i class="ft-file-text"></i><span
+                            class="menu-title" data-i18n="">Document Repository</span></a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+    <div class="app-content content">
+        <div class="content-wrapper">
+            <div class="content-wrapper-before" style="background-color: #F8F3E9 !important; height: 80px;"></div>
+            <div class="content-header row">
+                <div class="content-header-left col-md-4 col-12 mb-2 breadcrumb-fix">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+                        <li class="breadcrumb-item active">Company Overview</li>
+                    </ol>
+                </div>
+
+            </div>
+            <div class="content-body" style="margin-top: -10px;"><!-- Revenue, Hit Rate & Deals -->
+
+                <!--/ Revenue, Hit Rate & Deals -->
+                <!-- Emails Products & Avg Deals -->
+                <div class="row">
+
+
+                    <div class="col-12 col-lg-12">
+                        <div class="card">
+                            <div class="col-xl-12 col-lg-12 mt-2">
+
+                                <div class="tab-wrapper">
+                                    <!-- Tombol Panah Kiri -->
+                                    <button class="scroll-arrow scroll-left" onclick="scrollTabs(-100)">
+                                        <i data-feather="chevron-left"></i>
+                                    </button>
+
+                                    <!-- Container Scroll Horizontal -->
+                                    <div id="tab-scroll-container" class="tab-scroll">
+                                        <ul class="nav nav-tabs">
+                                            <li class="nav-item">
+                                                <a class="nav-link colornonaktif" id="tab-investment" href="index.html"
+                                                    style="border: none; padding: 8px 15px; font-weight: 500;">
+                                                    Investment Proposal & Gatekeeping
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link colornonaktif active" id="tab-investment"
+                                                    href="index_qc.html"
+                                                    style="border: none; padding: 8px 15px; font-weight: 500;">
+                                                    Quality Control (QC)
+                                                </a>
+                                            </li>
+
+                                            <li class="nav-item">
+                                                <a class="nav-link colornonaktif disabled" id="tab-gatekeeping"
+                                                    data-toggle="tab" href="#gatekeeping" style="border: none; padding: 8px 15px; font-weight: 500; 
+     pointer-events: none; opacity: 0.6; cursor: not-allowed;">
+                                                    Coming Soon
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- Tombol Panah Kanan -->
+                                    <button class="scroll-arrow scroll-right" onclick="scrollTabs(100)">
+                                        <i data-feather="chevron-right"></i>
+                                    </button>
+                                </div>
+
+                            </div>
+
+                            <div class="card-header mr-2 ml-2">
+
+                                <section id="minimal-statistics">
+                                    <div class="row align-items-center mt-3 mb-1">
+                                        <div class="col-md-8 col-12 text-center text-md-left">
+                                            <h4 class="text-uppercase black mb-2">Quality Control (QC) - Company
+                                                Overview
+                                            </h4>
+
+                                            <!-- Date Range Picker -->
+                                            <div class="d-flex align-items-center">
+                                                <span class="mr-2 font-weight-bold"
+                                                    style="color: #2c3e50; font-size: 14px;">📅 Filter
+                                                    Date:</span>
+                                                <input type="text" id="daterange"
+                                                    class="form-control form-control-sm date-filter-input"
+                                                    placeholder="Select date range" />
+                                            </div>
+                                        </div>
+
+
+                                        <!-- Tambahkan script Flatpickr -->
+                                        <link rel="stylesheet"
+                                            href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+                                        <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+                                        <div class="col-md-4 col-12 text-center text-md-right mt-2 mt-md-0">
+                                            <button type="button"
+                                                class="btn btn-grey-blue btn-min-width mr-1 mb-1 mt-3">+ Request
+                                                QC</button>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xl-3 col-lg-6 col-md-12">
+                                            <div class="card"
+                                                style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important; border-radius: 12px !important;">
+                                                <div class="card-content">
+                                                    <div class="card-body">
+                                                        <div class="media d-flex">
+                                                            <div class="align-self-top">
+                                                                <i
+                                                                    class="icon-rocket icon-opacity info font-large-4"></i>
+                                                            </div>
+                                                            <div class="media-body text-right align-self-bottom mt-3">
+                                                                <span
+                                                                    class="d-block mb-1 black font-medium-1">Total</span>
+                                                                <h1 class="info mb-0">127</h1>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-3 col-lg-6 col-md-12">
+                                            <div class="card"
+                                                style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important; border-radius: 12px !important;">
+                                                <div class="card-content">
+                                                    <div class="card-body">
+                                                        <div class="media d-flex">
+                                                            <div class="align-self-top">
+                                                                <i
+                                                                    class="icon-check icon-opacity success font-large-4"></i>
+                                                            </div>
+                                                            <div class="media-body text-right align-self-bottom mt-3">
+                                                                <span
+                                                                    class="d-block mb-1 black font-medium-1">Approved</span>
+                                                                <h1 class="success mb-0">
+                                                                    86 <span
+                                                                        style="font-size: 0.6em; color: gray;">(67,72%)</span>
+                                                                </h1>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-3 col-lg-6 col-md-12">
+                                            <div class="card"
+                                                style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important; border-radius: 12px !important;">
+                                                <div class="card-content">
+                                                    <div class="card-body">
+                                                        <div class="media d-flex">
+                                                            <div class="align-self-top">
+                                                                <i
+                                                                    class="icon-list icon-opacity warning font-large-4"></i>
+                                                            </div>
+                                                            <div class="media-body text-right align-self-bottom mt-3">
+                                                                <span class="d-block mb-1 black font-medium-1">Approved
+                                                                    Reject</span>
+                                                                <h1 class="warning mb-0">29 <span
+                                                                        style="font-size: 0.6em; color: gray;">(22,83%)</span>
+                                                                </h1>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-3 col-lg-6 col-md-12">
+                                            <div class="card"
+                                                style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important; border-radius: 12px !important;">
+                                                <div class="card-content">
+                                                    <div class="card-body">
+                                                        <div class="media d-flex">
+                                                            <div class="align-self-top">
+                                                                <i
+                                                                    class="icon-shield icon-opacity danger font-large-4"></i>
+                                                            </div>
+                                                            <div class="media-body text-right align-self-bottom mt-3">
+                                                                <span
+                                                                    class="d-block mb-1 black font-medium-1">Rejected</span>
+                                                                <h1 class="danger mb-0">12 <span
+                                                                        style="font-size: 0.6em; color: gray;">(9.45%)</span>
+                                                                </h1>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row match-height">
+                                        <!-- <div class="col-md-8 col-12 pt-0 text-center text-md-left">
+                                            <h4 class="text-uppercase black mb-0"></h4>
+                                        </div> -->
+
+                                        <!-- WRAPPER UNTUK SCROLL HORIZONTAL DI HP -->
+                                        <div style="width: 100%; overflow-x: auto;">
+                                            <div style="min-width: 600px;"> <!-- atur min-width sesuai kebutuhan -->
+                                                <canvas style="max-height: 450px; width: 100%;"
+                                                    id="qcBarChart"></canvas>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+
+
+                                    <!-- <div class="row match-height">
+                                        <div class="col-md-8 col-12 pt-5 text-center text-md-left">
+                                            <h4 class="text-uppercase black mb-0">BAR CHART - TOP 10 Risk & Cost</h4>
+                                        </div>
+
+
+                                        <div class="col-xl-6 col-lg-6 col-md-12">
+                                            <div class="card card-transparent">
+                                                <div
+                                                    class="card-header bg-transparent pl-0 d-flex justify-content-between align-items-center">
+                                                    <h5 class="card-title text-bold-700">Top 10 Risk</h5>
+                                                    <button class="btn btn-sm btn-grey-blue" data-toggle="modal"
+                                                        data-target="#riskModal">
+                                                        <i class="icon-layers"></i> View data
+                                                    </button>
+                                                </div>
+                                                <div class="card-content">
+                                                    <div id="riskLegend"
+                                                        style="margin-top:10px; font-size:14px; display:flex; justify-content:center; gap:20px;">
+                                                    </div>
+                                                    <canvas id="riskChart" class="height-450"></canvas>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-xl-6 col-lg-6 col-md-12">
+                                            <div class="card card-transparent">
+                                                <div
+                                                    class="card-header bg-transparent pl-0 d-flex justify-content-between align-items-center">
+                                                    <h5 class="card-title text-bold-700">Top 10 Cost</h5>
+                                                    <button class="btn btn-sm btn-grey-blue" data-toggle="modal"
+                                                        data-target="#biayaModal">
+                                                        <i class="icon-layers"></i> View data
+                                                    </button>
+                                                </div>
+                                                <div class="card-content">
+                                                    <div id="biayaLegend"
+                                                        style="margin-top:10px; font-size:14px; display:flex; justify-content:center; gap:20px;">
+                                                    </div>
+                                                    <canvas id="biayaChart" class="height-450"></canvas>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> -->
+
+
+
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6 col-md-6">
+                        <h5 class="card-title text-bold-700 my-2">QC Record</h5>
+                        <div class="card">
+                            <div class="card-content mt-2 mb-2">
+                                <div id="recent-projects" class="media-list position-relative">
+                                    <div class="table-responsive scroll-limited"
+                                        style="max-height: 400px; overflow-y: auto;">
+                                        <table class="table table-padded table-xl mb-0 zero-configuration"
+                                            id="recent-project-table">
+                                            <thead
+                                                style="position: sticky; top: 0; background: #fff; z-index: 10; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                                                <tr>
+                                                    <th class="border-top-0">No</th>
+                                                    <th class="border-top-0">Purchased-Order Number</th>
+                                                    <th class="border-top-0">SLA</th>
+                                                    <th class="border-top-0">Status</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><a style="color: black;" href="#">1</a></td>
+                                                    <td>
+                                                        <p>487248274</p>
+                                                    </td>
+                                                    <td>
+                                                        <p>4 Hari</p>
+                                                    </td>
+                                                    <td>
+                                                        <p class="text-info font-medium-1 mb-0 warning">Waiting for
+                                                            Inspection</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a style="color: black;" href="#">2</a></td>
+                                                    <td>
+                                                        <p>582914732</p>
+                                                    </td>
+                                                    <td>
+                                                        <p>7 Hari</p>
+                                                    </td>
+                                                    <td>
+                                                        <p class="text-success font-medium-1 mb-0">Completed</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a style="color: black;" href="#">3</a></td>
+                                                    <td>
+                                                        <p>695217843</p>
+                                                    </td>
+                                                    <td>
+                                                        <p>3 Hari</p>
+                                                    </td>
+                                                    <td>
+                                                        <p class="text-warning font-medium-1 mb-0">In Progress</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a style="color: black;" href="#">4</a></td>
+                                                    <td>
+                                                        <p>743912678</p>
+                                                    </td>
+                                                    <td>
+                                                        <p>5 Hari</p>
+                                                    </td>
+                                                    <td>
+                                                        <p class="text-danger font-medium-1 mb-0">Rejected</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a style="color: black;" href="#">5</a></td>
+                                                    <td>
+                                                        <p>812395476</p>
+                                                    </td>
+                                                    <td>
+                                                        <p>2 Hari</p>
+                                                    </td>
+                                                    <td>
+                                                        <p class="text-info font-medium-1 mb-0 warning">Waiting for
+                                                            Inspection</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a style="color: black;" href="#">6</a></td>
+                                                    <td>
+                                                        <p>935126847</p>
+                                                    </td>
+                                                    <td>
+                                                        <p>6 Hari</p>
+                                                    </td>
+                                                    <td>
+                                                        <p class="text-success font-medium-1 mb-0">Completed</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a style="color: black;" href="#">7</a></td>
+                                                    <td>
+                                                        <p>178945263</p>
+                                                    </td>
+                                                    <td>
+                                                        <p>4 Hari</p>
+                                                    </td>
+                                                    <td>
+                                                        <p class="text-warning font-medium-1 mb-0">In Progress</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a style="color: black;" href="#">8</a></td>
+                                                    <td>
+                                                        <p>264879135</p>
+                                                    </td>
+                                                    <td>
+                                                        <p>8 Hari</p>
+                                                    </td>
+                                                    <td>
+                                                        <p class="text-danger font-medium-1 mb-0">Rejected</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a style="color: black;" href="#">9</a></td>
+                                                    <td>
+                                                        <p>312497856</p>
+                                                    </td>
+                                                    <td>
+                                                        <p>3 Hari</p>
+                                                    </td>
+                                                    <td>
+                                                        <p class="text-info font-medium-1 mb-0 warning">Waiting for
+                                                            Inspection</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a style="color: black;" href="#">10</a></td>
+                                                    <td>
+                                                        <p>476213589</p>
+                                                    </td>
+                                                    <td>
+                                                        <p>10 Hari</p>
+                                                    </td>
+                                                    <td>
+                                                        <p class="text-success font-medium-1 mb-0">Completed</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a style="color: black;" href="#">11</a></td>
+                                                    <td>
+                                                        <p>519384726</p>
+                                                    </td>
+                                                    <td>
+                                                        <p>9 Hari</p>
+                                                    </td>
+                                                    <td>
+                                                        <p class="text-warning font-medium-1 mb-0">In Progress</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a style="color: black;" href="#">12</a></td>
+                                                    <td>
+                                                        <p>628473915</p>
+                                                    </td>
+                                                    <td>
+                                                        <p>5 Hari</p>
+                                                    </td>
+                                                    <td>
+                                                        <p class="text-danger font-medium-1 mb-0">Rejected</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a style="color: black;" href="#">13</a></td>
+                                                    <td>
+                                                        <p>734829561</p>
+                                                    </td>
+                                                    <td>
+                                                        <p>6 Hari</p>
+                                                    </td>
+                                                    <td>
+                                                        <p class="text-info font-medium-1 mb-0 warning">Waiting for
+                                                            Inspection</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a style="color: black;" href="#">14</a></td>
+                                                    <td>
+                                                        <p>849213657</p>
+                                                    </td>
+                                                    <td>
+                                                        <p>7 Hari</p>
+                                                    </td>
+                                                    <td>
+                                                        <p class="text-success font-medium-1 mb-0">Completed</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a style="color: black;" href="#">15</a></td>
+                                                    <td>
+                                                        <p>958472316</p>
+                                                    </td>
+                                                    <td>
+                                                        <p>2 Hari</p>
+                                                    </td>
+                                                    <td>
+                                                        <p class="text-warning font-medium-1 mb-0">In Progress</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a style="color: black;" href="#">16</a></td>
+                                                    <td>
+                                                        <p>163845972</p>
+                                                    </td>
+                                                    <td>
+                                                        <p>9 Hari</p>
+                                                    </td>
+                                                    <td>
+                                                        <p class="text-danger font-medium-1 mb-0">Rejected</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a style="color: black;" href="#">17</a></td>
+                                                    <td>
+                                                        <p>279316584</p>
+                                                    </td>
+                                                    <td>
+                                                        <p>4 Hari</p>
+                                                    </td>
+                                                    <td>
+                                                        <p class="text-success font-medium-1 mb-0">Completed</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a style="color: black;" href="#">18</a></td>
+                                                    <td>
+                                                        <p>392847615</p>
+                                                    </td>
+                                                    <td>
+                                                        <p>8 Hari</p>
+                                                    </td>
+                                                    <td>
+                                                        <p class="text-info font-medium-1 mb-0 warning">Waiting for
+                                                            Inspection</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a style="color: black;" href="#">19</a></td>
+                                                    <td>
+                                                        <p>481926753</p>
+                                                    </td>
+                                                    <td>
+                                                        <p>3 Hari</p>
+                                                    </td>
+                                                    <td>
+                                                        <p class="text-warning font-medium-1 mb-0">In Progress</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a style="color: black;" href="#">20</a></td>
+                                                    <td>
+                                                        <p>597213846</p>
+                                                    </td>
+                                                    <td>
+                                                        <p>5 Hari</p>
+                                                    </td>
+                                                    <td>
+                                                        <p class="text-success font-medium-1 mb-0">Completed</p>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-xl-6 col-lg-6 col-md-6">
+                        <h5 class="card-title text-bold-700 my-2">FPJ Record</h5>
+                        <div class="card">
+                            <div class="card-content mt-2 mb-2">
+                                <div id="recent-projects" class="media-list position-relative">
+                                    <div class="table-responsive scroll-limited"
+                                        style="max-height: 400px; overflow-y: auto;">
+                                        <table class="table table-padded table-xl mb-0 zero-configuration"
+                                            id="recent-project-table">
+                                            <thead
+                                                style="position: sticky; top: 0; background: #fff; z-index: 10; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                                                <tr>
+                                                    <th class="border-top-0">No</th>
+                                                    <th class="border-top-0">Purchased-Order Number</th>
+                                                    <th class="border-top-0">No GR</th>
+                                                    <th class="border-top-0">Department</th>
+                                                    <th class="border-top-0">Durasi FPJ</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><a style="color: black;" href="#">1</a></td>
+                                                    <td>
+                                                        <p>487248274</p>
+                                                    </td>
+                                                    <td>
+                                                        <p>773423232</p>
+                                                    </td>
+                                                    <td>
+                                                        <p class="text-info font-medium-1 mb-0">Keandalan</p>
+                                                    </td>
+                                                    <td>
+                                                        <p>4 Hari</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a style="color: black;" href="#">2</a></td>
+                                                    <td>
+                                                        <p>583917462</p>
+                                                    </td>
+                                                    <td>
+                                                        <p>884239100</p>
+                                                    </td>
+                                                    <td>
+                                                        <p class="text-success font-medium-1 mb-0">Maintenance</p>
+                                                    </td>
+                                                    <td>
+                                                        <p>6 Hari</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a style="color: black;" href="#">3</a></td>
+                                                    <td>
+                                                        <p>692814735</p>
+                                                    </td>
+                                                    <td>
+                                                        <p>905173284</p>
+                                                    </td>
+                                                    <td>
+                                                        <p class="text-warning font-medium-1 mb-0">Procurement</p>
+                                                    </td>
+                                                    <td>
+                                                        <p>3 Hari</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a style="color: black;" href="#">4</a></td>
+                                                    <td>
+                                                        <p>741923658</p>
+                                                    </td>
+                                                    <td>
+                                                        <p>782641039</p>
+                                                    </td>
+                                                    <td>
+                                                        <p class="text-danger font-medium-1 mb-0">Finance</p>
+                                                    </td>
+                                                    <td>
+                                                        <p>4 Hari</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a style="color: black;" href="#">5</a></td>
+                                                    <td>
+                                                        <p>853412790</p>
+                                                    </td>
+                                                    <td>
+                                                        <p>690421853</p>
+                                                    </td>
+                                                    <td>
+                                                        <p class="text-info font-medium-1 mb-0">Keandalan</p>
+                                                    </td>
+                                                    <td>
+                                                        <p>5 Hari</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a style="color: black;" href="#">6</a></td>
+                                                    <td>
+                                                        <p>912378654</p>
+                                                    </td>
+                                                    <td>
+                                                        <p>512093847</p>
+                                                    </td>
+                                                    <td>
+                                                        <p class="text-success font-medium-1 mb-0">Operation</p>
+                                                    </td>
+                                                    <td>
+                                                        <p>8 Hari</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a style="color: black;" href="#">7</a></td>
+                                                    <td>
+                                                        <p>104238975</p>
+                                                    </td>
+                                                    <td>
+                                                        <p>839271640</p>
+                                                    </td>
+                                                    <td>
+                                                        <p class="text-warning font-medium-1 mb-0">Procurement</p>
+                                                    </td>
+                                                    <td>
+                                                        <p>2 Hari</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a style="color: black;" href="#">8</a></td>
+                                                    <td>
+                                                        <p>213489760</p>
+                                                    </td>
+                                                    <td>
+                                                        <p>764819203</p>
+                                                    </td>
+                                                    <td>
+                                                        <p class="text-info font-medium-1 mb-0">Keandalan</p>
+                                                    </td>
+                                                    <td>
+                                                        <p>4 Hari</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a style="color: black;" href="#">9</a></td>
+                                                    <td>
+                                                        <p>315792684</p>
+                                                    </td>
+                                                    <td>
+                                                        <p>958472315</p>
+                                                    </td>
+                                                    <td>
+                                                        <p class="text-success font-medium-1 mb-0">Maintenance</p>
+                                                    </td>
+                                                    <td>
+                                                        <p>7 Hari</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a style="color: black;" href="#">10</a></td>
+                                                    <td>
+                                                        <p>427186593</p>
+                                                    </td>
+                                                    <td>
+                                                        <p>693847210</p>
+                                                    </td>
+                                                    <td>
+                                                        <p class="text-danger font-medium-1 mb-0">Finance</p>
+                                                    </td>
+                                                    <td>
+                                                        <p>2 Hari</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a style="color: black;" href="#">11</a></td>
+                                                    <td>
+                                                        <p>519384726</p>
+                                                    </td>
+                                                    <td>
+                                                        <p>801492637</p>
+                                                    </td>
+                                                    <td>
+                                                        <p class="text-info font-medium-1 mb-0">Keandalan</p>
+                                                    </td>
+                                                    <td>
+                                                        <p>6 Hari</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a style="color: black;" href="#">12</a></td>
+                                                    <td>
+                                                        <p>628473915</p>
+                                                    </td>
+                                                    <td>
+                                                        <p>902384176</p>
+                                                    </td>
+                                                    <td>
+                                                        <p class="text-warning font-medium-1 mb-0">Procurement</p>
+                                                    </td>
+                                                    <td>
+                                                        <p>3 Hari</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a style="color: black;" href="#">13</a></td>
+                                                    <td>
+                                                        <p>734829561</p>
+                                                    </td>
+                                                    <td>
+                                                        <p>718239465</p>
+                                                    </td>
+                                                    <td>
+                                                        <p class="text-success font-medium-1 mb-0">Maintenance</p>
+                                                    </td>
+                                                    <td>
+                                                        <p>8 Hari</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a style="color: black;" href="#">14</a></td>
+                                                    <td>
+                                                        <p>849213657</p>
+                                                    </td>
+                                                    <td>
+                                                        <p>605932187</p>
+                                                    </td>
+                                                    <td>
+                                                        <p class="text-danger font-medium-1 mb-0">Finance</p>
+                                                    </td>
+                                                    <td>
+                                                        <p>5 Hari</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a style="color: black;" href="#">15</a></td>
+                                                    <td>
+                                                        <p>958472316</p>
+                                                    </td>
+                                                    <td>
+                                                        <p>793841265</p>
+                                                    </td>
+                                                    <td>
+                                                        <p class="text-info font-medium-1 mb-0">Keandalan</p>
+                                                    </td>
+                                                    <td>
+                                                        <p>5 Hari</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a style="color: black;" href="#">16</a></td>
+                                                    <td>
+                                                        <p>163845972</p>
+                                                    </td>
+                                                    <td>
+                                                        <p>981726354</p>
+                                                    </td>
+                                                    <td>
+                                                        <p class="text-success font-medium-1 mb-0">Operation</p>
+                                                    </td>
+                                                    <td>
+                                                        <p>7 Hari</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a style="color: black;" href="#">17</a></td>
+                                                    <td>
+                                                        <p>279316584</p>
+                                                    </td>
+                                                    <td>
+                                                        <p>873219465</p>
+                                                    </td>
+                                                    <td>
+                                                        <p class="text-warning font-medium-1 mb-0">Procurement</p>
+                                                    </td>
+                                                    <td>
+                                                        <p>9 Hari</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a style="color: black;" href="#">18</a></td>
+                                                    <td>
+                                                        <p>392847615</p>
+                                                    </td>
+                                                    <td>
+                                                        <p>764219853</p>
+                                                    </td>
+                                                    <td>
+                                                        <p class="text-info font-medium-1 mb-0">Keandalan</p>
+                                                    </td>
+                                                    <td>
+                                                        <p>6 Hari</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a style="color: black;" href="#">19</a></td>
+                                                    <td>
+                                                        <p>481926753</p>
+                                                    </td>
+                                                    <td>
+                                                        <p>657839241</p>
+                                                    </td>
+                                                    <td>
+                                                        <p class="text-success font-medium-1 mb-0">Maintenance</p>
+                                                    </td>
+                                                    <td>
+                                                        <p>8 Hari</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a style="color: black;" href="#">20</a></td>
+                                                    <td>
+                                                        <p>597213846</p>
+                                                    </td>
+                                                    <td>
+                                                        <p>742195836</p>
+                                                    </td>
+                                                    <td>
+                                                        <p class="text-danger font-medium-1 mb-0">Finance</p>
+                                                    </td>
+                                                    <td>
+                                                        <p>4 Hari</p>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+    </div>
+    </div>
+    <!-- ////////////////////////////////////////////////////////////////////////////-->
+
+
+    <footer class="footer footer-static footer-light navbar-border navbar-shadow">
+        <div class="clearfix blue-grey lighten-2 text-sm-center mb-0 px-2"><span
+                class="float-md-left d-block d-md-inline-block">2025 &copy; Pupuk Iskandar Muda <a
+                    class="text-bold-800 grey darken-2" href="#">Developed by Kroco Mumet - ver. 1.0.0</a></span>
+            <ul class="list-inline float-md-right d-block d-md-inline-blockd-none d-lg-block mb-0">
+            </ul>
+        </div>
+    </footer>
+
+    <!-- BEGIN VENDOR JS-->
+    <script src="app-assets/vendors/js/vendors.min.js" type="text/javascript"></script>
+    <!-- BEGIN VENDOR JS-->
+    <!-- BEGIN PAGE VENDOR JS-->
+    <script src="app-assets/vendors/js/charts/chartist.min.js" type="text/javascript"></script>
+    <script src="app-assets/vendors/js/charts/chartist-plugin-tooltip.min.js" type="text/javascript"></script>
+    <script src="app-assets/vendors/js/charts/chart.min.js" type="text/javascript"></script>
+    <script src="app-assets/vendors/js/tables/datatable/datatables.min.js" type="text/javascript"></script>
+    <!-- END PAGE VENDOR JS-->
+    <!-- BEGIN CHAMELEON  JS-->
+    <script src="app-assets/js/core/app-menu.js" type="text/javascript"></script>
+
+    <script src="app-assets/js/core/app-dashboard.js" type="text/javascript"></script>
+    <!-- END CHAMELEON  JS-->
+    <!-- BEGIN PAGE LEVEL JS-->
+    <script src="app-assets/js/scripts/pages/dashboard-analytics.js" type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+    <script src="app-assets/js/scripts/charts/chartjs/pie-doughnut/doughnut-simple.js" type="text/javascript"></script>
+    <script src="app-assets/js/scripts/navs/navs.js" type="text/javascript"></script>
+    <script src="app-assets/js/scripts/tables/datatables/datatable-basic.js" type="text/javascript"></script>
+    <script src="app-assets/js/scripts/cards/card-advanced.js" type="text/javascript"></script>
+    <!-- END PAGE LEVEL JS-->
+</body>
+
+</html>
+
+
+<!-- Tambahkan jQuery dan Select2 JS -->
+<!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $('#project-location').select2({
+            placeholder: "Search Modul",
+            allowClear: true,
+            width: '200px' // kasih fixed width
+        });
+    });
+</script>
+
+
+<script>
+    function scrollTabs(amount) {
+        const container = document.getElementById('tab-scroll-container');
+        container.scrollLeft += amount;
+    }
+</script>
+
+<script>
+    function scrollTabs(amount) {
+        const container = document.getElementById('tab-scroll-container');
+        container.scrollLeft += amount;
+    }
+
+    // Aktifkan feather icon setelah load
+    feather.replace();
+</script>
+
+
+
+
+<!-- JS -->
+<!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script> -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+
+<script>
+    $(function () {
+        var thisYear = moment().year();
+        var start = moment(thisYear + "-01-01", "YYYY-MM-DD");
+        var end = moment();
+
+        $('#daterange').daterangepicker({
+            opens: 'left',
+            startDate: start,
+            endDate: end,
+            locale: {
+                format: 'DD MMM YYYY',
+                separator: ' - '
+            },
+            ranges: {
+                'Today': [moment(), moment()],
+                'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+                'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+                'This Month': [moment().startOf('month'), moment().endOf('month')],
+                'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')],
+                'This Year': [moment().startOf('year'), moment()],
+                'Last Year': [moment().subtract(1, 'year').startOf('year'), moment().subtract(1, 'year').endOf('year')]
+            }
+        }, function (start, end) {
+            console.log("Range dipilih: " + start.format('DD MMM YYYY') + ' - ' + end.format('DD MMM YYYY'));
+        });
+    });
+</script>
+
+
+
+
+<script>
+    const ctx = document.getElementById('qcBarChart').getContext('2d');
+    const labels = ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Agu', 'Sep', 'Okt', 'Nov', 'Des'];
+
+    // Data non-kumulatif realistis
+    const total = [10, 9, 11, 12, 13, 14, 15, 12, 10, 8, 13, 1];
+    const approved = [7, 6, 7, 8, 9, 9, 11, 8, 6, 5, 10, 0];
+    const approvedReject = [2, 2, 2, 2, 3, 3, 3, 3, 3, 2, 4, 0];
+    const rejected = [1, 1, 2, 2, 1, 2, 1, 1, 1, 1, 1, 0];
+    const inProgress = [1, 1, 1, 1, 1, 2, 2, 1, 2, 2, 3, 1];
+
+    new Chart(ctx, {
+        data: {
+            labels,
+            datasets: [
+                { type: 'bar', label: 'Total', data: total, backgroundColor: '#3b82f6', borderRadius: 6 },
+                { type: 'bar', label: 'Approved', data: approved, backgroundColor: '#22c55e', borderRadius: 6 },
+                { type: 'bar', label: 'Approved Reject', data: approvedReject, backgroundColor: '#eab308', borderRadius: 6 },
+                { type: 'bar', label: 'Rejected', data: rejected, backgroundColor: '#ef4444', borderRadius: 6 },
+                { type: 'bar', label: 'In Progress', data: inProgress, backgroundColor: '#9c27e6', borderRadius: 6 },
+                {
+                    type: 'line',
+                    label: 'Total Trend',
+                    data: total,
+                    borderColor: 'rgba(14,165,233,0.8)',
+                    backgroundColor: 'rgba(14,165,233,0.2)',
+                    tension: 0.4,
+                    fill: false,
+                    pointStyle: 'circle',
+                    pointRadius: 5,
+                    pointHoverRadius: 7,
+                    borderWidth: 2,
+                    datalabels: { display: false }
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            layout: { padding: { top: 50, bottom: 20 } },
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        padding: 15,
+                        usePointStyle: true,
+                        filter: (legendItem) => legendItem.text !== 'Total Trend'
+                    }
+                },
+                title: {
+                    display: true,
+                    text: 'Quality Control (Januari – Desember 2025)',
+                    font: { size: 16, weight: 'bold' },
+                    padding: { bottom: 20 }
+                },
+                datalabels: {
+                    color: '#111',
+                    anchor: 'end',
+                    align: 'top',
+                    offset: 8,
+                    font: { weight: 'bold', size: 11 },
+                    formatter: (value) => value > 0 ? value : ''
+                }
+            },
+            scales: {
+                x: {
+                    grid: { display: false },
+                    ticks: { padding: 8 }
+                },
+                y: {
+                    beginAtZero: true,
+                    ticks: { stepSize: 5, padding: 10 }
+                }
+            }
+        },
+        plugins: [
+            {
+                id: 'dynamicPadding',
+                beforeLayout: (chart) => {
+                    const yScale = chart.scales.y;
+                    chart.options.layout.padding.top = yScale.max > 15 ? 60 : 40;
+                }
+            },
+            ChartDataLabels
+        ]
+    });
+</script>
