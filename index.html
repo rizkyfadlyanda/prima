@@ -160,6 +160,87 @@
   }
 </style>
 
+
+<style>
+  .notif-dropdown {
+    width: 360px;
+    padding: 0;
+  }
+
+  .notif-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 15px;
+    border-bottom: 1px solid #eee;
+  }
+
+  .notif-title {
+    font-weight: 600;
+  }
+
+  .notif-badge {
+    background: #eee;
+    border-radius: 12px;
+    padding: 2px 8px;
+    font-size: 12px;
+    margin-left: 5px;
+  }
+
+  .mark-read {
+    font-size: 13px;
+    color: #4a6cf7;
+    text-decoration: none;
+  }
+
+  .notif-tabs {
+    display: flex;
+    border-bottom: 1px solid #eee;
+  }
+
+  .tab-btn {
+    background: none;
+    border: none;
+    padding: 10px 15px;
+    font-size: 13px;
+    color: #888;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .tab-btn.active {
+    color: #4a6cf7;
+    font-weight: 600;
+  }
+
+  .tab-btn.active::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 15px;
+    right: 15px;
+    height: 2px;
+    background: #4a6cf7;
+  }
+
+  .notif-tab-content {
+    display: none;
+  }
+
+  .notif-tab-content.active {
+    display: block;
+  }
+
+  .notif-list {
+    max-height: 280px;
+    overflow-y: auto;
+  }
+
+  .notif-item.unread {
+    background: #f3f7ff;
+  }
+</style>
+
 <body class="vertical-layout vertical-menu 2-columns  menu-expanded fixed-navbar" data-open="click"
   data-menu="vertical-menu" data-color="custom-dark" data-col="2-columns">
 
@@ -197,15 +278,196 @@
             </li>
 
 
-            <li class="dropdown dropdown-notification nav-item"><a class="nav-link nav-link-label" href="#"
-                data-toggle="dropdown"><i class="ficon ft-bell bell-shake" id="notification-navbar-link"></i><span
+
+
+            <li class="dropdown dropdown-notification nav-item">
+              <a class="nav-link nav-link-label" href="#" data-toggle="dropdown">
+                <i class="ficon ft-bell" id="notification-navbar-link"></i>
+                <span class="badge badge-pill badge-sm badge-primary badge-default badge-up badge-glow">5</span>
+              </a>
+
+              <ul class="dropdown-menu dropdown-menu-media dropdown-menu-right notif-dropdown">
+
+                <!-- HEADER -->
+                <div class="notif-header">
+                  <div class="notif-title">
+                    Notifications <span class="notif-badge">5</span>
+                  </div>
+                  <a href="#" class="mark-read">Mark all as read</a>
+                </div>
+
+                <!-- TABS -->
+                <div class="notif-tabs">
+                  <button class="tab-btn active" type="button">All <span>( 5 )</span></button>
+                  <button class="tab-btn" type="button">Unread <span>( 2 )</span></button>
+                </div>
+
+                <!-- TAB CONTENT WRAPPER -->
+                <div class="notif-tab-wrapper">
+
+                  <!-- TAB ALL -->
+                  <div class="notif-tab-content active">
+                    <li class="scrollable-container media-list w-100 notif-list">
+
+                      <a href="#" class="notif-item unread">
+                        <div class="media">
+                          <div class="media-left align-self-center">
+                            <i class="ft-share warning font-medium-4 mt-2"></i>
+                          </div>
+                          <div class="media-body">
+                            <h6 class="media-heading warning">Revise by AVP Umum</h6>
+                            <p class="notification-text font-small-3 text-muted">Pembelian straight tube</p>
+                            <small>
+                              <time class="media-meta text-muted" datetime="2015-06-11T18:29:20+08:00">3:30
+                                PM</time></small>
+                          </div>
+                        </div>
+                      </a>
+
+                      <a href="#" class="notif-item unread">
+                        <div class="media">
+                          <div class="media-left align-self-center">
+                            <i class="ft-save success font-medium-4 mt-2"></i>
+                          </div>
+                          <div class="media-body">
+                            <h6 class="media-heading success">Approved by SVP KP2K</h6>
+                            <p class="notification-text font-small-3 text-muted">Pembelian tube katalis</p> <small>
+                              <time class="media-meta text-muted" datetime="2015-06-11T18:29:20+08:00">10:05
+                                AM</time></small>
+                          </div>
+                        </div>
+                      </a>
+
+                      <a href="#" class="notif-item">
+                        <div class="media">
+                          <div class="media-left align-self-center">
+                            <i class="ft-repeat danger font-medium-4 mt-2"></i>
+                          </div>
+                          <div class="media-body">
+                            <h6 class="media-heading danger">Rejected by AVP KP2K</h6>
+                            <p class="notification-text font-small-3 text-muted">Pengajuan alat tempur</p> <small>
+                              <time class="media-meta text-muted"
+                                datetime="2015-06-11T18:29:20+08:00">Yesterday</time></small>
+                          </div>
+                        </div>
+                      </a>
+
+                      <a href="#" class="notif-item unread">
+                        <div class="media">
+                          <div class="media-left align-self-center">
+                            <i class="ft-share warning font-medium-4 mt-2"></i>
+                          </div>
+                          <div class="media-body">
+                            <h6 class="media-heading warning">Revise by AVP Umum</h6>
+                            <p class="notification-text font-small-3 text-muted">Pembelian straight tube</p>
+                            <small>
+                              <time class="media-meta text-muted" datetime="2015-06-11T18:29:20+08:00">3:30
+                                PM</time></small>
+                          </div>
+                        </div>
+                      </a>
+
+                      <a href="#" class="notif-item unread">
+                        <div class="media">
+                          <div class="media-left align-self-center">
+                            <i class="ft-save success font-medium-4 mt-2"></i>
+                          </div>
+                          <div class="media-body">
+                            <h6 class="media-heading success">Approved by SVP KP2K</h6>
+                            <p class="notification-text font-small-3 text-muted">Pembelian tube katalis</p> <small>
+                              <time class="media-meta text-muted" datetime="2015-06-11T18:29:20+08:00">10:05
+                                AM</time></small>
+                          </div>
+                        </div>
+                      </a>
+
+                      <a href="#" class="notif-item">
+                        <div class="media">
+                          <div class="media-left align-self-center">
+                            <i class="ft-repeat danger font-medium-4 mt-2"></i>
+                          </div>
+                          <div class="media-body">
+                            <h6 class="media-heading danger">Rejected by AVP KP2K</h6>
+                            <p class="notification-text font-small-3 text-muted">Pengajuan alat tempur</p> <small>
+                              <time class="media-meta text-muted"
+                                datetime="2015-06-11T18:29:20+08:00">Yesterday</time></small>
+                          </div>
+                        </div>
+                      </a>
+
+                    </li>
+                  </div>
+
+                  <!-- TAB UNREAD -->
+                  <div class="notif-tab-content">
+                    <li class="scrollable-container media-list w-100 notif-list">
+
+                      <a href="#" class="notif-item unread">
+                        <div class="media">
+                          <div class="media-left align-self-center">
+                            <i class="ft-save success font-medium-4 mt-2"></i>
+                          </div>
+                          <div class="media-body">
+                            <h6 class="media-heading success">Approved by SVP KP2K</h6>
+                            <p class="notification-text font-small-3 text-muted">Pembelian tube katalis</p> <small>
+                              <time class="media-meta text-muted" datetime="2015-06-11T18:29:20+08:00">10:05
+                                AM</time></small>
+                          </div>
+                        </div>
+                      </a>
+
+                      <a href="#" class="notif-item">
+                        <div class="media">
+                          <div class="media-left align-self-center">
+                            <i class="ft-repeat danger font-medium-4 mt-2"></i>
+                          </div>
+                          <div class="media-body">
+                            <h6 class="media-heading danger">Rejected by AVP KP2K</h6>
+                            <p class="notification-text font-small-3 text-muted">Pengajuan alat tempur</p> <small>
+                              <time class="media-meta text-muted"
+                                datetime="2015-06-11T18:29:20+08:00">Yesterday</time></small>
+                          </div>
+                        </div>
+                      </a>
+
+                    </li>
+                  </div>
+
+                </div>
+              </ul>
+            </li>
+
+            <script>
+              document.querySelectorAll('.tab-btn').forEach((btn, index) => {
+                btn.addEventListener('click', () => {
+
+                  // reset tab button
+                  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                  btn.classList.add('active');
+
+                  // reset content
+                  document.querySelectorAll('.notif-tab-content').forEach(c => c.classList.remove('active'));
+                  document.querySelectorAll('.notif-tab-content')[index].classList.add('active');
+
+                });
+              });
+            </script>
+
+
+
+
+
+
+
+            <!-- <li class="dropdown dropdown-notification nav-item"><a class="nav-link nav-link-label" href="#"
+                data-toggle="dropdown"><i class="ficon ft-bell" id="notification-navbar-link"></i><span
                   class="badge badge-pill badge-sm badge-primary badge-default badge-up badge-glow">5</span></a>
               <ul class="dropdown-menu dropdown-menu-media dropdown-menu-right">
                 <div class="arrow_box_right">
                   <li class="dropdown-menu-header">
                     <h6 class="dropdown-header m-0"><span class="grey darken-2">Notifications</span></h6>
                   </li>
-                  <li class="scrollable-container media-list w-100"><a href="javascript:void(0)">
+                  <li class="scrollable-container media-list w-100"><a href="">
                       <div class="media">
                         <div class="media-left align-self-center"><i class="ft-share warning font-medium-4 mt-2"></i>
                         </div>
@@ -217,7 +479,7 @@
                               PM</time></small>
                         </div>
                       </div>
-                    </a><a href="javascript:void(0)">
+                    </a><a href="">
                       <div class="media">
                         <div class="media-left align-self-center"><i class="ft-save font-medium-4 mt-2 success"></i>
                         </div>
@@ -230,7 +492,7 @@
                               AM</time></small>
                         </div>
                       </div>
-                    </a><a href="javascript:void(0)">
+                    </a><a href="">
                       <div class="media">
                         <div class="media-left align-self-center"><i class="ft-repeat font-medium-4 mt-2 danger"></i>
                         </div>
@@ -243,10 +505,9 @@
                         </div>
                       </div>
                   </li>
-
                 </div>
               </ul>
-            </li>
+            </li> -->
 
             <li class="dropdown dropdown-user nav-item"><a class="dropdown-toggle nav-link dropdown-user-link" href="#"
                 data-toggle="dropdown"> <span class="avatar avatar-online"><img
@@ -1633,4 +1894,9 @@
       console.log("Range dipilih: " + start.format('DD MMM YYYY') + ' - ' + end.format('DD MMM YYYY'));
     });
   });
+
+  $('.dropdown-notification .dropdown-menu').on('click', function (e) {
+    e.stopPropagation();
+  });
+
 </script>
