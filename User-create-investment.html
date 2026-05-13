@@ -44,21 +44,16 @@
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 
-
     <!-- Feather Icons CDN -->
     <script src="https://unpkg.com/feather-icons"></script>
-
-
 
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 
     <style>
         .select2-container {
             width: 100% !important;
-            /* biar ngikutin parent */
         }
 
-        /* Input select tetap round */
         .select2-container .select2-selection--single {
             border-radius: 2rem !important;
             height: 38px !important;
@@ -68,22 +63,580 @@
             padding-left: 12px;
         }
 
-        /* Dropdown list hasil search kotak (biar petak) */
         .select2-dropdown {
             border-radius: 0 !important;
         }
 
-        /* Highlight item saat hover/terpilih */
         .select2-results__option--highlighted {
             background-color: #6366f1 !important;
-            /* ungu modern */
             color: white !important;
         }
     </style>
 
+    <!-- Modern Form CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Hide old Chameleon header */
+        .content-header {
+            display: none !important;
+        }
+
+        /* ── BREADCRUMB BANNER ── */
+        .content-wrapper-before {
+            display: block !important;
+            background-color: #F5F0E8 !important;
+            height: auto !important;
+            padding: 14px 28px 50px !important;
+            margin-bottom: -44px !important;
+        }
+
+        .prima-breadcrumb-inline {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            /* ← tambah ini */
+            row-gap: 4px;
+            /* ← jarak antar baris */
+            gap: 6px;
+            font-size: 13px;
+            color: #9CA3AF;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .prima-breadcrumb-inline a {
+            color: #9CA3AF;
+            text-decoration: none;
+            transition: color 0.15s;
+        }
+
+        .prima-breadcrumb-inline a:hover {
+            color: #374151;
+        }
+
+        .prima-breadcrumb-inline .sep {
+            color: #C9C3BB;
+            font-weight: 300;
+            font-size: 14px;
+        }
+
+        .prima-breadcrumb-inline .active-bc {
+            color: #1F2937;
+            font-weight: 700;
+        }
+
+        /* ── PRIMA FORM AREA ── */
+        .prima-form-area {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            padding: 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .prima-form-inner .section-card:first-child {
+            position: relative;
+            z-index: 2;
+        }
+
+        .prima-title-bar {
+            padding: 14px 20px 10px;
+        }
+
+        .prima-page-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #111827;
+            margin: 0;
+            letter-spacing: -0.4px;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .prima-form-area .section-card {
+            background: #FFFFFF;
+            border: 1px solid #E5E7EB;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(37, 99, 235, 0.04), 0 8px 32px rgba(0, 0, 0, 0.06);
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+
+        .prima-form-area .section-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 20px 24px 18px;
+            border-bottom: 1px solid #E5E7EB;
+        }
+
+        .prima-form-area .section-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .prima-form-area .section-icon.blue {
+            background: #EFF6FF;
+            color: #2563EB;
+        }
+
+        .prima-form-area .section-icon.purple {
+            background: #F5F3FF;
+            color: #7C3AED;
+        }
+
+        .prima-form-area .section-icon.green {
+            background: #F0FDF4;
+            color: #16A34A;
+        }
+
+        .prima-form-area .section-icon.orange {
+            background: #FFF7ED;
+            color: #EA580C;
+        }
+
+        .prima-form-area .section-icon.red {
+            background: #FEF2F2;
+            color: #DC2626;
+        }
+
+        .prima-form-area .section-icon.teal {
+            background: #F0FDFA;
+            color: #0D9488;
+        }
+
+        .prima-form-area .section-icon.pink {
+            background: #FDF2F8;
+            color: #DB2777;
+        }
+
+        .prima-form-area .section-icon.indigo {
+            background: #EEF2FF;
+            color: #4338CA;
+        }
+
+        .prima-form-area .section-icon.amber {
+            background: #FFFBEB;
+            color: #B45309;
+        }
+
+        .prima-form-area .section-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: #111827;
+            margin: 0;
+            line-height: 1.3;
+        }
+
+        .prima-form-area .section-subtitle {
+            font-size: 12px;
+            color: #6B7280;
+            margin: 2px 0 0;
+        }
+
+        .prima-form-area .badge-required {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            background: #FEF2F2;
+            color: #DC2626;
+            border: 1px solid #FECACA;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+            padding: 2px 9px;
+            margin-left: 8px;
+        }
+
+        .prima-form-area .badge-optional {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            background: #FFFBEB;
+            color: #D97706;
+            border: 1px solid #FDE68A;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+            padding: 2px 9px;
+            margin-left: 8px;
+        }
+
+        .prima-form-area .section-body {
+            padding: 22px 24px;
+        }
+
+        .prima-form-area .form-label {
+            font-size: 13px;
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 6px;
+            display: block;
+        }
+
+        .prima-form-area .form-control,
+        .prima-form-area .form-select {
+            border: 1.5px solid #E5E7EB !important;
+            border-radius: 10px !important;
+            font-family: 'Plus Jakarta Sans', sans-serif !important;
+            font-size: 13.5px !important;
+            color: #111827 !important;
+            padding: 9px 14px !important;
+            background: #FAFBFC !important;
+            transition: all 0.2s;
+            height: auto !important;
+            box-shadow: none !important;
+        }
+
+        .prima-form-area .form-control:focus {
+            border-color: #2563EB !important;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1) !important;
+            background: #fff !important;
+            outline: none !important;
+        }
+
+        .prima-form-area .form-control::placeholder {
+            color: #9CA3AF;
+            font-size: 13px;
+        }
+
+        .prima-form-area textarea.form-control {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .prima-form-area .select2-container {
+            width: 100% !important;
+        }
+
+        .prima-form-area .select2-container .select2-selection--single {
+            border: 1.5px solid #E5E7EB !important;
+            border-radius: 10px !important;
+            height: 42px !important;
+            display: flex !important;
+            align-items: center !important;
+            background: #FAFBFC !important;
+            padding: 0 14px !important;
+        }
+
+        .prima-form-area .select2-container--default.select2-container--focus .select2-selection--single,
+        .prima-form-area .select2-container--default.select2-container--open .select2-selection--single {
+            border-color: #2563EB !important;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1) !important;
+        }
+
+        .prima-form-area .select2-container--default .select2-selection--single .select2-selection__rendered {
+            color: #111827 !important;
+            padding: 0 !important;
+            font-size: 13.5px !important;
+            line-height: 40px !important;
+            font-family: 'Plus Jakarta Sans', sans-serif !important;
+        }
+
+        .prima-form-area .select2-container--default .select2-selection--single .select2-selection__placeholder {
+            color: #9CA3AF !important;
+        }
+
+        .prima-form-area .select2-container--default .select2-selection--single .select2-selection__arrow {
+            height: 40px !important;
+            right: 10px !important;
+        }
+
+        .prima-form-area .input-icon-wrap {
+            position: relative;
+        }
+
+        .prima-form-area .input-icon-wrap .form-control {
+            padding-left: 38px !important;
+        }
+
+        .prima-form-area .input-icon-wrap .input-icon {
+            position: absolute;
+            left: 13px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #9CA3AF;
+            font-size: 13px;
+            pointer-events: none;
+        }
+
+        .prima-form-area .checkbox-pill-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 4px;
+        }
+
+        .prima-form-area .checkbox-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            cursor: pointer;
+            padding: 7px 14px;
+            border: 1.5px solid #E5E7EB;
+            border-radius: 20px;
+            background: #FAFBFC;
+            font-size: 13px;
+            font-weight: 500;
+            color: #6B7280;
+            transition: all 0.2s;
+            user-select: none;
+        }
+
+        .prima-form-area .checkbox-pill input {
+            display: none;
+        }
+
+        .prima-form-area .checkbox-pill .pill-check {
+            width: 15px;
+            height: 15px;
+            border-radius: 4px;
+            border: 1.5px solid #D1D5DB;
+            background: #fff;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 9px;
+            color: transparent;
+            transition: all 0.2s;
+        }
+
+        .prima-form-area .checkbox-pill input:checked~.pill-check {
+            background: #2563EB;
+            border-color: #2563EB;
+            color: #fff;
+        }
+
+        .prima-form-area .checkbox-pill:has(input:checked) {
+            background: #EFF6FF;
+            border-color: #DBEAFE;
+            color: #2563EB;
+            font-weight: 600;
+        }
+
+        .prima-form-area .checkbox-pill:hover {
+            border-color: #DBEAFE;
+            background: #EFF6FF;
+            color: #2563EB;
+        }
+
+        .prima-form-area .repeater-row {
+            background: #F9FAFB;
+            border: 1.5px solid #E5E7EB;
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 12px;
+        }
+
+        .prima-form-area .repeater-row:hover {
+            border-color: #93C5FD;
+        }
+
+        .prima-form-area .btn-add-row {
+            background: #2563EB;
+            color: #fff;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 9px;
+            font-size: 13px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            transition: all 0.2s;
+            text-decoration: none;
+        }
+
+        .prima-form-area .btn-add-row:hover {
+            background: #1D4ED8;
+            transform: translateY(-1px);
+        }
+
+        .prima-form-area .btn-del-row {
+            background: #FEF2F2;
+            color: #DC2626;
+            border: 1.5px solid #FECACA;
+            padding: 7px 14px;
+            border-radius: 9px;
+            font-size: 13px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            transition: all 0.2s;
+        }
+
+        .prima-form-area .btn-del-row:hover {
+            background: #FEE2E2;
+        }
+
+        .prima-form-area .action-bar {
+            background: #fff;
+            border: 1px solid #E5E7EB;
+            border-radius: 12px;
+            padding: 18px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 12px;
+            box-shadow: 0 2px 8px rgba(37, 99, 235, 0.04), 0 8px 32px rgba(0, 0, 0, 0.06);
+            margin-top: 8px;
+            margin-bottom: 32px;
+        }
+
+        .prima-form-area .btn-draft {
+            background: #F9FAFB;
+            color: #374151;
+            border: 1.5px solid #E5E7EB;
+            padding: 9px 20px;
+            border-radius: 9px;
+            font-size: 13.5px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            cursor: pointer;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            transition: all 0.2s;
+        }
+
+        .prima-form-area .btn-draft:hover {
+            background: #E5E7EB;
+        }
+
+        .prima-form-area .btn-release {
+            background: #16A34A;
+            color: #fff;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 9px;
+            font-size: 14px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            transition: all 0.2s;
+        }
+
+        .prima-form-area .btn-release:hover {
+            background: #15803D;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 14px rgba(22, 163, 74, 0.3);
+        }
+
+        .prima-form-area .mb-field {
+            margin-bottom: 16px;
+        }
+
+        .prima-form-area .info-tip {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #DBEAFE;
+            color: #2563EB;
+            font-size: 10px;
+            cursor: help;
+            margin-left: 5px;
+            vertical-align: middle;
+        }
+
+        /* ============================================================
+           ── SIDEBAR COLLAPSED ICON CENTER FIX ──
+           Ketika menu-collapsed, icon navigasi harus berada di tengah
+           ============================================================ */
+
+        /* Nav item link: flex + center saat collapsed */
+        .menu-collapsed .main-menu .navigation>li>a,
+        .menu-collapsed .main-menu .navigation-main>li>a {
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+            display: flex !important;
+            justify-content: center !important;
+            align-items: center !important;
+            width: 100% !important;
+        }
+
+        /* Icon itu sendiri: paksa ke tengah, hapus float/margin kiri */
+        .menu-collapsed .main-menu .navigation>li>a>i,
+        .menu-collapsed .main-menu .navigation-main>li>a>i,
+        .menu-collapsed .main-menu .navigation>li>a>[class*="ft-"],
+        .menu-collapsed .main-menu .navigation-main>li>a>[class*="ft-"] {
+            float: none !important;
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+            position: static !important;
+            display: block !important;
+            text-align: center !important;
+            width: auto !important;
+            line-height: 1 !important;
+        }
+
+        /* Sembunyikan teks menu saat collapsed */
+        .menu-collapsed .main-menu .navigation>li>a .menu-title,
+        .menu-collapsed .main-menu .navigation-main>li>a .menu-title,
+        .menu-collapsed .main-menu .navigation>li>a span:not([class*="badge"]),
+        .menu-collapsed .main-menu .navigation-main>li>a span:not([class*="badge"]) {
+            display: none !important;
+        }
+
+        /* Sub-menu hover panel: pastikan icon di dalam juga center */
+        .menu-collapsed .main-menu .navigation>li:hover>a,
+        .menu-collapsed .main-menu .navigation-main>li:hover>a {
+            justify-content: center !important;
+        }
+
+        /* Navbar brand saat collapsed: center logo */
+        .menu-collapsed .main-menu .navbar-header .navbar-brand {
+            justify-content: center !important;
+            padding: 0 !important;
+        }
+
+        .menu-collapsed .main-menu .navbar-header .navbar-brand .brand-text {
+            display: none !important;
+        }
+
+        /* Pastikan li sendiri tidak ada text-align yang mengganggu */
+        .menu-collapsed .main-menu .navigation>li,
+        .menu-collapsed .main-menu .navigation-main>li {
+            text-align: center !important;
+        }
+
+        /* Fix khusus untuk active state supaya tidak bergeser */
+        .menu-collapsed .main-menu .navigation>li.active>a,
+        .menu-collapsed .main-menu .navigation-main>li.active>a {
+            padding-left: 0 !important;
+            justify-content: center !important;
+        }
+    </style>
+
+    <style>
+        @media (max-width: 767.98px) {
+            html body .content .content-wrapper {
+                padding-top: 73px;
+                /* fallback awal */
+            }
+        }
+    </style>
 
 
-    <!-- END Custom CSS-->
 </head>
 
 
@@ -103,7 +656,7 @@
                                 href="#"><i class="ft-menu"></i></a></li>
 
                         <li class="dropdown nav-item mega-dropdown d-none d-md-block"><a
-                                class="dropdown-toggle nav-link" href="#">Create Investment</a>
+                                class="dropdown-toggle nav-link" href="#">Investment Proposal</a>
                         </li>
 
                     </ul>
@@ -250,8 +803,14 @@
                 <li class=" nav-item menu-content"><a href="index.html"><i class="ft-airplay"></i><span
                             class="menu-title" data-i18n="">Strategic Decision</span></a>
                     <ul class="menu-content">
-                        <li class=""><a class="menu-item" href="User-data-investment.html">Investment Proposal &
-                                Gatekeeping</a>
+                        <li class="">
+                            <a style="padding-left: 39px !important; display:flex; align-items:center; gap:8px;"
+                                href="index.html">
+                                <img src="app-assets/images/logo/sprint.jpg" alt="Sprint Logo"
+                                    style="width:45px; height:auto;">
+                                <span class="menu-title" data-i18n="">Investment Proposal &
+                                    Gatekeeping</span>
+                            </a>
                             <ul class="menu-content">
                                 <li class=""><a class="menu-item" href="">Investment Proposal</a>
                                     <ul class="menu-content">
@@ -339,991 +898,552 @@
 
     <div class="app-content content">
         <div class="content-wrapper ">
-            <div class="content-wrapper-before" style="background-color: #F8F3E9 !important; height: 80px;"></div>
-            <div class="content-header row ">
-                <div class="content-header-left col-md-12 col-12 mb-2 breadcrumb-fix">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.html">Strategic Decision</a></li>
-                        <li class="breadcrumb-item">Investment Proposal & Gatekeeping</li>
-                        <li class="breadcrumb-item">Investment Proposal</li>
-                        <li class="breadcrumb-item">Request</li>
-                        <li class="breadcrumb-item active">Create</li>
-                    </ol>
-                </div>
 
+            <!-- ── BREADCRUMB BANNER (overlap ke bawah via CSS) ── -->
+            <div class="content-wrapper-before">
+                <ol class="prima-breadcrumb-inline">
+                    <li><a href="index.html">Strategic Decision</a></li>
+                    <li class="sep">-</li>
+                    <li><a href="#">Investment Proposal &amp; Gatekeeping</a></li>
+                    <li class="sep">-</li>
+                    <li><a href="#">Investment Proposal</a></li>
+                    <li class="sep">-</li>
+                    <li class="active-bc">Request</li>
+                </ol>
             </div>
-            <div class="content-body" style="margin-top: -10px;"><!-- Revenue, Hit Rate & Deals -->
 
 
-                <section class="maxlength" id="maxlength">
+            <div class="prima-form-area pt-1">
 
-                    <div class="row">
-                        <div class="col-12">
+                <div class="prima-form-inner">
+                    <form>
 
-
-                            <div class="card">
-
-                                <div class="card-header">
-                                    <div class="header-flex">
-                                        <div class="title-wrap">
-                                            <h4 class="card-title">Request - Create Investment</h4>
-
-                                        </div>
+                        <!-- SECTION 1 -->
+                        <div class="section-card">
+                            <div class="section-header">
+                                <div class="section-icon blue"><i class="fa-solid fa-user"></i></div>
+                                <div>
+                                    <div class="section-title">1. Identitas Pengusul <span class="badge-required"><i
+                                                class="fa-solid fa-asterisk" style="font-size:8px;"></i> Wajib</span>
                                     </div>
-                                    <hr style="margin-top:10px; margin-bottom:0; border: 1px solid #eee;">
+                                    <div class="section-subtitle">Isi data identitas pengusul dan tim approval</div>
                                 </div>
-
-                                <div style="margin-top: -30px;" class="card-content collapse show mr-1 ml-1 mt-2">
-                                    <div class="card-body card-dashboard">
-
-
-
-                                        <form class="form">
-                                            <div class="form-body">
-                                                <h4 style="color: #00008b;" class="card-title mb-3">
-                                                    1. Identitas Pengusul <span class="text-danger">*Wajib</span>
-                                                </h4>
-
-                                                <div class="row">
-                                                    <div class="col-md-4">
-                                                        <div class="form-group">
-                                                            <label for="pengusul">Nama Pengusul</label>
-                                                            <input type="text" id="pengusul" class="form-control round"
-                                                                placeholder="Nama Pengusul">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                        <div class="form-group">
-                                                            <label for="reviewer">Reviewer</label>
-                                                            <select id="reviewer" class="form-control round select2">
-                                                                <option value="">Pilih Reviewer</option>
-                                                                <option>User 1</option>
-                                                                <option>User 2</option>
-                                                                <option>User 3</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                        <div class="form-group">
-                                                            <label for="approval1">Approval #1</label>
-                                                            <select id="approval1" class="form-control round select2">
-                                                                <option value="">Pilih Approval #1</option>
-                                                                <option>User 1</option>
-                                                                <option>User 2</option>
-                                                                <option>User 3</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="row">
-
-                                                    <div class="col-md-4">
-                                                        <div class="form-group">
-                                                            <label for="approval2">Approval #2</label>
-                                                            <select id="approval2" class="form-control round select2">
-                                                                <option value="">Pilih Approval #2</option>
-                                                                <option>User 1</option>
-                                                                <option>User 2</option>
-                                                                <option>User 3</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                        <div class="form-group">
-                                                            <label for="verificator">Verificator</label>
-                                                            <select id="verificator" class="form-control round select2">
-                                                                <option value="">Pilih Verificator</option>
-                                                                <option>User 1</option>
-                                                                <option>User 2</option>
-                                                                <option>User 3</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                        <div class="form-group">
-                                                            <label for="tanggal">Tanggal Pengajuan</label>
-                                                            <input type="date" id="tanggal" class="form-control round">
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-
-
-                                                <hr style="margin-top:10px; margin-bottom:0; border: 1px solid #eee;">
-
-                                                <h4 style="color: #00008b;" class="card-title mb-3 mt-3">
-                                                    2. Informasi Peralatan / Objek / Sistem <span
-                                                        class="text-danger">*Wajib</span>
-                                                </h4>
-
-                                                <div class="row">
-
-                                                    <div class="col-md-3">
-                                                        <div class="form-group">
-                                                            <label for="Equipment">Equipment</label>
-                                                            <select id="Equipment" class="form-control round select2">
-                                                                <option value="">Pilih Equipment</option>
-                                                                <option>User 1</option>
-                                                                <option>User 2</option>
-                                                                <option>User 3</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-2">
-                                                        <div class="form-group">
-                                                            <label for="pengusul">Tag Number</label>
-                                                            <input type="text" id="pengusul" class="form-control round"
-                                                                placeholder="Tag Number">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-2">
-                                                        <div class="form-group">
-                                                            <label for="pengusul">Name</label>
-                                                            <input type="text" id="pengusul" class="form-control round"
-                                                                placeholder="Name">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-2">
-                                                        <div class="form-group">
-                                                            <label for="pengusul">Plant</label>
-                                                            <input type="text" id="pengusul" class="form-control round"
-                                                                placeholder="Plant">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-3">
-                                                        <div class="form-group">
-                                                            <label for="tanggal">Tanggal Terakhir Pengadaan</label>
-                                                            <input type="date" id="tanggal" class="form-control round">
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="row">
-
-
-                                                </div>
-
-
-
-                                                <hr style="margin-top:10px; margin-bottom:0; border: 1px solid #eee;">
-                                                <h4 style="color: #00008b;" class="card-title mb-3 mt-3">
-                                                    3. Data Historis Kegagalan Peralatan / Objek / Sistem <span
-                                                        class="text-danger">*Wajib</span>
-                                                </h4>
-
-                                                <div class="row">
-                                                    <div class="col-md-4">
-                                                        <div class="form-group">
-                                                            <label for="tanggal">Tanggal Terakhir Pengadaan</label>
-                                                            <input type="date" id="tanggal" class="form-control round">
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-
-                                                <div class="row">
-                                                    <div class="col-md-4">
-                                                        <div class="form-group">
-                                                            <label for="Problem & Cause">Problem & Cause</label>
-                                                            <textarea id="Problem & Cause" class="form-control round"
-                                                                placeholder="Problem & Cause"
-                                                                style="resize: vertical; overflow: auto; min-height: 38px;"></textarea>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                        <div class="form-group">
-                                                            <label for="Follow Up">Follow Up</label>
-                                                            <textarea id="Follow Up" class="form-control round"
-                                                                placeholder="Follow Up"
-                                                                style="resize: vertical; overflow: auto; min-height: 38px;"></textarea>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                        <div class="form-group">
-                                                            <label for="Note">Note</label>
-                                                            <textarea id="Note" class="form-control round"
-                                                                placeholder="Note"
-                                                                style="resize: vertical; overflow: auto; min-height: 38px;"></textarea>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <button type="button" class="btn btn-danger btn-sm round "
-                                                    id="add-item">
-                                                    <i class="ft-x"></i> Delete
-                                                </button>
-                                                <button type="button" class="btn btn-primary btn-sm round"
-                                                    id="add-item">
-                                                    <i class="ft-plus"></i> Add More
-                                                </button>
-
-
-                                                <hr class="mt-2"
-                                                    style="margin-top:10px; margin-bottom:0; border: 1px solid #eee;">
-                                                <h4 style="color: #00008b;" class="card-title mb-3 mt-3">
-                                                    4. Rekomendasi dan Justifikasi Investasi <span
-                                                        class="text-danger">*Wajib</span>
-                                                </h4>
-
-                                                <div class="row">
-                                                    <div class="col-md-4">
-                                                        <div class="form-group">
-                                                            <label for="Investasi Yang Diajukan">Investasi Yang
-                                                                Diajukan</label>
-                                                            <textarea id="Investasi Yang Diajukan"
-                                                                class="form-control round"
-                                                                placeholder="Investasi Yang Diajukan"
-                                                                style="resize: vertical; overflow: auto; min-height: 38px;"></textarea>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                        <div class="form-group">
-                                                            <label for="Alasan Investasi">Alasan Investasi</label>
-                                                            <textarea id="Alasan Investasi" class="form-control round"
-                                                                placeholder="Alasan Investasi"
-                                                                style="resize: vertical; overflow: auto; min-height: 38px;"></textarea>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                        <div class="form-group">
-                                                            <label for="Kondisi Saat Ini">Kondisi Saat Ini</label>
-                                                            <textarea id="Kondisi Saat Ini" class="form-control round"
-                                                                placeholder="Kondisi Saat Ini"
-                                                                style="resize: vertical; overflow: auto; min-height: 38px;"></textarea>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <style>
-                                                    .checkbox-group {
-                                                        display: flex;
-                                                        flex-wrap: wrap;
-                                                        gap: 8px;
-                                                        margin-bottom: 10px;
-                                                    }
-
-                                                    .checkbox-label {
-                                                        display: flex;
-                                                        align-items: center;
-                                                        gap: 6px;
-                                                        cursor: pointer;
-                                                        padding: 6px 14px;
-                                                        border: 1px solid #e0e0e0;
-                                                        border-radius: 25px;
-                                                        background: #fafafa;
-                                                        font-size: 13px;
-                                                        font-weight: 500;
-                                                        color: #555;
-                                                        transition: all 0.2s ease;
-                                                        user-select: none;
-                                                    }
-
-                                                    .checkbox-label input {
-                                                        display: none;
-                                                    }
-
-                                                    .checkbox-label span {
-                                                        width: 16px;
-                                                        height: 16px;
-                                                        border-radius: 4px;
-                                                        border: 2px solid #ccc;
-                                                        display: inline-block;
-                                                        position: relative;
-                                                        transition: all 0.3s ease;
-                                                    }
-
-                                                    .checkbox-label input:checked+span {
-                                                        background-color: #00008b;
-                                                        border-color: #00008b;
-                                                    }
-
-                                                    .checkbox-label input:checked+span::after {
-                                                        content: "✔";
-                                                        color: #fff;
-                                                        font-size: 11px;
-                                                        position: absolute;
-                                                        top: -1px;
-                                                        left: 2px;
-                                                    }
-
-                                                    .checkbox-label:hover {
-                                                        background: #f0f4ff;
-                                                        border-color: #00008b;
-                                                        color: #333;
-                                                    }
-                                                </style>
-
-                                                <div class="row">
-                                                    <div class="col-md-12">
-
-                                                        <label class="fw-semibold mb-2">Tujuan Investasi</label>
-
-
-                                                        <div class="d-flex flex-wrap gap-4">
-
-                                                            <div class="col-lg-4 col-sm-12">
-                                                                <label class="checkbox-label">
-                                                                    <input type="checkbox" class="toggle-col"
-                                                                        data-col="0">
-                                                                    <span></span> Peningkatan Reliability (Keandalan)
-                                                                </label>
-                                                                <label class="checkbox-label">
-                                                                    <input type="checkbox" class="toggle-col"
-                                                                        data-col="0">
-                                                                    <span></span> Peningkatan Availability
-                                                                    (Ketersediaan)
-                                                                </label>
-                                                                <label class="checkbox-label">
-                                                                    <input type="checkbox" class="toggle-col"
-                                                                        data-col="0">
-                                                                    <span></span> Peningkatan Safety (Keselamatan)
-                                                                </label>
-
-                                                            </div>
-
-                                                            <div class="col-lg-4 col-sm-12">
-                                                                <label class="checkbox-label">
-                                                                    <input type="checkbox" class="toggle-col"
-                                                                        data-col="0">
-                                                                    <span></span> Efisiensi Biaya Pemeliharaan
-                                                                </label>
-                                                                <label class="checkbox-label">
-                                                                    <input type="checkbox" class="toggle-col"
-                                                                        data-col="0">
-                                                                    <span></span> Kepatuhan terhadap Regulasi
-                                                                </label>
-                                                                <label class="checkbox-label">
-                                                                    <input id="lainnya" type="checkbox"
-                                                                        class="toggle-col" data-col="0">
-                                                                    <span></span> Lainnya
-                                                                </label>
-
-                                                                <!-- Input tambahan muncul jika "Lainnya" dicentang -->
-                                                                <div id="lainnyaInput" class="mt-1"
-                                                                    style="display:none;">
-                                                                    <input type="text" class="form-control round"
-                                                                        placeholder="Lainnya">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <script>
-                                                    document.getElementById("lainnya").addEventListener("change", function () {
-                                                        var input = document.getElementById("lainnyaInput");
-                                                        if (this.checked) {
-                                                            input.style.display = "block";
-                                                            input.classList.add("animate__animated", "animate__fadeIn"); // opsional animasi
-                                                        } else {
-                                                            input.style.display = "none";
-                                                        }
-                                                    });
-                                                </script>
-
-
-                                                <div class="row mt-2">
-                                                    <div class="col-md-2">
-                                                        <div class="form-group">
-                                                            <label for="pengusul">Jumlah</label>
-                                                            <input type="text" id="pengusul" class="form-control round"
-                                                                placeholder="Jumlah">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-2">
-                                                        <div class="form-group">
-                                                            <label for="pengusul">Unit</label>
-                                                            <input type="text" id="pengusul" class="form-control round"
-                                                                placeholder="Unit">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                        <div class="form-group">
-                                                            <label for="Jenis Investasi">Jenis Investasi</label>
-                                                            <select id="Jenis Investasi"
-                                                                class="form-control round select2">
-                                                                <option value="">Pilih Jenis Investasi</option>
-                                                                <option>User 1</option>
-                                                                <option>User 2</option>
-                                                                <option>User 3</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                        <div class="form-group">
-                                                            <label for="Pengadaan Oleh">Pengadaan Oleh</label>
-                                                            <select id="Pengadaan Oleh"
-                                                                class="form-control round select2">
-                                                                <option value="">Pilih Pengadaan Oleh</option>
-                                                                <option>User 1</option>
-                                                                <option>User 2</option>
-                                                                <option>User 3</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="row">
-                                                    <div class="col-md-2">
-                                                        <div class="form-group">
-                                                            <label for="Single / Multi Year">Single / Multi Year</label>
-                                                            <select id="Single / Multi Year"
-                                                                class="form-control round select2">
-                                                                <option value="">Pilih Single / Multi Year</option>
-                                                                <option>User 1</option>
-                                                                <option>User 2</option>
-                                                                <option>User 3</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-md-2">
-                                                        <div class="form-group">
-                                                            <label for="Tahun">Tahun</label>
-                                                            <select id="Tahun" class="form-control round select2">
-                                                                <option value="">Pilih Tahun</option>
-                                                                <option>User 1</option>
-                                                                <option>User 2</option>
-                                                                <option>User 3</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-
-
-
-
-
-                                                <hr class="mt-2"
-                                                    style="margin-top:10px; margin-bottom:0; border: 1px solid #eee;">
-                                                <h4 style="color: #00008b;" class="card-title mb-3 mt-3">
-                                                    5. Risiko yang dipertimbangkan jika investasi tidak dilakukan <span
-                                                        class="text-danger">*Wajib</span>
-                                                </h4>
-
-
-
-
-                                                <div class="row">
-
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label for="material">Failure Mode (Potensi kegagalan
-                                                                yang
-                                                                terjadi)</label>
-                                                            <textarea id="pengusul" class="form-control round"
-                                                                placeholder="Failure Mode"
-                                                                style="resize: vertical; overflow: auto; min-height: 38px;"></textarea>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label for="material">Failure Effect </label>
-                                                            <textarea id="pengusul" class="form-control round"
-                                                                placeholder="Failure Effect"
-                                                                style="resize: vertical; overflow: auto; min-height: 38px;"></textarea>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-md-12">
-                                                        <label for="Tahun">Failure Consequence (bisa diisi lebih
-                                                            dari satu)</label>
-                                                    </div>
-                                                </div>
-
-
-                                                <div class="col-md-6">
-
-
-                                                    <div class="row">
-
-
-                                                        <div class="col-md-4">
-                                                            <div class="form-group">
-                                                                <select id="Safety" data-placeholder="Safety"
-                                                                    class="form-control round select2">
-                                                                    <option value="">Safety</option>
-                                                                    <option>User 1</option>
-                                                                    <option>User 2</option>
-                                                                    <option>User 2</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-md-4">
-                                                            <div class="form-group">
-                                                                <select id="Environment" data-placeholder="Environment"
-                                                                    class="form-control round select2">
-                                                                    <option value="">Environment</option>
-                                                                    <option>User 1</option>
-                                                                    <option>User 2</option>
-                                                                    <option>User 2</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-md-4">
-                                                            <div class="form-group">
-                                                                <select id="Production" data-placeholder="Production"
-                                                                    class="form-control round select2">
-                                                                    <option value="">Production</option>
-                                                                    <option>User 1</option>
-                                                                    <option>User 2</option>
-                                                                    <option>User 3</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-md-4">
-                                                            <div class="form-group">
-                                                                <select id="Downtime" data-placeholder="Downtime"
-                                                                    class="form-control round select2">
-                                                                    <option value="">Downtime</option>
-                                                                    <option>User 1</option>
-                                                                    <option>User 2</option>
-                                                                    <option>User 2</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-md-4">
-                                                            <div class="form-group">
-                                                                <select id="Maintenance Cost"
-                                                                    data-placeholder="Maintenance Cost"
-                                                                    class="form-control round select2">
-                                                                    <option value="">Maintenance Cost</option>
-                                                                    <option>User 1</option>
-                                                                    <option>User 2</option>
-                                                                    <option>User 3</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-
-
-                                                    </div>
-
-                                                </div>
-
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label for="Frequency Failure">Frequency Failure</label>
-                                                            <select id="Frequency Failure"
-                                                                data-placeholder="Frequency Failure"
-                                                                class="form-control round select2">
-                                                                <option value="">Frequency Failure</option>
-                                                                <option>User 1</option>
-                                                                <option>User 2</option>
-                                                                <option>User 3</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label for="Aktivitas Pencegahan Saat ini">Aktivitas
-                                                                Pencegahan Saat ini</label>
-                                                            <select id="Aktivitas Pencegahan Saat ini"
-                                                                data-placeholder="Aktivitas Pencegahan Saat ini"
-                                                                class="form-control round select2">
-                                                                <option value="">Aktivitas Pencegahan Saat ini
-                                                                </option>
-                                                                <option>User 1</option>
-                                                                <option>User 2</option>
-                                                                <option>User 3</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-
-                                                <button type="button" class="btn btn-danger btn-sm round "
-                                                    id="add-item">
-                                                    <i class="ft-x"></i> Delete
-                                                </button>
-                                                <button type="button" class="btn btn-primary btn-sm round"
-                                                    id="add-item">
-                                                    <i class="ft-plus"></i> Add More
-                                                </button>
-
-
-                                                <hr class="mt-2"
-                                                    style="margin-top:10px; margin-bottom:0; border: 1px solid #eee;">
-                                                <h4 style="color: #00008b;" class="card-title mb-3 mt-3">
-                                                    6. Rincian Biaya Investasi <span class="text-danger">*Wajib
-                                                        disi</span>
-                                                </h4>
-
-
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label for="CAPEX">Capital Expenditure (CAPEX) / Estimate
-                                                                at Completion (EAC) <i data-toggle="popover"
-                                                                    data-content="Termasuk pembelian, pemasangan, dan comissioning."
-                                                                    data-trigger="hover"
-                                                                    data-original-title="CAPEX / EAC"
-                                                                    style="color: #00008b;"
-                                                                    class="ft-alert-circle"></i></label>
-                                                            <input type="text" id="CAPEX" class="form-control round"
-                                                                placeholder="Estimasi Biaya">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label for="Sumber1">Sumber Data</label>
-                                                            <input type="text" id="Sumber1" class="form-control round"
-                                                                placeholder="Sumber Data">
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label for="CAPEX">Operational Expenditure (OPEX) <i
-                                                                    data-toggle="popover"
-                                                                    data-content="Energi, bahan habis pakai, biaya pemeliharaan."
-                                                                    data-trigger="hover" data-original-title="OPEX"
-                                                                    style="color: #00008b;"
-                                                                    class="ft-alert-circle"></i></label>
-                                                            <input type="text" id="CAPEX" class="form-control round"
-                                                                placeholder="Estimasi Biaya">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label for="Sumber2">Sumber Data</label>
-                                                            <input type="text" id="Sumber2" class="form-control round"
-                                                                placeholder="Sumber Data">
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label for="CAPEX">Biaya Sparepart <i data-toggle="popover"
-                                                                    data-content="Penggantian spare part selama umur pakai aset."
-                                                                    data-trigger="hover" data-original-title="Sparepart"
-                                                                    style="color: #00008b;"
-                                                                    class="ft-alert-circle"></i></label>
-                                                            <input type="text" id="CAPEX" class="form-control round"
-                                                                placeholder="Estimasi Biaya">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label for="Sumber3">Sumber Data</label>
-                                                            <input type="text" id="Sumber3" class="form-control round"
-                                                                placeholder="Sumber Data">
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label for="CAPEX">Biaya Downtime <i data-toggle="popover"
-                                                                    data-content="Perhitungan kehilangan produksi tanpa investasi."
-                                                                    data-trigger="hover" data-original-title="Downtime"
-                                                                    style="color: #00008b;"
-                                                                    class="ft-alert-circle"></i></label>
-                                                            <input type="text" id="CAPEX" class="form-control round"
-                                                                placeholder="Estimasi Biaya">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label for="Sumber4">Sumber Data</label>
-                                                            <input type="text" id="Sumber4" class="form-control round"
-                                                                placeholder="Sumber Data">
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label for="CAPEX">Masa Usia Pakai <i data-toggle="popover"
-                                                                    data-content="Usia pakai peralatan."
-                                                                    data-trigger="hover"
-                                                                    data-original-title="Masa Usia Pakai"
-                                                                    style="color: #00008b;"
-                                                                    class="ft-alert-circle"></i></label>
-                                                            <input type="text" id="CAPEX" class="form-control round"
-                                                                placeholder="Masa Usia Pakai">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label for="Sumber5">Sumber Data</label>
-                                                            <input type="text" id="Sumber5" class="form-control round"
-                                                                placeholder="Sumber Data">
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label for="CAPEX">Nilai Disposal <i data-toggle="popover"
-                                                                    data-content="Nilai jual kembali atau nilai residu aset di akhir umur pakai."
-                                                                    data-trigger="hover"
-                                                                    data-original-title="Nilai Disposal"
-                                                                    style="color: #00008b;"
-                                                                    class="ft-alert-circle"></i></label>
-                                                            <input type="text" id="CAPEX" class="form-control round"
-                                                                placeholder="Estimasi Biaya">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label for="Sumber6">Sumber Data</label>
-                                                            <input type="text" id="Sumber6" class="form-control round"
-                                                                placeholder="Sumber Data">
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-
-
-                                                <hr class="mt-2"
-                                                    style="margin-top:10px; margin-bottom:0; border: 1px solid #eee;">
-                                                <h4 style="color: #00008b;" class="card-title mb-3 mt-3">
-                                                    7. Justifikasi Alternatif Solusi <span
-                                                        class="text-warning">*Opsional</span>
-                                                </h4>
-
-
-
-
-                                                <div class="row">
-
-                                                    <div class="col-md-3">
-                                                        <div class="form-group">
-                                                            <label for="material">Alternatif Solusi</label>
-                                                            <textarea id="Alternatif Solusi" class="form-control round"
-                                                                placeholder="Alternatif Solusi"
-                                                                style="resize: vertical; overflow: auto; min-height: 38px;"></textarea>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-md-3">
-                                                        <div class="form-group">
-                                                            <label for="material">Deskripsi</label>
-                                                            <textarea id="Deskripsi" class="form-control round"
-                                                                placeholder="Deskripsi"
-                                                                style="resize: vertical; overflow: auto; min-height: 38px;"></textarea>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-md-3">
-                                                        <div class="form-group">
-                                                            <label for="material">Keunggulan</label>
-                                                            <textarea id="Keunggulan" class="form-control round"
-                                                                placeholder="Keunggulan"
-                                                                style="resize: vertical; overflow: auto; min-height: 38px;"></textarea>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-md-3">
-                                                        <div class="form-group">
-                                                            <label for="material">Kelemahan</label>
-                                                            <textarea id="Kelemahan" class="form-control round"
-                                                                placeholder="Kelemahan"
-                                                                style="resize: vertical; overflow: auto; min-height: 38px;"></textarea>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-
-                                                <button type="button" class="btn btn-danger btn-sm round "
-                                                    id="add-item">
-                                                    <i class="ft-x"></i> Delete
-                                                </button>
-                                                <button type="button" class="btn btn-primary btn-sm round"
-                                                    id="add-item">
-                                                    <i class="ft-plus"></i> Add More
-                                                </button>
-
-
-                                                <hr class="mt-2"
-                                                    style="margin-top:10px; margin-bottom:0; border: 1px solid #eee;">
-                                                <h4 style="color: #00008b;" class="card-title mb-3 mt-3">
-                                                    8. Studi Benchmarking <span class="text-warning">*Opsional</span>
-                                                </h4>
-
-
-
-
-                                                <div class="row">
-
-                                                    <div class="col-md-3">
-                                                        <div class="form-group">
-                                                            <label for="material">Nama Perusahaan / Industri</label>
-                                                            <textarea id="Nama Perusahaan / Industri"
-                                                                class="form-control round"
-                                                                placeholder="Nama Perusahaan / Industri"
-                                                                style="resize: vertical; overflow: auto; min-height: 38px;"></textarea>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-md-3">
-                                                        <div class="form-group">
-                                                            <label for="material">Jenis Investasi</label>
-                                                            <textarea id="Jenis Investasi" class="form-control round"
-                                                                placeholder="Jenis Investasi"
-                                                                style="resize: vertical; overflow: auto; min-height: 38px;"></textarea>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-md-3">
-                                                        <div class="form-group">
-                                                            <label for="material">Hasil yang Dicapai</label>
-                                                            <textarea id="Hasil yang Dicapai" class="form-control round"
-                                                                placeholder="Hasil yang Dicapai"
-                                                                style="resize: vertical; overflow: auto; min-height: 38px;"></textarea>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-md-3">
-                                                        <div class="form-group">
-                                                            <label for="material">Sumber Data</label>
-                                                            <textarea id="Sumber Data" class="form-control round"
-                                                                placeholder="Sumber Data"
-                                                                style="resize: vertical; overflow: auto; min-height: 38px;"></textarea>
-                                                        </div>
-                                                    </div>
-
-
-
-                                                </div>
-
-                                                <button type="button" class="btn btn-danger btn-sm round "
-                                                    id="add-item">
-                                                    <i class="ft-x"></i> Delete
-                                                </button>
-                                                <button type="button" class="btn btn-primary btn-sm round"
-                                                    id="add-item">
-                                                    <i class="ft-plus"></i> Add More
-                                                </button>
-
-                                                <div class="row mt-2">
-
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label for="material">Ringkasan Best Practices dari
-                                                                Benchmarking</label>
-                                                            <textarea id="Ringkasan Best Practices dari Benchmarking"
-                                                                class="form-control round"
-                                                                placeholder="Ringkasan Best Practices dari Benchmarking"
-                                                                style="resize: vertical; overflow: auto; min-height: 38px;"></textarea>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label for="material">Bagaimana Benchmarking ini relevan
-                                                                dengan kondisi pabrik kita?</label>
-                                                            <textarea
-                                                                id="Bagaimana Benchmarking ini relevan dengan kondisi pabrik kita?"
-                                                                class="form-control round"
-                                                                placeholder="Bagaimana Benchmarking ini relevan dengan kondisi pabrik kita?"
-                                                                style="resize: vertical; overflow: auto; min-height: 38px;"></textarea>
-                                                        </div>
-                                                    </div>
-
-
-
-                                                </div>
-
-
-                                                <hr style="margin-top:10px; margin-bottom:0; border: 1px solid #eee;">
-                                                <h4 style="color: #00008b;" class="card-title mb-3 mt-3">
-                                                    9. File Attachments <span class="text-warning">*Opsional</span>
-                                                </h4>
-
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label for="attachment_file">Attachment (Upload
-                                                                File)</label>
-                                                            <input type="file" id="attachment_file"
-                                                                class="form-control round" accept="*/*">
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-
-                                                <button type="button" class="btn btn-danger btn-sm round "
-                                                    id="add-item">
-                                                    <i class="ft-x"></i> Delete
-                                                </button>
-                                                <button type="button" class="btn btn-primary btn-sm round"
-                                                    id="add-item">
-                                                    <i class="ft-plus"></i> Add More
-                                                </button>
-
-
-
-                                                <hr class="mt-2"
-                                                    style="margin-top:10px; margin-bottom:0; border: 1px solid #eee;">
-                                                <h4 style="color: #00008b;" class="card-title mb-3 mt-3">
-                                                    10. Note <span class="text-warning">*Opsional</span>
-                                                </h4>
-
-
-
-
-                                                <div class="row">
-
-                                                    <div class="col-md-12">
-                                                        <div class="form-group">
-                                                            <label for="material">Note</label>
-                                                            <textarea id="Note" class="form-control round"
-                                                                placeholder="Note"
-                                                                style="resize: vertical; overflow: auto; min-height: 38px; height: 300px;"></textarea>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-
-
-                                            </div>
-                                            <div class="form-actions text-right">
-                                                <button type="button" class="btn btn-secondary round mr-1">
-                                                    <i class="ft-save"></i> Draft
-                                                </button>
-                                                <button type="submit" class="btn btn-success round">
-                                                    <i class="ft-check-square"></i> Release
-                                                </button>
-                                            </div>
-                                        </form>
-
-
-
-
+                            </div>
+                            <div class="section-body">
+                                <div class="row">
+                                    <div class="col-md-4 mb-field">
+                                        <label class="form-label">Nama Pengusul</label>
+                                        <div class="input-icon-wrap"><i class="fa-regular fa-user input-icon"></i><input
+                                                type="text" class="form-control" placeholder="Nama Pengusul"></div>
+                                    </div>
+                                    <div class="col-md-4 mb-field">
+                                        <label class="form-label">Reviewer</label>
+                                        <select class="form-control select2-modern" data-placeholder="Cari reviewer...">
+                                            <option value=""></option>
+                                            <option>User 1</option>
+                                            <option>User 2</option>
+                                            <option>User 3</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4 mb-field">
+                                        <label class="form-label">Approval #1</label>
+                                        <select class="form-control select2-modern" data-placeholder="Cari approval...">
+                                            <option value=""></option>
+                                            <option>User 1</option>
+                                            <option>User 2</option>
+                                            <option>User 3</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4 mb-field">
+                                        <label class="form-label">Approval #2</label>
+                                        <select class="form-control select2-modern" data-placeholder="Cari approval...">
+                                            <option value=""></option>
+                                            <option>User 1</option>
+                                            <option>User 2</option>
+                                            <option>User 3</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4 mb-field">
+                                        <label class="form-label">Verificator</label>
+                                        <select class="form-control select2-modern"
+                                            data-placeholder="Cari verificator...">
+                                            <option value=""></option>
+                                            <option>User 1</option>
+                                            <option>User 2</option>
+                                            <option>User 3</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4 mb-field">
+                                        <label class="form-label">Tanggal Pengajuan</label>
+                                        <div class="input-icon-wrap"><i
+                                                class="fa-regular fa-calendar input-icon"></i><input type="date"
+                                                class="form-control" style="padding-left:38px;"></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </section>
 
+                        <!-- SECTION 2 -->
+                        <div class="section-card">
+                            <div class="section-header">
+                                <div class="section-icon purple"><i class="fa-solid fa-gears"></i></div>
+                                <div>
+                                    <div class="section-title">2. Informasi Peralatan / Objek / Sistem <span
+                                            class="badge-required"><i class="fa-solid fa-asterisk"
+                                                style="font-size:8px;"></i> Wajib</span></div>
+                                    <div class="section-subtitle">Data teknis peralatan yang diajukan investasinya</div>
+                                </div>
+                            </div>
+                            <div class="section-body">
+                                <div class="row">
+                                    <div class="col-md-3 mb-field"><label class="form-label">Equipment</label><select
+                                            class="form-control select2-modern" data-placeholder="Pilih equipment...">
+                                            <option value=""></option>
+                                            <option>User 1</option>
+                                            <option>User 2</option>
+                                            <option>User 3</option>
+                                        </select></div>
+                                    <div class="col-md-2 mb-field"><label class="form-label">Tag Number</label><input
+                                            type="text" class="form-control" placeholder="Tag Number"></div>
+                                    <div class="col-md-2 mb-field"><label class="form-label">Name</label><input
+                                            type="text" class="form-control" placeholder="Name"></div>
+                                    <div class="col-md-2 mb-field"><label class="form-label">Plant</label><input
+                                            type="text" class="form-control" placeholder="Plant"></div>
+                                    <div class="col-md-3 mb-field"><label class="form-label">Tanggal Terakhir
+                                            Pengadaan</label><input type="date" class="form-control"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SECTION 3 -->
+                        <div class="section-card">
+                            <div class="section-header">
+                                <div class="section-icon red"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                                <div>
+                                    <div class="section-title">3. Data Historis Kegagalan Peralatan <span
+                                            class="badge-required"><i class="fa-solid fa-asterisk"
+                                                style="font-size:8px;"></i> Wajib</span></div>
+                                    <div class="section-subtitle">Riwayat kegagalan peralatan / objek / sistem</div>
+                                </div>
+                            </div>
+                            <div class="section-body">
+                                <div class="row mb-3">
+                                    <div class="col-md-4"><label class="form-label">Tanggal Terakhir
+                                            Pengadaan</label><input type="date" class="form-control"></div>
+                                </div>
+                                <div id="failure-repeater-1" class="repeater-row">
+                                    <div class="row">
+                                        <div class="col-md-4 mb-field"><label class="form-label">Problem &amp;
+                                                Cause</label><textarea class="form-control"
+                                                placeholder="Problem &amp; Cause" rows="3"></textarea></div>
+                                        <div class="col-md-4 mb-field"><label class="form-label">Follow
+                                                Up</label><textarea class="form-control" placeholder="Follow Up"
+                                                rows="3"></textarea></div>
+                                        <div class="col-md-4 mb-field"><label class="form-label">Note</label><textarea
+                                                class="form-control" placeholder="Note" rows="3"></textarea></div>
+                                    </div>
+                                    <button type="button" class="btn-del-row"
+                                        onclick="this.closest('.repeater-row').remove()"><i
+                                            class="fa-solid fa-trash-can"></i> Delete</button>
+                                </div>
+                                <div id="failure-group"></div>
+                                <button type="button" class="btn-add-row mt-2" onclick="addFailureRow()"><i
+                                        class="fa-solid fa-plus"></i> Add More</button>
+                            </div>
+                        </div>
+
+                        <!-- SECTION 4 -->
+                        <div class="section-card">
+                            <div class="section-header">
+                                <div class="section-icon green"><i class="fa-solid fa-lightbulb"></i></div>
+                                <div>
+                                    <div class="section-title">4. Rekomendasi dan Justifikasi Investasi <span
+                                            class="badge-required"><i class="fa-solid fa-asterisk"
+                                                style="font-size:8px;"></i> Wajib</span></div>
+                                    <div class="section-subtitle">Uraian rekomendasi dan justifikasi pengajuan investasi
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="section-body">
+                                <div class="row">
+                                    <div class="col-md-4 mb-field"><label class="form-label">Investasi Yang
+                                            Diajukan</label><textarea class="form-control"
+                                            placeholder="Investasi Yang Diajukan" rows="3"></textarea></div>
+                                    <div class="col-md-4 mb-field"><label class="form-label">Alasan
+                                            Investasi</label><textarea class="form-control"
+                                            placeholder="Alasan Investasi" rows="3"></textarea></div>
+                                    <div class="col-md-4 mb-field"><label class="form-label">Kondisi Saat
+                                            Ini</label><textarea class="form-control" placeholder="Kondisi Saat Ini"
+                                            rows="3"></textarea></div>
+                                </div>
+                                <hr style="border:none;border-top:1px solid #E5E7EB;margin:4px 0 20px;">
+                                <label class="form-label mb-2">Tujuan Investasi</label>
+                                <div class="checkbox-pill-group mb-3">
+                                    <label class="checkbox-pill"><input type="checkbox"><span
+                                            class="pill-check">✓</span> Peningkatan Reliability</label>
+                                    <label class="checkbox-pill"><input type="checkbox"><span
+                                            class="pill-check">✓</span> Peningkatan Availability</label>
+                                    <label class="checkbox-pill"><input type="checkbox"><span
+                                            class="pill-check">✓</span> Peningkatan Safety</label>
+                                    <label class="checkbox-pill"><input type="checkbox"><span
+                                            class="pill-check">✓</span> Efisiensi Biaya Pemeliharaan</label>
+                                    <label class="checkbox-pill"><input type="checkbox"><span
+                                            class="pill-check">✓</span> Kepatuhan terhadap Regulasi</label>
+                                    <label class="checkbox-pill"><input type="checkbox" id="cb-lainnya"><span
+                                            class="pill-check">✓</span> Lainnya</label>
+                                </div>
+                                <div id="lainnyaInput" style="display:none;max-width:320px;margin-bottom:16px;"><input
+                                        type="text" class="form-control" placeholder="Sebutkan tujuan lainnya..."></div>
+                                <hr style="border:none;border-top:1px solid #E5E7EB;margin:4px 0 20px;">
+                                <div class="row">
+                                    <div class="col-md-2 mb-field"><label class="form-label">Jumlah</label><input
+                                            type="text" class="form-control" placeholder="Jumlah"></div>
+                                    <div class="col-md-2 mb-field"><label class="form-label">Unit</label><input
+                                            type="text" class="form-control" placeholder="Unit"></div>
+                                    <div class="col-md-4 mb-field"><label class="form-label">Jenis
+                                            Investasi</label><select class="form-control select2-modern"
+                                            data-placeholder="Pilih Jenis Investasi...">
+                                            <option value=""></option>
+                                            <option>User 1</option>
+                                            <option>User 2</option>
+                                            <option>User 3</option>
+                                        </select></div>
+                                    <div class="col-md-4 mb-field"><label class="form-label">Pengadaan
+                                            Oleh</label><select class="form-control select2-modern"
+                                            data-placeholder="Pilih Pengadaan Oleh...">
+                                            <option value=""></option>
+                                            <option>User 1</option>
+                                            <option>User 2</option>
+                                            <option>User 3</option>
+                                        </select></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3 mb-field"><label class="form-label">Single / Multi
+                                            Year</label><select class="form-control select2-modern"
+                                            data-placeholder="Pilih...">
+                                            <option value=""></option>
+                                            <option>Single Year</option>
+                                            <option>Multi Year</option>
+                                        </select></div>
+                                    <div class="col-md-2 mb-field"><label class="form-label">Tahun</label><select
+                                            class="form-control select2-modern" data-placeholder="Pilih Tahun...">
+                                            <option value=""></option>
+                                            <option>2024</option>
+                                            <option>2025</option>
+                                            <option>2026</option>
+                                        </select></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SECTION 5 -->
+                        <div class="section-card">
+                            <div class="section-header">
+                                <div class="section-icon orange"><i class="fa-solid fa-circle-exclamation"></i></div>
+                                <div>
+                                    <div class="section-title">5. Risiko Jika Investasi Tidak Dilakukan <span
+                                            class="badge-required"><i class="fa-solid fa-asterisk"
+                                                style="font-size:8px;"></i> Wajib</span></div>
+                                    <div class="section-subtitle">Potensi kegagalan dan konsekuensi risiko</div>
+                                </div>
+                            </div>
+                            <div class="section-body">
+                                <div class="row">
+                                    <div class="col-md-6 mb-field"><label class="form-label">Failure Mode <span
+                                                style="font-weight:400;color:#6B7280">(Potensi kegagalan yang
+                                                terjadi)</span></label><textarea class="form-control"
+                                            placeholder="Failure Mode" rows="3"></textarea></div>
+                                    <div class="col-md-6 mb-field"><label class="form-label">Failure
+                                            Effect</label><textarea class="form-control" placeholder="Failure Effect"
+                                            rows="3"></textarea></div>
+                                </div>
+                                <label class="form-label mb-2">Failure Consequence <span
+                                        style="font-weight:400;color:#6B7280">(bisa lebih dari satu)</span></label>
+                                <div class="row">
+                                    <div class="col-md-2 mb-field"><select class="form-control select2-modern"
+                                            data-placeholder="Safety">
+                                            <option value=""></option>
+                                            <option>Low</option>
+                                            <option>Medium</option>
+                                            <option>High</option>
+                                        </select></div>
+                                    <div class="col-md-2 mb-field"><select class="form-control select2-modern"
+                                            data-placeholder="Environment">
+                                            <option value=""></option>
+                                            <option>Low</option>
+                                            <option>Medium</option>
+                                            <option>High</option>
+                                        </select></div>
+                                    <div class="col-md-2 mb-field"><select class="form-control select2-modern"
+                                            data-placeholder="Production">
+                                            <option value=""></option>
+                                            <option>Low</option>
+                                            <option>Medium</option>
+                                            <option>High</option>
+                                        </select></div>
+                                    <div class="col-md-2 mb-field"><select class="form-control select2-modern"
+                                            data-placeholder="Downtime">
+                                            <option value=""></option>
+                                            <option>Low</option>
+                                            <option>Medium</option>
+                                            <option>High</option>
+                                        </select></div>
+                                    <div class="col-md-3 mb-field"><select class="form-control select2-modern"
+                                            data-placeholder="Maintenance Cost">
+                                            <option value=""></option>
+                                            <option>Low</option>
+                                            <option>Medium</option>
+                                            <option>High</option>
+                                        </select></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 mb-field"><label class="form-label">Frequency
+                                            Failure</label><select class="form-control select2-modern"
+                                            data-placeholder="Frequency Failure">
+                                            <option value=""></option>
+                                            <option>Low</option>
+                                            <option>Medium</option>
+                                            <option>High</option>
+                                        </select></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SECTION 6 -->
+                        <div class="section-card">
+                            <div class="section-header">
+                                <div class="section-icon teal"><i class="fa-solid fa-calculator"></i></div>
+                                <div>
+                                    <div class="section-title">6. Analisis Biaya dan Manfaat (Cost-Benefit) <span
+                                            class="badge-required"><i class="fa-solid fa-asterisk"
+                                                style="font-size:8px;"></i> Wajib</span></div>
+                                    <div class="section-subtitle">Estimasi biaya investasi dan manfaat yang diperoleh
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="section-body">
+                                <div class="row">
+                                    <div class="col-md-6 mb-field"><label class="form-label">CAPEX <i
+                                                class="info-tip fa-solid fa-info"
+                                                title="Capital Expenditure"></i></label><input type="text"
+                                            class="form-control" placeholder="Estimasi Biaya"></div>
+                                    <div class="col-md-6 mb-field"><label class="form-label">Sumber Data</label><input
+                                            type="text" class="form-control" placeholder="Sumber Data"></div>
+                                    <div class="col-md-6 mb-field"><label class="form-label">OPEX <i
+                                                class="info-tip fa-solid fa-info"
+                                                title="Operational Expenditure"></i></label><input type="text"
+                                            class="form-control" placeholder="Estimasi Biaya"></div>
+                                    <div class="col-md-6 mb-field"><label class="form-label">Sumber Data</label><input
+                                            type="text" class="form-control" placeholder="Sumber Data"></div>
+                                    <div class="col-md-6 mb-field"><label class="form-label">Biaya Downtime <i
+                                                class="info-tip fa-solid fa-info"
+                                                title="Kehilangan produksi tanpa investasi"></i></label><input
+                                            type="text" class="form-control" placeholder="Estimasi Biaya"></div>
+                                    <div class="col-md-6 mb-field"><label class="form-label">Sumber Data</label><input
+                                            type="text" class="form-control" placeholder="Sumber Data"></div>
+                                    <div class="col-md-6 mb-field"><label class="form-label">Masa Usia Pakai <i
+                                                class="info-tip fa-solid fa-info"
+                                                title="Usia pakai peralatan"></i></label><input type="text"
+                                            class="form-control" placeholder="Masa Usia Pakai"></div>
+                                    <div class="col-md-6 mb-field"><label class="form-label">Sumber Data</label><input
+                                            type="text" class="form-control" placeholder="Sumber Data"></div>
+                                    <div class="col-md-6 mb-field"><label class="form-label">Nilai Disposal <i
+                                                class="info-tip fa-solid fa-info"
+                                                title="Nilai residu aset di akhir umur pakai"></i></label><input
+                                            type="text" class="form-control" placeholder="Estimasi Biaya"></div>
+                                    <div class="col-md-6 mb-field"><label class="form-label">Sumber Data</label><input
+                                            type="text" class="form-control" placeholder="Sumber Data"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SECTION 7 -->
+                        <div class="section-card">
+                            <div class="section-header">
+                                <div class="section-icon indigo"><i class="fa-solid fa-scale-balanced"></i></div>
+                                <div>
+                                    <div class="section-title">7. Justifikasi Alternatif Solusi <span
+                                            class="badge-optional"><i class="fa-regular fa-circle-question"
+                                                style="font-size:10px;"></i> Opsional</span></div>
+                                    <div class="section-subtitle">Perbandingan alternatif solusi yang dipertimbangkan
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="section-body">
+                                <div id="alt-repeater-1" class="repeater-row">
+                                    <div class="row">
+                                        <div class="col-md-3 mb-field"><label class="form-label">Alternatif
+                                                Solusi</label><textarea class="form-control"
+                                                placeholder="Alternatif Solusi" rows="3"></textarea></div>
+                                        <div class="col-md-3 mb-field"><label
+                                                class="form-label">Deskripsi</label><textarea class="form-control"
+                                                placeholder="Deskripsi" rows="3"></textarea></div>
+                                        <div class="col-md-3 mb-field"><label
+                                                class="form-label">Keunggulan</label><textarea class="form-control"
+                                                placeholder="Keunggulan" rows="3"></textarea></div>
+                                        <div class="col-md-3 mb-field"><label
+                                                class="form-label">Kelemahan</label><textarea class="form-control"
+                                                placeholder="Kelemahan" rows="3"></textarea></div>
+                                    </div>
+                                    <button type="button" class="btn-del-row"
+                                        onclick="this.closest('.repeater-row').remove()"><i
+                                            class="fa-solid fa-trash-can"></i> Delete</button>
+                                </div>
+                                <div id="alt-group"></div>
+                                <button type="button" class="btn-add-row mt-2" onclick="addAltRow()"><i
+                                        class="fa-solid fa-plus"></i> Add More</button>
+                            </div>
+                        </div>
+
+                        <!-- SECTION 8 -->
+                        <div class="section-card">
+                            <div class="section-header">
+                                <div class="section-icon pink"><i class="fa-solid fa-binoculars"></i></div>
+                                <div>
+                                    <div class="section-title">8. Studi Benchmarking <span class="badge-optional"><i
+                                                class="fa-regular fa-circle-question" style="font-size:10px;"></i>
+                                            Opsional</span></div>
+                                    <div class="section-subtitle">Perbandingan dengan industri atau perusahaan lain
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="section-body">
+                                <div id="bench-repeater-1" class="repeater-row">
+                                    <div class="row">
+                                        <div class="col-md-3 mb-field"><label class="form-label">Nama Perusahaan /
+                                                Industri</label><textarea class="form-control"
+                                                placeholder="Nama Perusahaan / Industri" rows="3"></textarea></div>
+                                        <div class="col-md-3 mb-field"><label class="form-label">Jenis
+                                                Investasi</label><textarea class="form-control"
+                                                placeholder="Jenis Investasi" rows="3"></textarea></div>
+                                        <div class="col-md-3 mb-field"><label class="form-label">Hasil yang
+                                                Dicapai</label><textarea class="form-control"
+                                                placeholder="Hasil yang Dicapai" rows="3"></textarea></div>
+                                        <div class="col-md-3 mb-field"><label class="form-label">Sumber
+                                                Data</label><textarea class="form-control" placeholder="Sumber Data"
+                                                rows="3"></textarea></div>
+                                    </div>
+                                    <button type="button" class="btn-del-row"
+                                        onclick="this.closest('.repeater-row').remove()"><i
+                                            class="fa-solid fa-trash-can"></i> Delete</button>
+                                </div>
+                                <div id="bench-group"></div>
+                                <button type="button" class="btn-add-row mt-2 mb-3" onclick="addBenchRow()"><i
+                                        class="fa-solid fa-plus"></i> Add More</button>
+                                <hr style="border:none;border-top:1px solid #E5E7EB;margin:16px 0;">
+                                <div class="row">
+                                    <div class="col-md-6 mb-field"><label class="form-label">Ringkasan Best Practices
+                                            dari Benchmarking</label><textarea class="form-control"
+                                            placeholder="Ringkasan Best Practices" rows="4"></textarea></div>
+                                    <div class="col-md-6 mb-field"><label class="form-label">Bagaimana Benchmarking ini
+                                            relevan dengan kondisi pabrik kita?</label><textarea class="form-control"
+                                            placeholder="Relevansi Benchmarking" rows="4"></textarea></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SECTION 9 -->
+                        <div class="section-card">
+                            <div class="section-header">
+                                <div class="section-icon amber"><i class="fa-solid fa-paperclip"></i></div>
+                                <div>
+                                    <div class="section-title">9. File Attachments <span class="badge-optional"><i
+                                                class="fa-regular fa-circle-question" style="font-size:10px;"></i>
+                                            Opsional</span></div>
+                                    <div class="section-subtitle">Upload file pendukung investasi (PDF, Excel, gambar,
+                                        dsb.)</div>
+                                </div>
+                            </div>
+                            <div class="section-body">
+                                <div id="attach-repeater-1" class="repeater-row">
+                                    <div class="row">
+                                        <div class="col-md-6 mb-field"><label class="form-label">Attachment (Upload
+                                                File)</label><input type="file" class="form-control" accept="*/*"></div>
+                                    </div>
+                                    <button type="button" class="btn-del-row"
+                                        onclick="this.closest('.repeater-row').remove()"><i
+                                            class="fa-solid fa-trash-can"></i> Delete</button>
+                                </div>
+                                <div id="attach-group"></div>
+                                <button type="button" class="btn-add-row mt-2" onclick="addAttachRow()"><i
+                                        class="fa-solid fa-plus"></i> Add More</button>
+                            </div>
+                        </div>
+
+                        <!-- SECTION 10 -->
+                        <div class="section-card">
+                            <div class="section-header">
+                                <div class="section-icon" style="background:#F0FDF4;color:#16A34A;"><i
+                                        class="fa-regular fa-note-sticky"></i></div>
+                                <div>
+                                    <div class="section-title">10. Note <span class="badge-optional"><i
+                                                class="fa-regular fa-circle-question" style="font-size:10px;"></i>
+                                            Opsional</span></div>
+                                    <div class="section-subtitle">Catatan tambahan untuk pengajuan ini</div>
+                                </div>
+                            </div>
+                            <div class="section-body">
+                                <div class="row">
+                                    <div class="col-md-12"><label class="form-label">Note</label><textarea
+                                            class="form-control" placeholder="Tambahkan catatan di sini..."
+                                            style="height:140px;"></textarea></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ACTION BAR -->
+                        <div class="action-bar">
+                            <button type="button" class="btn-draft"><i class="fa-regular fa-floppy-disk"></i> Simpan
+                                Draft</button>
+                            <button type="submit" class="btn-release"><i class="fa-solid fa-paper-plane"></i>
+                                Release</button>
+                        </div>
+
+                    </form>
+                </div><!-- /prima-form-inner -->
+
+                <script>
+                    document.getElementById('cb-lainnya').addEventListener('change', function () {
+                        document.getElementById('lainnyaInput').style.display = this.checked ? 'block' : 'none';
+                    });
+                    function makeRow(fields) {
+                        let h = '<div class="repeater-row"><div class="row">';
+                        fields.forEach(function (f) { h += '<div class="col-md-' + f.col + ' mb-field"><label class="form-label">' + f.label + '</label><textarea class="form-control" placeholder="' + f.label + '" rows="3"></textarea></div>'; });
+                        h += '</div><button type="button" class="btn-del-row" onclick="this.closest(\'.repeater-row\').remove()"><i class=\"fa-solid fa-trash-can\"></i> Delete</button></div>';
+                        return h;
+                    }
+                    function addFailureRow() { document.getElementById('failure-group').insertAdjacentHTML('beforeend', makeRow([{ col: 4, label: 'Problem & Cause' }, { col: 4, label: 'Follow Up' }, { col: 4, label: 'Note' }])); }
+                    function addAltRow() { document.getElementById('alt-group').insertAdjacentHTML('beforeend', makeRow([{ col: 3, label: 'Alternatif Solusi' }, { col: 3, label: 'Deskripsi' }, { col: 3, label: 'Keunggulan' }, { col: 3, label: 'Kelemahan' }])); }
+                    function addBenchRow() { document.getElementById('bench-group').insertAdjacentHTML('beforeend', makeRow([{ col: 3, label: 'Nama Perusahaan / Industri' }, { col: 3, label: 'Jenis Investasi' }, { col: 3, label: 'Hasil yang Dicapai' }, { col: 3, label: 'Sumber Data' }])); }
+                    function addAttachRow() { document.getElementById('attach-group').insertAdjacentHTML('beforeend', '<div class="repeater-row mt-1"><div class="row"><div class="col-md-6 mb-field"><label class="form-label">Attachment (Upload File)</label><input type="file" class="form-control" accept="*/*"></div></div><button type="button" class="btn-del-row" onclick="this.closest(\'.repeater-row\').remove()"><i class=\"fa-solid fa-trash-can\"></i> Delete</button></div>'); }
+                    document.addEventListener('DOMContentLoaded', function () {
+                        if (typeof $ !== 'undefined' && $.fn.select2) {
+                            $('.select2-modern').each(function () {
+                                $(this).select2({ placeholder: $(this).data('placeholder') || 'Search...', allowClear: true });
+                            });
+                        }
+                    });
+                </script>
             </div>
+
         </div>
     </div>
-    <!-- ////////////////////////////////////////////////////////////////////////////-->
 
+    <!-- ////////////////////////////////////////////////////////////////////////////-->
 
     <footer class="footer footer-static footer-light navbar-border navbar-shadow">
         <div class="clearfix blue-grey lighten-2 text-sm-center mb-0 px-2"><span
                 class="float-md-left d-block d-md-inline-block">2025 &copy; Copyright <a
                     class="text-bold-800 grey darken-2" href="#">Keandalan Pabrik dan Penjamin Kualitas</a></span>
             <ul class="list-inline float-md-right d-block d-md-inline-blockd-none d-lg-block mb-0">
-
-
-
             </ul>
         </div>
     </footer>
 
     <!-- BEGIN VENDOR JS-->
     <script src="app-assets/vendors/js/vendors.min.js" type="text/javascript"></script>
-    <!-- BEGIN VENDOR JS-->
     <!-- BEGIN PAGE VENDOR JS-->
     <script src="app-assets/vendors/js/charts/chartist.min.js" type="text/javascript"></script>
     <script src="app-assets/vendors/js/charts/chartist-plugin-tooltip.min.js" type="text/javascript"></script>
@@ -1348,7 +1468,7 @@
 
 </html>
 
-<!-- Tambahkan jQuery dan Select2 JS -->
+<!-- jQuery dan Select2 JS -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
@@ -1357,13 +1477,11 @@
         $('#project-location').select2({
             placeholder: "Search Modul",
             allowClear: true,
-            width: '200px' // kasih fixed width
+            width: '200px'
         });
     });
 </script>
 
-
-<!-- Tambahin JS Select2 -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 <script>
