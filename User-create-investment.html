@@ -630,11 +630,27 @@
     <style>
         @media (max-width: 767.98px) {
             html body .content .content-wrapper {
-                padding-top: 73px;
-                /* fallback awal */
+                padding-top: 0;
             }
         }
     </style>
+
+    <script>
+        function updatePaddingTop() {
+            if (window.innerWidth <= 767.98) {
+                const breadcrumb = document.querySelector('.content-wrapper-before');
+                const contentWrapper = document.querySelector('.content .content-wrapper');
+
+                if (breadcrumb && contentWrapper) {
+                    const height = breadcrumb.offsetHeight;
+                    contentWrapper.style.paddingTop = (height - 20) + 'px';
+                }
+            }
+        }
+
+        window.addEventListener('load', updatePaddingTop);
+        window.addEventListener('resize', updatePaddingTop);
+    </script>
 
 
 </head>
